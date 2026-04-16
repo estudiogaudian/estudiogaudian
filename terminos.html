@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Términos y Condiciones — GAUDIAN</title>
+<meta name="description" content="Términos y Condiciones del servicio de Agencia Gaudian, estudio boutique de comunicación digital. Clorinda, Formosa, Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:#0c0c0b;color:#ede9e0;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+
+body::before{
+  content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;opacity:.028;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+}
+
+:root{
+  --ink:#0c0c0b;--cream:#ede9e0;--warm:#c8c2b4;--muted:#7a7670;
+  --gold:#b8a882;--border:rgba(237,233,224,.1);--border-m:rgba(237,233,224,.22);
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;height:68px;padding:0 5vw;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(12,12,11,.92);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{display:flex;align-items:center;gap:14px}
+.nav-sep{width:1px;height:20px;background:var(--border-m)}
+.nav-tagline{font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.nav-back{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.nav-back:hover{color:var(--cream)}
+.nav-back svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* HERO */
+.tyc-hero{
+  padding:140px 5vw 5rem;
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.tyc-hero::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(184,168,130,.04) 0%,transparent 60%);
+  pointer-events:none;
+}
+.tyc-eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+.tyc-eyebrow::before{content:'';width:18px;height:1px;background:var(--muted)}
+.tyc-hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.5rem,9vw,8rem);
+  line-height:.88;letter-spacing:.03em;color:var(--cream);
+  margin-bottom:1.5rem;
+}
+.tyc-hero-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;font-weight:300;font-style:italic;
+  color:var(--warm);line-height:1.5;
+  max-width:560px;margin-bottom:2rem;
+}
+.tyc-meta-bar{
+  display:flex;flex-wrap:wrap;gap:2rem;
+  padding-top:2rem;border-top:1px solid var(--border);
+}
+.tyc-meta-item{display:flex;flex-direction:column;gap:3px}
+.tyc-meta-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.tyc-meta-value{font-size:13px;font-weight:400;color:var(--warm)}
+.tyc-meta-value a{color:var(--gold);border-bottom:1px solid transparent;transition:border-color .2s}
+.tyc-meta-value a:hover{border-color:var(--gold)}
+
+/* CONTENT LAYOUT */
+.tyc-layout{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:0;
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 5vw;
+}
+
+/* SIDEBAR NAV */
+.tyc-sidebar{
+  padding:4rem 2rem 4rem 0;
+  position:sticky;top:68px;align-self:start;
+  height:calc(100vh - 68px);overflow-y:auto;
+}
+.tyc-sidebar::-webkit-scrollbar{width:2px}
+.tyc-sidebar::-webkit-scrollbar-track{background:transparent}
+.tyc-sidebar::-webkit-scrollbar-thumb{background:var(--border-m)}
+.tyc-sidebar-title{
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:1.2rem;
+}
+.tyc-sidebar-nav{list-style:none;border-left:1px solid var(--border)}
+.tyc-sidebar-nav li a{
+  display:block;font-size:12px;font-weight:300;
+  color:var(--muted);padding:6px 0 6px 16px;
+  border-left:2px solid transparent;margin-left:-1px;
+  transition:color .2s,border-color .2s;line-height:1.4;
+}
+.tyc-sidebar-nav li a:hover,
+.tyc-sidebar-nav li a.active{color:var(--cream);border-color:var(--gold)}
+
+/* MAIN CONTENT */
+.tyc-main{
+  padding:4rem 0 6rem 4rem;
+  border-left:1px solid var(--border);
+}
+.tyc-section{margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--border)}
+.tyc-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.tyc-section-id{
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:.75rem;
+  display:flex;align-items:center;gap:8px;
+}
+.tyc-section-id::before{content:'';width:12px;height:1px;background:var(--muted)}
+.tyc-section-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.8rem,3vw,2.5rem);
+  letter-spacing:.04em;color:var(--cream);
+  margin-bottom:1.5rem;line-height:.95;
+}
+.tyc-section p{
+  font-size:14px;font-weight:300;line-height:1.8;
+  color:var(--warm);margin-bottom:1rem;
+}
+.tyc-section p:last-child{margin-bottom:0}
+.tyc-section ul,.tyc-section ol{
+  padding-left:1.4rem;margin-bottom:1rem;
+}
+.tyc-section ul li,.tyc-section ol li{
+  font-size:14px;font-weight:300;line-height:1.75;
+  color:var(--warm);margin-bottom:.4rem;list-style:none;
+  display:flex;align-items:flex-start;gap:10px;
+}
+.tyc-section ul li::before{content:'—';color:var(--gold);flex-shrink:0;margin-top:2px}
+.tyc-section ol{counter-reset:steps}
+.tyc-section ol li{counter-increment:steps}
+.tyc-section ol li::before{
+  content:counter(steps,decimal-leading-zero);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:.95rem;letter-spacing:.05em;
+  color:var(--gold);flex-shrink:0;min-width:24px;
+}
+.tyc-section strong{color:var(--cream);font-weight:500}
+.tyc-section a{color:var(--gold);border-bottom:1px solid transparent;transition:border-color .2s}
+.tyc-section a:hover{border-color:var(--gold)}
+
+.highlight-box{
+  border:1px solid var(--border);
+  border-left:2px solid var(--gold);
+  padding:1.25rem 1.5rem;
+  margin:1.5rem 0;
+  background:rgba(184,168,130,.04);
+}
+.highlight-box p{margin-bottom:0 !important;font-size:13px !important}
+
+/* FOOTER */
+footer{
+  background:var(--ink);border-top:1px solid var(--border);
+  padding:2.5rem 5vw;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1.5rem;
+}
+.ft-left{display:flex;align-items:center;gap:14px}
+.ft-sep{width:1px;height:16px;background:var(--border-m)}
+.ft-tag{font-size:9px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.ft-right{font-size:11px;font-weight:300;color:var(--muted);line-height:1.7;text-align:right}
+.ft-right a{color:var(--muted);transition:color .2s}
+.ft-right a:hover{color:var(--cream)}
+
+@media(max-width:900px){
+  .tyc-layout{grid-template-columns:1fr}
+  .tyc-sidebar{display:none}
+  .tyc-main{padding:3rem 0 5rem;border-left:none}
+  footer{flex-direction:column;align-items:flex-start}
+  .ft-right{text-align:left}
+}
+@media(max-width:600px){
+  .tyc-hero{padding:120px 5vw 3rem}
+  .tyc-meta-bar{gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <svg height="26" viewBox="0 0 340 44" xmlns="http://www.w3.org/2000/svg" style="fill:#ede9e0;width:auto">
+      <text font-family="'Bebas Neue',sans-serif" font-size="44" letter-spacing="5" y="40" x="0">GAUDIAN</text>
+    </svg>
+    <div class="nav-sep"></div>
+    <span class="nav-tagline">Estudio boutique de comunicación</span>
+  </div>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al inicio
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="tyc-hero">
+  <div class="tyc-eyebrow">Legal · Agencia Gaudian</div>
+  <h1 class="tyc-hero-title">Términos y<br>Condiciones</h1>
+  <p class="tyc-hero-sub">Condiciones de prestación del servicio de comunicación digital y marketing para negocios locales.</p>
+  <div class="tyc-meta-bar">
+    <div class="tyc-meta-item">
+      <span class="tyc-meta-label">Responsable</span>
+      <span class="tyc-meta-value">Franco Gaudino</span>
+    </div>
+    <div class="tyc-meta-item">
+      <span class="tyc-meta-label">CUIL</span>
+      <span class="tyc-meta-value">20-40486958-3</span>
+    </div>
+    <div class="tyc-meta-item">
+      <span class="tyc-meta-label">Nombre comercial</span>
+      <span class="tyc-meta-value">Agencia Gaudian</span>
+    </div>
+    <div class="tyc-meta-item">
+      <span class="tyc-meta-label">Contacto</span>
+      <span class="tyc-meta-value"><a href="mailto:lic.gaudinofraco@gmail.com">lic.gaudinofraco@gmail.com</a></span>
+    </div>
+    <div class="tyc-meta-item">
+      <span class="tyc-meta-label">Última actualización</span>
+      <span class="tyc-meta-value">Abril 2025</span>
+    </div>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="tyc-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="tyc-sidebar">
+    <div class="tyc-sidebar-title">Índice</div>
+    <ul class="tyc-sidebar-nav">
+      <li><a href="#s1">1. Información del prestador</a></li>
+      <li><a href="#s2">2. Descripción del servicio</a></li>
+      <li><a href="#s3">3. Cómo contratar</a></li>
+      <li><a href="#s4">4. Precios y pagos</a></li>
+      <li><a href="#s5">5. Permanencia y cancelación</a></li>
+      <li><a href="#s6">6. Obligaciones de las partes</a></li>
+      <li><a href="#s7">7. Propiedad intelectual</a></li>
+      <li><a href="#s8">8. Limitación de responsabilidad</a></li>
+      <li><a href="#s9">9. Privacidad de datos</a></li>
+      <li><a href="#s10">10. Jurisdicción</a></li>
+    </ul>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="tyc-main">
+
+    <div class="tyc-section" id="s1">
+      <div class="tyc-section-id">01</div>
+      <div class="tyc-section-title">Información del prestador</div>
+      <p>El presente sitio web y los servicios ofrecidos en él son prestados por <strong>Franco Gaudino</strong> (CUIL 20-40486958-3), actuando bajo el nombre comercial <strong>Agencia Gaudian</strong>, con base operativa en la ciudad de Clorinda, provincia de Formosa, República Argentina.</p>
+      <p>Para cualquier consulta, reclamo o ejercicio de derechos, podés comunicarte a través de los siguientes canales:</p>
+      <ul>
+        <li>Correo electrónico: <a href="mailto:lic.gaudinofraco@gmail.com">lic.gaudinofraco@gmail.com</a></li>
+        <li>WhatsApp: <a href="https://wa.me/543718615261" target="_blank">+54 3718 615261</a></li>
+        <li>Instagram: <a href="https://instagram.com/gaudian.estudio" target="_blank">@gaudian.estudio</a></li>
+        <li>Horario de atención: lunes a viernes de 8 a 18 hs</li>
+      </ul>
+    </div>
+
+    <div class="tyc-section" id="s2">
+      <div class="tyc-section-id">02</div>
+      <div class="tyc-section-title">Descripción del servicio</div>
+      <p>Gaudian es un <strong>estudio boutique de comunicación digital</strong> que presta servicios personalizados de marketing a negocios locales. Los servicios incluyen, según el plan contratado:</p>
+      <ul>
+        <li>Gestión de redes sociales (Instagram y/o Facebook)</li>
+        <li>Creación de contenido gráfico y audiovisual (imágenes, reels, stories)</li>
+        <li>Gestión de publicidad paga en plataformas Meta (Facebook Ads e Instagram Ads)</li>
+        <li>Diseño de estrategia mensual de comunicación digital</li>
+        <li>Redacción de textos y copys para publicaciones y anuncios</li>
+        <li>Reportes periódicos de resultados y métricas</li>
+      </ul>
+      <div class="highlight-box">
+        <p>Se trata de un <strong>servicio personalizado</strong>: cada cliente recibe una propuesta adaptada a su rubro, su mercado local y sus objetivos específicos. Gaudian no utiliza plantillas genéricas ni estrategias replicadas entre clientes.</p>
+      </div>
+      <p>El presupuesto destinado a publicidad paga en plataformas de terceros (Meta Ads) no forma parte del precio del plan y es gestionado de forma separada según lo acordado en el contrato de prestación.</p>
+    </div>
+
+    <div class="tyc-section" id="s3">
+      <div class="tyc-section-id">03</div>
+      <div class="tyc-section-title">Cómo contratar el servicio</div>
+      <p>El proceso de contratación es el siguiente:</p>
+      <ol>
+        <li><strong>Contacto inicial:</strong> El interesado puede comunicarse con Gaudian a través del formulario de contacto del sitio web, por WhatsApp al +54 3718 615261 o por correo electrónico a lic.gaudinofraco@gmail.com. No existe un proceso de compra automática: todo servicio requiere un contacto previo.</li>
+        <li><strong>Reunión de diagnóstico:</strong> Se agenda una cita (presencial o virtual, según la disponibilidad de ambas partes) sin cargo ni compromiso. En ella se analiza la situación actual del negocio, sus objetivos y el plan más adecuado.</li>
+        <li><strong>Propuesta personalizada:</strong> Gaudian elabora una propuesta escrita con el detalle del servicio a prestar, el plan seleccionado, los entregables mensuales y el costo total.</li>
+        <li><strong>Firma del contrato:</strong> Si el cliente acepta la propuesta, se firma un contrato de prestación de servicios donde quedan estipuladas las obligaciones de ambas partes, la duración del acuerdo y las condiciones particulares acordadas.</li>
+        <li><strong>Inicio del servicio:</strong> Una vez firmado el contrato y acreditado el primer pago mensual, Gaudian da inicio al servicio dentro de los 5 días hábiles siguientes.</li>
+      </ol>
+    </div>
+
+    <div class="tyc-section" id="s4">
+      <div class="tyc-section-id">04</div>
+      <div class="tyc-section-title">Precios y formas de pago</div>
+      <p>Los precios de los planes vigentes son los siguientes (expresados en pesos argentinos, IVA incluido):</p>
+      <ul>
+        <li><strong>Plan Activación:</strong> $180.000 ARS por mes</li>
+        <li><strong>Plan Presencia:</strong> $270.000 ARS por mes</li>
+        <li><strong>Plan Autoridad:</strong> $370.000 ARS por mes</li>
+      </ul>
+      <p>Gaudian acepta todos los medios de pago habilitados: transferencia bancaria, MercadoPago, efectivo y otros medios digitales disponibles en el momento del pago. La modalidad de pago quedará especificada en el contrato.</p>
+      <p>El pago es mensual y debe realizarse dentro de los primeros 5 días hábiles de cada mes calendario, salvo que se acuerde otra modalidad expresamente en el contrato.</p>
+      <div class="highlight-box">
+        <p>Los precios pueden ser actualizados por Gaudian con un <strong>preaviso mínimo de 30 días corridos</strong> al cliente. El cliente podrá rescindir el contrato sin penalidad si no acepta la actualización de precios, siempre que lo comunique dentro de los 10 días hábiles siguientes a la notificación.</p>
+      </div>
+    </div>
+
+    <div class="tyc-section" id="s5">
+      <div class="tyc-section-id">05</div>
+      <div class="tyc-section-title">Permanencia mínima y cancelación</div>
+      <p>Los servicios de Gaudian tienen una <strong>permanencia mínima de 6 (seis) meses</strong> contados desde la fecha de firma del contrato. Esta condición existe porque los resultados del marketing digital son acumulativos y requieren tiempo para consolidarse; resultados significativos no son posibles de garantizar en períodos inferiores.</p>
+      <p>Una vez cumplido el período de permanencia mínima, cualquiera de las partes puede dar por finalizado el servicio con un <strong>preaviso de 30 días corridos</strong>, comunicado por escrito (correo electrónico o WhatsApp con constancia).</p>
+      <div class="highlight-box">
+        <p>En caso de rescisión anticipada por parte del cliente antes de cumplirse los 6 meses, se deberán abonar los meses restantes del período de permanencia como indemnización, salvo casos de fuerza mayor debidamente acreditados o acuerdo expreso entre las partes.</p>
+      </div>
+      <p>Gaudian se reserva el derecho de rescindir el contrato de forma inmediata y sin penalidad en caso de: incumplimiento de pago por parte del cliente por más de 10 días hábiles; conductas que perjudiquen la reputación del estudio; o solicitud de acciones que contravengan la legislación vigente.</p>
+    </div>
+
+    <div class="tyc-section" id="s6">
+      <div class="tyc-section-id">06</div>
+      <div class="tyc-section-title">Obligaciones de las partes</div>
+      <p><strong>Gaudian se compromete a:</strong></p>
+      <ul>
+        <li>Entregar los contenidos y gestionar las campañas según lo acordado en el plan contratado y el contrato firmado.</li>
+        <li>Mantener comunicación fluida con el cliente y responder consultas dentro de las 24 horas hábiles.</li>
+        <li>Emitir reportes mensuales de resultados en la forma y formato acordados.</li>
+        <li>Guardar estricta confidencialidad sobre la información del negocio del cliente.</li>
+        <li>Notificar con anticipación cualquier cambio en precios, condiciones o disponibilidad del servicio.</li>
+      </ul>
+      <p><strong>El cliente se compromete a:</strong></p>
+      <ul>
+        <li>Proveer acceso a las cuentas de redes sociales y plataformas necesarias para el desarrollo del trabajo.</li>
+        <li>Abonar el servicio en tiempo y forma según lo estipulado en el contrato.</li>
+        <li>Brindar información veraz y actualizada sobre su negocio para la elaboración del contenido.</li>
+        <li>Respetar los plazos de revisión y aprobación de materiales que se acuerden.</li>
+        <li>No compartir credenciales de acceso ni materiales de Gaudian con terceros sin autorización.</li>
+      </ul>
+    </div>
+
+    <div class="tyc-section" id="s7">
+      <div class="tyc-section-id">07</div>
+      <div class="tyc-section-title">Propiedad intelectual</div>
+      <p>Todo el contenido creado por Gaudian para el cliente (imágenes, textos, videos, diseños, estrategias) pasa a ser <strong>propiedad del cliente</strong> una vez finalizada la relación contractual y siempre que el cliente se encuentre al día con los pagos correspondientes.</p>
+      <p>Durante la vigencia del contrato, los materiales producidos son de uso exclusivo del cliente para los fines acordados. No podrán ser cedidos, sublicenciados ni modificados por el cliente sin consentimiento de Gaudian.</p>
+      <p>Gaudian se reserva el derecho de incluir los trabajos realizados en su portfolio, sitio web y materiales de presentación comercial, salvo que el cliente solicite expresamente la confidencialidad de los materiales en el contrato.</p>
+    </div>
+
+    <div class="tyc-section" id="s8">
+      <div class="tyc-section-id">08</div>
+      <div class="tyc-section-title">Limitación de responsabilidad</div>
+      <p>Gaudian no garantiza resultados específicos en términos de ventas, número de seguidores, generación de leads o retorno de inversión, ya que estos dependen de múltiples factores externos al control del estudio, incluyendo:</p>
+      <ul>
+        <li>Los algoritmos y políticas de plataformas de terceros (Meta, Instagram, Facebook)</li>
+        <li>La calidad del producto o servicio ofrecido por el cliente</li>
+        <li>Las condiciones del mercado local y la competencia</li>
+        <li>El presupuesto destinado a publicidad paga</li>
+        <li>Factores económicos o sociales externos</li>
+      </ul>
+      <p>Gaudian no se responsabiliza por interrupciones, cambios de algoritmo o modificaciones en los términos de servicio de plataformas de terceros que puedan afectar el rendimiento de las campañas o la visibilidad del contenido.</p>
+    </div>
+
+    <div class="tyc-section" id="s9">
+      <div class="tyc-section-id">09</div>
+      <div class="tyc-section-title">Privacidad y protección de datos</div>
+      <p>Los datos personales que el cliente o los usuarios del sitio web provean a través del formulario de contacto (nombre, correo electrónico, teléfono y cualquier otra información voluntariamente facilitada) serán utilizados exclusivamente para:</p>
+      <ul>
+        <li>Responder consultas y gestionar el contacto inicial</li>
+        <li>Gestionar la relación comercial y contractual con clientes activos</li>
+        <li>Enviar información relevante sobre el servicio cuando el usuario lo solicite</li>
+      </ul>
+      <p>Los datos <strong>no serán compartidos con terceros</strong> ni utilizados con fines publicitarios propios sin consentimiento previo y expreso del usuario.</p>
+      <div class="highlight-box">
+        <p>Podés solicitar el acceso, rectificación o eliminación de tus datos personales en cualquier momento escribiendo a <a href="mailto:lic.gaudinofraco@gmail.com">lic.gaudinofraco@gmail.com</a> con el asunto "Datos personales".</p>
+      </div>
+    </div>
+
+    <div class="tyc-section" id="s10">
+      <div class="tyc-section-id">10</div>
+      <div class="tyc-section-title">Jurisdicción y ley aplicable</div>
+      <p>Los presentes Términos y Condiciones se rigen íntegramente por las leyes de la <strong>República Argentina</strong>, en particular por el Código Civil y Comercial de la Nación y la normativa vigente en materia de defensa del consumidor (Ley 24.240 y modificatorias).</p>
+      <p>Cualquier controversia, reclamo o diferendo que surja en relación a los servicios prestados por Gaudian que no pueda resolverse de manera amigable entre las partes será sometida a la jurisdicción de los <strong>tribunales ordinarios de la ciudad de Formosa</strong>, provincia de Formosa, República Argentina, renunciando las partes expresamente a cualquier otro fuero que pudiera corresponder.</p>
+      <p>Gaudian se reserva el derecho de modificar los presentes Términos y Condiciones en cualquier momento. Los cambios serán notificados a los clientes activos con al menos <strong>15 días corridos de anticipación</strong> por correo electrónico o WhatsApp.</p>
+    </div>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-left">
+    <svg height="20" viewBox="0 0 340 44" xmlns="http://www.w3.org/2000/svg" style="fill:#ede9e0;width:auto">
+      <text font-family="'Bebas Neue',sans-serif" font-size="44" letter-spacing="5" y="40" x="0">GAUDIAN</text>
+    </svg>
+    <div class="ft-sep"></div>
+    <span class="ft-tag">Estudio boutique de comunicación</span>
+  </div>
+  <div class="ft-right">
+    Franco Gaudino · CUIL 20-40486958-3 · Clorinda, Formosa, Argentina<br>
+    <a href="mailto:lic.gaudinofraco@gmail.com">lic.gaudinofraco@gmail.com</a> ·
+    <a href="https://wa.me/543718615261" target="_blank">+54 3718 615261</a> ·
+    <a href="index.html">Volver al inicio</a>
+  </div>
+</footer>
+
+<script>
+/* Active sidebar link on scroll */
+const sections=document.querySelectorAll('.tyc-section[id]');
+const links=document.querySelectorAll('.tyc-sidebar-nav a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{
+    if(window.scrollY>=s.offsetTop-120) current=s.id;
+  });
+  links.forEach(l=>{
+    l.classList.remove('active');
+    if(l.getAttribute('href')==='#'+current) l.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

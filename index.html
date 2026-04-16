@@ -4,20 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GAUDIAN — Estudio boutique de comunicación</title>
-<meta name="description" content="Gaudian es un estudio boutique de comunicación y marketing digital especializado en negocios locales de Clorinda, Formosa.">
+<meta name="description" content="Gaudian es un estudio boutique de comunicación y marketing digital especializado en negocios locales de Clorinda, Formosa. Gestión de redes, Meta Ads y contenido.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-/* ─── RESET ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:'DM Sans',sans-serif;background:#0c0c0b;color:#ede9e0;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;width:100%;height:100%;object-fit:cover}
 
-/* ─── GRAIN OVERLAY ─── */
 body::before{
   content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;
   opacity:.028;
@@ -25,57 +22,24 @@ body::before{
   background-size:200px 200px;
 }
 
-/* ─── VARS ─── */
 :root{
-  --ink:#0c0c0b;
-  --cream:#ede9e0;
-  --warm:#c8c2b4;
-  --muted:#7a7670;
-  --gold:#b8a882;
-  --border:rgba(237,233,224,.1);
-  --border-m:rgba(237,233,224,.22);
-  --r:12px;
+  --ink:#0c0c0b;--cream:#ede9e0;--warm:#c8c2b4;--muted:#7a7670;
+  --gold:#b8a882;--border:rgba(237,233,224,.1);--border-m:rgba(237,233,224,.22);
 }
 
-/* ─── CURSOR ─── */
-.cur{
-  position:fixed;top:0;left:0;pointer-events:none;z-index:9000;
-  width:8px;height:8px;border-radius:50%;background:var(--cream);
-  transform:translate(-50%,-50%);
-  transition:width .35s,height .35s,opacity .35s;
-  mix-blend-mode:difference;
-}
+.cur{position:fixed;top:0;left:0;pointer-events:none;z-index:9000;width:8px;height:8px;border-radius:50%;background:var(--cream);transform:translate(-50%,-50%);transition:width .35s,height .35s;mix-blend-mode:difference}
 .cur.big{width:44px;height:44px}
-.cur-ring{
-  position:fixed;top:0;left:0;pointer-events:none;z-index:8999;
-  width:36px;height:36px;border-radius:50%;
-  border:1px solid rgba(237,233,224,.35);
-  transform:translate(-50%,-50%);
-  transition:transform .12s,width .3s,height .3s,opacity .3s;
-}
+.cur-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:8999;width:36px;height:36px;border-radius:50%;border:1px solid rgba(237,233,224,.35);transform:translate(-50%,-50%)}
 
-/* ─── NAV ─── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:500;
-  height:68px;padding:0 5vw;
-  display:flex;align-items:center;justify-content:space-between;
-  transition:background .5s,border-color .5s;
-  border-bottom:1px solid transparent;
-}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:68px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;transition:background .5s,border-color .5s;border-bottom:1px solid transparent}
 nav.scrolled{background:rgba(12,12,11,.88);backdrop-filter:blur(20px);border-color:var(--border)}
 .nav-brand{display:flex;align-items:center;gap:14px}
-.nav-logo-svg{height:28px;width:auto;fill:var(--cream)}
 .nav-sep{width:1px;height:20px;background:var(--border-m)}
 .nav-tagline{font-size:9px;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{font-size:11px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);transition:color .2s}
 .nav-links a:hover{color:var(--cream)}
-.nav-wa{
-  display:flex;align-items:center;gap:8px;
-  font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--cream);padding:9px 18px;
-  border:1px solid var(--border-m);transition:all .2s;
-}
+.nav-wa{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);padding:9px 18px;border:1px solid var(--border-m);transition:all .2s}
 .nav-wa:hover{background:var(--cream);color:var(--ink)}
 .nav-wa svg{width:13px;height:13px;fill:currentColor;flex-shrink:0}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:600}
@@ -84,434 +48,260 @@ nav.scrolled{background:rgba(12,12,11,.88);backdrop-filter:blur(20px);border-col
 .mmenu.open{display:flex}
 .mmenu a{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;letter-spacing:.08em;color:var(--cream)}
 
-/* ─── HERO ─── */
-#hero{
-  min-height:100vh;display:grid;
-  grid-template-rows:1fr auto;
-  position:relative;overflow:hidden;
-}
-.hero-image-full{
-  position:absolute;inset:0;
-}
-.hero-image-full img{
-  width:100%;height:100%;object-fit:cover;object-position:center 30%;
-  filter:brightness(.38) saturate(.7);
-}
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to bottom, rgba(12,12,11,.1) 0%, rgba(12,12,11,.55) 60%, rgba(12,12,11,1) 100%);
-}
-.hero-inner{
-  position:relative;z-index:2;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:0 5vw 5vh;padding-top:120px;
-}
-.hero-tag{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:10px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:2rem;
-}
+#hero{min-height:100vh;display:grid;grid-template-rows:1fr auto;position:relative;overflow:hidden}
+.hero-image-full{position:absolute;inset:0}
+.hero-image-full img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.38) saturate(.7)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(12,12,11,.1) 0%,rgba(12,12,11,.55) 60%,rgba(12,12,11,1) 100%)}
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:0 5vw 5vh;padding-top:120px}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem}
 .hero-tag::before{content:'';width:28px;height:1px;background:var(--gold)}
-.hero-h1{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(6rem,18vw,16rem);
-  line-height:.85;letter-spacing:.025em;
-  color:var(--cream);margin-bottom:.4rem;
-}
-.hero-sub{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.1rem,2.2vw,1.5rem);
-  font-style:italic;font-weight:300;
-  color:var(--warm);letter-spacing:.12em;
-  margin-bottom:3.5rem;
-}
-.hero-bottom{
-  display:grid;grid-template-columns:1fr auto;
-  align-items:end;gap:3rem;
-}
-.hero-copy{
-  font-size:clamp(.95rem,1.4vw,1.05rem);
-  font-weight:300;line-height:1.75;
-  color:var(--warm);max-width:440px;
-}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,18vw,16rem);line-height:.85;letter-spacing:.025em;color:var(--cream);margin-bottom:.4rem}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.2vw,1.5rem);font-style:italic;font-weight:300;color:var(--warm);letter-spacing:.12em;margin-bottom:3.5rem}
+.hero-bottom{display:grid;grid-template-columns:1fr auto;align-items:end;gap:3rem}
+.hero-copy{font-size:clamp(.95rem,1.4vw,1.05rem);font-weight:300;line-height:1.75;color:var(--warm);max-width:440px}
 .hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:1rem}
-.btn-hero-p{
-  font-size:11px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;
-  padding:15px 36px;background:var(--cream);color:var(--ink);
-  display:inline-flex;align-items:center;gap:10px;
-  transition:opacity .2s,transform .2s;white-space:nowrap;
-}
-.btn-hero-p:hover{opacity:.85;transform:translateY(-2px)}
-.btn-hero-o{
-  font-size:11px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;
-  padding:15px 36px;border:1px solid var(--border-m);color:var(--cream);
-  display:inline-flex;align-items:center;gap:10px;
-  transition:border-color .2s,background .2s;white-space:nowrap;
-}
-.btn-hero-o:hover{border-color:var(--cream);background:rgba(237,233,224,.06)}
-.hero-scroll{
-  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:10px;
-  color:var(--muted);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
-  animation:scrollpulse 2.2s ease-in-out infinite;
-}
+.btn-p{font-size:11px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;padding:15px 36px;background:var(--cream);color:var(--ink);display:inline-flex;align-items:center;gap:10px;transition:opacity .2s,transform .2s;white-space:nowrap;border:none;cursor:pointer}
+.btn-p:hover{opacity:.85;transform:translateY(-2px)}
+.btn-o{font-size:11px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;padding:15px 36px;border:1px solid var(--border-m);color:var(--cream);display:inline-flex;align-items:center;gap:10px;transition:border-color .2s,background .2s;white-space:nowrap;background:none;cursor:pointer}
+.btn-o:hover{border-color:var(--cream);background:rgba(237,233,224,.06)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);font-size:9px;letter-spacing:.2em;text-transform:uppercase;animation:scrollpulse 2.2s ease-in-out infinite}
 .hero-scroll-line{width:1px;height:52px;background:linear-gradient(to bottom,var(--muted),transparent)}
 @keyframes scrollpulse{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 
-/* ─── MARQUEE ─── */
-.marquee-wrap{
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:1.1rem 0;overflow:hidden;background:var(--ink);position:relative;z-index:2;
-}
-.marquee-track{
-  display:flex;gap:0;white-space:nowrap;
-  animation:marquee 28s linear infinite;
-}
-.marquee-track span{
-  font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--muted);padding:0 2.5rem;
-  border-right:1px solid var(--border);
-}
-.marquee-track span:last-child{border-right:none}
+.marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.1rem 0;overflow:hidden;background:var(--ink);position:relative;z-index:2}
+.marquee-track{display:flex;white-space:nowrap;animation:marquee 28s linear infinite}
+.marquee-track span{font-size:11px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:0 2.5rem;border-right:1px solid var(--border)}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ─── SECTIONS ─── */
 section{padding:8rem 5vw}
 .s-label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;display:flex;align-items:center;gap:10px}
 .s-label::before{content:'';width:18px;height:1px;background:var(--muted)}
-.s-h2{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(3rem,7vw,6.5rem);
-  line-height:.88;letter-spacing:.03em;color:var(--cream);
-}
-.s-h2-serif{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.5rem,5.5vw,5rem);
-  font-weight:300;line-height:1.05;color:var(--cream);
-}
+.s-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.88;letter-spacing:.03em;color:var(--cream)}
+.s-h2-serif{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5.5vw,5rem);font-weight:300;line-height:1.05;color:var(--cream)}
 
-/* ─── NOSOTROS ─── */
 #nosotros{background:#111110}
 .nos-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:4rem}
 .nos-text p{font-size:1.05rem;font-weight:300;line-height:1.8;color:var(--warm);margin-bottom:1.4rem}
 .nos-text p strong{color:var(--cream);font-weight:500}
 .nos-text p em{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15em;color:var(--gold)}
 .nos-visual{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:260px 160px;gap:8px}
-.nos-img-a{grid-column:1/3;grid-row:1/2;overflow:hidden;position:relative}
+.nos-img-a{grid-column:1/3;grid-row:1/2;overflow:hidden}
 .nos-img-b{grid-column:1/2;grid-row:2/3;overflow:hidden}
 .nos-img-c{grid-column:2/3;grid-row:2/3;overflow:hidden}
-.nos-img-a img,.nos-img-b img,.nos-img-c img{
-  transition:transform 6s ease;filter:brightness(.75) saturate(.8);
-}
+.nos-img-a img,.nos-img-b img,.nos-img-c img{transition:transform 6s ease;filter:brightness(.75) saturate(.8)}
 .nos-img-a:hover img,.nos-img-b:hover img,.nos-img-c:hover img{transform:scale(1.04)}
-.nos-stat-bar{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  border:1px solid var(--border);margin-top:4rem;
-}
-.nos-stat{
-  padding:2rem 1.5rem;border-right:1px solid var(--border);
-  transition:background .3s;
-}
+.nos-stat-bar{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);margin-top:4rem}
+.nos-stat{padding:2rem 1.5rem;border-right:1px solid var(--border);transition:background .3s}
 .nos-stat:last-child{border-right:none}
 .nos-stat:hover{background:rgba(237,233,224,.03)}
-.nos-stat-n{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:3.2rem;letter-spacing:.04em;color:var(--cream);line-height:1;margin-bottom:4px;
-}
+.nos-stat-n{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;letter-spacing:.04em;color:var(--cream);line-height:1;margin-bottom:4px}
 .nos-stat-l{font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
-/* ─── SERVICIOS ─── */
-#servicios{background:var(--ink);padding-bottom:4rem}
-.srv-intro{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:300;
-  line-height:1.55;color:var(--warm);max-width:600px;
-  margin:1.5rem 0 4rem;font-style:italic;
-}
+#servicios{background:var(--ink)}
+.srv-intro{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:300;line-height:1.55;color:var(--warm);max-width:600px;margin:1.5rem 0 4rem;font-style:italic}
 .srv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid var(--border)}
-.srv-card{
-  padding:3rem 2.5rem;background:var(--ink);
-  border:1px solid var(--border);
-  display:grid;grid-template-rows:auto 1fr auto;
-  gap:1rem;transition:background .3s;
-  position:relative;overflow:hidden;
-}
-.srv-card::before{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:var(--gold);transform:scaleX(0);transform-origin:left;
-  transition:transform .4s ease;
-}
+.srv-card{padding:3rem 2.5rem;background:var(--ink);border:1px solid var(--border);display:grid;grid-template-rows:auto 1fr auto;gap:1rem;transition:background .3s;position:relative;overflow:hidden}
+.srv-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
 .srv-card:hover{background:#111110}
 .srv-card:hover::before{transform:scaleX(1)}
 .srv-n{font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
-.srv-name{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(2rem,3.5vw,3rem);
-  letter-spacing:.05em;color:var(--cream);line-height:.95;
-}
+.srv-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);letter-spacing:.05em;color:var(--cream);line-height:.95}
 .srv-desc{font-size:12px;font-weight:300;line-height:1.65;color:var(--muted)}
 .srv-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1rem}
-.srv-tag{
-  font-size:9px;letter-spacing:.14em;text-transform:uppercase;
-  padding:4px 10px;border:1px solid var(--border);color:var(--muted);
-}
-.srv-image-row{
-  display:grid;grid-template-columns:1fr 1fr 1fr;
-  height:260px;margin-top:1px;border:1px solid var(--border);
-  overflow:hidden;
-}
+.srv-tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border:1px solid var(--border);color:var(--muted)}
+.srv-image-row{display:grid;grid-template-columns:1fr 1fr 1fr;height:260px;margin-top:1px;border:1px solid var(--border);overflow:hidden}
 .srv-image-row div{overflow:hidden}
 .srv-image-row div img{transition:transform 6s ease;filter:brightness(.6) saturate(.7)}
 .srv-image-row div:hover img{transform:scale(1.06)}
 
-/* ─── PLANES ─── */
 #planes{background:#111110}
-.planes-intro{
-  font-size:1rem;font-weight:300;line-height:1.7;
-  color:var(--warm);max-width:480px;margin-top:1.2rem;margin-bottom:3.5rem;
-}
-.planes-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border:1px solid var(--border);gap:1px;background:var(--border);
-}
-.plan{
-  background:#111110;padding:2.5rem 2rem;
-  display:flex;flex-direction:column;
-  position:relative;overflow:hidden;
-}
+.planes-intro{font-size:1rem;font-weight:300;line-height:1.7;color:var(--warm);max-width:480px;margin-top:1.2rem;margin-bottom:3.5rem}
+.planes-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);gap:1px;background:var(--border)}
+.plan{background:#111110;padding:2.5rem 2rem;display:flex;flex-direction:column;position:relative;overflow:hidden}
 .plan.hot{background:var(--cream);color:var(--ink)}
-.plan-ribbon{
-  position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);
-}
+.plan-ribbon{position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold)}
 .plan.hot .plan-ribbon{background:var(--ink)}
 .plan-tier{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem}
 .plan.hot .plan-tier{color:#888}
-.plan-badge-pill{
-  display:inline-block;font-size:9px;font-weight:500;
-  letter-spacing:.14em;text-transform:uppercase;
-  padding:4px 10px;background:var(--ink);color:var(--cream);margin-bottom:1.2rem;
-}
-.plan-name{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:2.4rem;letter-spacing:.05em;color:var(--cream);
-}
+.plan-badge-pill{display:inline-block;font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;background:var(--ink);color:var(--cream);margin-bottom:1.2rem}
+.plan-name{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;letter-spacing:.05em;color:var(--cream)}
 .plan.hot .plan-name{color:var(--ink)}
 .plan-sub{font-size:11px;font-weight:300;line-height:1.5;color:var(--muted);margin-bottom:1.5rem}
 .plan.hot .plan-sub{color:#666}
-.plan-price{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:3.2rem;letter-spacing:.03em;color:var(--cream);line-height:1;
-}
+.plan-price{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;letter-spacing:.03em;color:var(--cream);line-height:1}
 .plan.hot .plan-price{color:var(--ink)}
 .plan-per{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1.8rem}
 .plan.hot .plan-per{color:#888}
 .plan-div{border:none;border-top:1px solid var(--border);margin:1.2rem 0}
 .plan.hot .plan-div{border-color:rgba(0,0,0,.12)}
 .plan-list{list-style:none;flex:1;margin-bottom:2rem}
-.plan-li{
-  font-size:12px;font-weight:300;line-height:1.5;color:var(--warm);
-  padding:5px 0;border-bottom:1px solid var(--border);
-  display:flex;align-items:flex-start;gap:8px;
-}
+.plan-li{font-size:12px;font-weight:300;line-height:1.5;color:var(--warm);padding:5px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:8px}
 .plan.hot .plan-li{color:#333;border-color:rgba(0,0,0,.08)}
 .plan-li:last-child{border-bottom:none}
 .plan-li::before{content:'✓';color:#5cb85c;font-size:10px;flex-shrink:0;margin-top:3px}
 .plan-li.x::before{content:'—';color:var(--muted)}
 .plan.hot .plan-li.x::before{color:#bbb}
-.plan-benefit{
-  background:rgba(237,233,224,.05);padding:11px 13px;
-  font-size:11px;font-weight:400;line-height:1.5;color:var(--warm);
-  margin-bottom:.75rem;
-}
+.plan-benefit{background:rgba(237,233,224,.05);padding:11px 13px;font-size:11px;font-weight:400;line-height:1.5;color:var(--warm);margin-bottom:.75rem}
 .plan.hot .plan-benefit{background:rgba(0,0,0,.06);color:#444}
 .plan-ideal{font-size:10px;font-weight:300;color:var(--muted);font-style:italic;line-height:1.5}
 .plan.hot .plan-ideal{color:#888}
-.plan-cta{
-  margin-top:2rem;
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--cream);padding:12px 0;
-  border-bottom:1px solid var(--border-m);
-  transition:gap .2s,border-color .2s;
-}
+.plan-cta{margin-top:2rem;display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);padding:12px 0;border-bottom:1px solid var(--border-m);transition:gap .2s}
 .plan.hot .plan-cta{color:var(--ink);border-color:rgba(0,0,0,.2)}
-.plan-cta:hover{gap:14px;border-color:var(--cream)}
-.plan.hot .plan-cta:hover{border-color:var(--ink)}
-.plan-nota{
-  margin-top:2.5rem;padding:1.5rem;
-  border:1px solid var(--border);
-  font-size:12px;font-weight:300;line-height:1.65;color:var(--muted);
-}
+.plan-cta:hover{gap:14px}
+.plan-nota{margin-top:2.5rem;padding:1.5rem;border:1px solid var(--border);font-size:12px;font-weight:300;line-height:1.65;color:var(--muted)}
 .plan-nota strong{color:var(--warm);font-weight:400}
 
-/* ─── PROCESO ─── */
 #proceso{background:var(--ink)}
-.proc-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:1px;border:1px solid var(--border);background:var(--border);
-  margin-top:3.5rem;
-}
-.proc-step{
-  background:var(--ink);padding:2.5rem 2rem;
-  position:relative;transition:background .3s;
-}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--border);background:var(--border);margin-top:3.5rem}
+.proc-step{background:var(--ink);padding:2.5rem 2rem;position:relative;transition:background .3s}
 .proc-step:hover{background:#111110}
-.proc-num{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:6rem;line-height:1;
-  color:rgba(237,233,224,.04);
-  position:absolute;top:.8rem;right:1.2rem;
-  transition:color .3s;
-}
-.proc-step:hover .proc-num{color:rgba(237,233,224,.07)}
+.proc-num{font-family:'Bebas Neue',sans-serif;font-size:6rem;line-height:1;color:rgba(237,233,224,.04);position:absolute;top:.8rem;right:1.2rem}
 .proc-icon{font-size:1.5rem;margin-bottom:1.2rem}
-.proc-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:1.6rem;letter-spacing:.05em;color:var(--cream);margin-bottom:.75rem;
-}
+.proc-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.05em;color:var(--cream);margin-bottom:.75rem}
 .proc-desc{font-size:12px;font-weight:300;line-height:1.7;color:var(--muted)}
 
-/* ─── SOCIAL PROOF ─── */
 #prueba{background:#111110}
 .prueba-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:3.5rem}
-.prueba-card{
-  background:#111110;padding:2.5rem 2rem;
-  transition:background .3s;
-}
+.prueba-card{background:#111110;padding:2.5rem 2rem;transition:background .3s}
 .prueba-card:hover{background:#161614}
-.prueba-quote{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.15rem;font-weight:300;font-style:italic;
-  line-height:1.65;color:var(--warm);margin-bottom:1.5rem;
-}
+.prueba-quote{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;font-style:italic;line-height:1.65;color:var(--warm);margin-bottom:1.5rem}
 .prueba-stars{color:var(--gold);font-size:12px;letter-spacing:2px;margin-bottom:1rem}
 .prueba-client{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--cream)}
 .prueba-biz{font-size:10px;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:2px}
 
-/* ─── CONTACTO ─── */
+/* ── CONTACTO ── */
 #contacto{background:var(--ink);padding-bottom:0}
-.contacto-hero{
-  height:55vh;position:relative;overflow:hidden;
-  display:flex;align-items:flex-end;
-  padding:0 5vw 5vh;
-  margin:0 -5vw;
-}
-.contacto-hero img{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:center 40%;
-  filter:brightness(.3) saturate(.6);
-}
-.contacto-hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(to top, rgba(12,12,11,.95) 0%, rgba(12,12,11,.2) 100%);
-}
+.contacto-hero{height:50vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:0 5vw 5vh;margin:0 -5vw}
+.contacto-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:brightness(.3) saturate(.6)}
+.contacto-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,12,11,.95) 0%,rgba(12,12,11,.2) 100%)}
 .contacto-hero-inner{position:relative;z-index:2;width:100%}
-.contacto-h{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(3rem,8vw,7rem);
-  line-height:.88;letter-spacing:.03em;color:var(--cream);
-  margin-bottom:1.5rem;
-}
-.contacto-block{
-  display:grid;grid-template-columns:1fr 1fr;gap:6rem;
-  padding:5rem 0 8rem;
-}
+.contacto-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,7rem);line-height:.88;letter-spacing:.03em;color:var(--cream);margin-bottom:1.5rem}
+.contacto-block{display:grid;grid-template-columns:1fr 1fr;gap:6rem;padding:5rem 0 6rem}
 .ct-info p{font-size:1rem;font-weight:300;line-height:1.75;color:var(--warm);margin-bottom:2.5rem}
 .ct-dato{display:flex;align-items:flex-start;gap:1.2rem;margin-bottom:1.2rem}
 .ct-dato-l{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);min-width:80px;padding-top:3px}
 .ct-dato-v{font-size:14px;font-weight:400;color:var(--cream)}
-.wa-btn{
-  display:inline-flex;align-items:center;gap:12px;
-  margin-top:2.5rem;background:#25D366;color:#fff;
-  font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
-  padding:16px 28px;transition:opacity .2s,transform .2s;
-}
+.ct-dato-v a{color:var(--cream);border-bottom:1px solid var(--border);transition:border-color .2s}
+.ct-dato-v a:hover{border-color:var(--cream)}
+.wa-btn{display:inline-flex;align-items:center;gap:12px;margin-top:2rem;background:#25D366;color:#fff;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:16px 28px;transition:opacity .2s,transform .2s}
 .wa-btn:hover{opacity:.88;transform:translateY(-2px)}
 .wa-btn svg{width:16px;height:16px;fill:#fff;flex-shrink:0}
-.ct-rubros{padding-top:2rem;border-top:1px solid var(--border)}
-.ct-rubros-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
-.ct-rubros-list{display:flex;flex-wrap:wrap;gap:8px}
-.ct-rubro{
-  font-size:10px;letter-spacing:.1em;text-transform:uppercase;
-  padding:5px 12px;border:1px solid var(--border);color:var(--muted);
-  transition:border-color .2s,color .2s;cursor:default;
-}
-.ct-rubro:hover{border-color:var(--border-m);color:var(--warm)}
 
-/* ─── FOOTER ─── */
-footer{
-  border-top:1px solid var(--border);
-  padding:3rem 5vw;
-  display:grid;grid-template-columns:auto 1fr auto;
-  align-items:center;gap:3rem;
+/* SOCIAL */
+.ct-social{display:flex;align-items:center;gap:12px;margin-top:1.5rem}
+.ct-social-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.ct-social-link{width:36px;height:36px;border:1px solid var(--border-m);display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s}
+.ct-social-link:hover{border-color:var(--cream);background:rgba(237,233,224,.06)}
+.ct-social-link svg{width:16px;height:16px;fill:var(--cream)}
+
+/* FORM */
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.form-input,.form-select,.form-textarea{
+  background:transparent;border:1px solid var(--border);
+  color:var(--cream);font-family:'DM Sans',sans-serif;
+  font-size:14px;font-weight:300;padding:13px 16px;
+  outline:none;transition:border-color .2s;width:100%;
 }
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--border-m)}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--muted)}
+.form-select{appearance:none;cursor:pointer;color:var(--muted)}
+.form-select option{background:#1a1a1a;color:var(--cream)}
+.form-textarea{resize:vertical;min-height:110px}
+.form-submit{margin-top:.5rem;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:15px 32px;border:none;cursor:pointer;transition:opacity .2s;align-self:flex-start}
+.form-submit:hover{opacity:.85}
+.form-note{font-size:10px;color:var(--muted);line-height:1.6;margin-top:.5rem}
+.form-success{display:none;background:rgba(92,184,92,.08);border:1px solid rgba(92,184,92,.25);padding:14px 16px;font-size:12px;color:#7acc7a;margin-top:.5rem;line-height:1.5}
+.form-error{display:none;background:rgba(220,80,80,.08);border:1px solid rgba(220,80,80,.25);padding:14px 16px;font-size:12px;color:#e08080;margin-top:.5rem;line-height:1.5}
+
+/* TÉRMINOS Y CONDICIONES */
+#tyc{background:#0a0a09;padding:6rem 5vw}
+.tyc-grid{display:grid;grid-template-columns:280px 1fr;gap:5rem;margin-top:3rem}
+.tyc-nav{position:sticky;top:90px;align-self:start}
+.tyc-nav-title{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.tyc-nav ul{list-style:none;border-left:1px solid var(--border)}
+.tyc-nav ul li a{display:block;font-size:12px;font-weight:300;color:var(--muted);padding:6px 0 6px 16px;transition:color .2s,border-color .2s;border-left:2px solid transparent;margin-left:-1px}
+.tyc-nav ul li a:hover{color:var(--cream);border-color:var(--gold)}
+.tyc-content{}
+.tyc-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+.tyc-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.tyc-section-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.05em;color:var(--cream);margin-bottom:1.2rem}
+.tyc-section p,.tyc-section li{font-size:13px;font-weight:300;line-height:1.75;color:var(--warm);margin-bottom:.75rem}
+.tyc-section ul,.tyc-section ol{padding-left:1.2rem;margin-bottom:.75rem}
+.tyc-section ul li{list-style:disc}
+.tyc-section ol li{list-style:decimal}
+.tyc-section strong{color:var(--cream);font-weight:500}
+.tyc-section a{color:var(--gold);border-bottom:1px solid transparent;transition:border-color .2s}
+.tyc-section a:hover{border-color:var(--gold)}
+.tyc-meta{background:rgba(237,233,224,.03);border:1px solid var(--border);padding:1.25rem 1.5rem;font-size:12px;font-weight:300;color:var(--muted);line-height:1.65;margin-bottom:2rem}
+.tyc-meta strong{color:var(--warm);font-weight:400}
+
+/* FOOTER */
+footer{background:var(--ink);border-top:1px solid var(--border);padding:3rem 5vw}
+.footer-top{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border);margin-bottom:2rem}
 .ft-logo{display:flex;align-items:center;gap:12px}
-.ft-logo-svg{height:22px;fill:var(--cream)}
 .ft-sep{width:1px;height:16px;background:var(--border)}
 .ft-tag{font-size:9px;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .ft-links{display:flex;gap:2rem;list-style:none;justify-content:center}
 .ft-links a{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .2s}
 .ft-links a:hover{color:var(--cream)}
-.ft-copy{font-size:10px;font-weight:300;color:var(--muted);letter-spacing:.08em;text-align:right}
+.ft-social{display:flex;gap:10px}
+.ft-social-link{width:32px;height:32px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:border-color .2s}
+.ft-social-link:hover{border-color:var(--border-m)}
+.ft-social-link svg{width:14px;height:14px;fill:var(--muted)}
+.footer-bottom{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-legal{font-size:10px;font-weight:300;color:var(--muted);line-height:1.7}
+.ft-legal strong{color:var(--warm);font-weight:400}
+.ft-copy{font-size:10px;font-weight:300;color:var(--muted);letter-spacing:.08em;text-align:right;line-height:1.7}
 
-/* ─── REVEAL ─── */
 .rev{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
 .rev.in{opacity:1;transform:none}
 .rev-d1{transition-delay:.1s}.rev-d2{transition-delay:.2s}.rev-d3{transition-delay:.3s}.rev-d4{transition-delay:.4s}
 
-/* ─── RESPONSIVE ─── */
 @media(max-width:1024px){
-  .nos-visual{display:none}
-  .nos-grid{grid-template-columns:1fr}
+  .nos-visual{display:none}.nos-grid{grid-template-columns:1fr}
   .nos-stat-bar{grid-template-columns:repeat(2,1fr)}
-  .nos-stat:nth-child(2){border-right:none}
-  .nos-stat:nth-child(3){border-right:1px solid var(--border)}
   .prueba-grid{grid-template-columns:1fr}
+  .tyc-grid{grid-template-columns:1fr}.tyc-nav{display:none}
 }
 @media(max-width:900px){
-  .nav-links,.nav-wa{display:none}
-  .burger{display:flex}
+  .nav-links,.nav-wa{display:none}.burger{display:flex}
   .planes-grid{grid-template-columns:1fr}
   .proc-grid{grid-template-columns:1fr 1fr}
   .contacto-block{grid-template-columns:1fr;gap:3rem}
   .srv-grid{grid-template-columns:1fr}
   .srv-image-row{grid-template-columns:1fr 1fr}
   .srv-image-row div:last-child{display:none}
-  footer{grid-template-columns:1fr;text-align:center}
-  .ft-logo{justify-content:center}
+  .footer-top{grid-template-columns:1fr;text-align:center}
+  .ft-logo{justify-content:center}.ft-links{justify-content:center}.ft-social{justify-content:center}
+  .footer-bottom{flex-direction:column;align-items:center;text-align:center}
   .ft-copy{text-align:center}
-  .ft-links{justify-content:center}
-  .hero-bottom{grid-template-columns:1fr}
-  .hero-actions{align-items:flex-start}
+  .hero-bottom{grid-template-columns:1fr}.hero-actions{align-items:flex-start}
 }
 @media(max-width:600px){
-  section{padding:5rem 5vw}
-  .proc-grid{grid-template-columns:1fr}
-  .nos-stat-bar{grid-template-columns:1fr 1fr}
+  section{padding:5rem 5vw}.proc-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- CURSOR -->
 <div class="cur" id="cur"></div>
 <div class="cur-ring" id="curRing"></div>
 
-<!-- MOBILE MENU -->
 <div class="mmenu" id="mm">
   <a href="#nosotros" onclick="closeMM()">Nosotros</a>
   <a href="#servicios" onclick="closeMM()">Servicios</a>
   <a href="#planes" onclick="closeMM()">Planes</a>
   <a href="#proceso" onclick="closeMM()">Proceso</a>
   <a href="#contacto" onclick="closeMM()">Contacto</a>
+  <a href="#tyc" onclick="closeMM()">Términos</a>
 </div>
 
-<!-- NAV -->
 <nav id="nav">
   <div class="nav-brand">
-    <!-- LOGO OFICIAL GAUDIAN como SVG inline -->
-    <svg class="nav-logo-svg" viewBox="0 0 320 48" xmlns="http://www.w3.org/2000/svg">
-      <text font-family="'Bebas Neue', sans-serif" font-size="46" letter-spacing="6" fill="currentColor" y="44" x="0">GAUDIAN</text>
+    <svg height="28" viewBox="0 0 340 46" xmlns="http://www.w3.org/2000/svg" style="fill:#ede9e0;width:auto">
+      <text font-family="'Bebas Neue',sans-serif" font-size="46" letter-spacing="5" y="44" x="0">GAUDIAN</text>
     </svg>
     <div class="nav-sep"></div>
     <span class="nav-tagline">Estudio boutique de comunicación</span>
@@ -522,14 +312,13 @@ footer{
     <li><a href="#planes">Planes</a></li>
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#contacto">Contacto</a></li>
+    <li><a href="terminos.html">Términos</a></li>
   </ul>
   <a href="https://wa.me/543718615261?text=Hola%20Gaudian" target="_blank" class="nav-wa">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     WhatsApp
   </a>
-  <div class="burger" id="burger" onclick="toggleMM()">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="burger" id="burger" onclick="toggleMM()"><span></span><span></span><span></span></div>
 </nav>
 
 <!-- HERO -->
@@ -540,21 +329,17 @@ footer{
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div class="hero-tag rev">Clorinda, Formosa · Argentina</div>
-    <!-- LOGO PRINCIPAL GRANDE -->
     <div class="hero-h1 rev rev-d1">GAUDIAN</div>
     <div class="hero-sub rev rev-d2">Estudio boutique de comunicación</div>
     <div class="hero-bottom rev rev-d3">
       <p class="hero-copy">Hacemos que tu negocio sea visible, profesional y memorable. Sin rodeos, sin tecnicismos. Solo resultados que se sienten en tu caja.</p>
       <div class="hero-actions">
-        <a href="#planes" class="btn-hero-p">Ver planes →</a>
-        <a href="https://wa.me/543718615261?text=Hola%20Gaudian,%20quiero%20consultar" target="_blank" class="btn-hero-o">Hablar por WhatsApp</a>
+        <a href="#planes" class="btn-p">Ver planes →</a>
+        <a href="https://wa.me/543718615261?text=Hola%20Gaudian,%20quiero%20consultar" target="_blank" class="btn-o">Hablar por WhatsApp</a>
       </div>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="hero-scroll-line"></div>
-    <span>Scroll</span>
-  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Scroll</span></div>
 </section>
 
 <!-- MARQUEE -->
@@ -628,9 +413,8 @@ footer{
 <section id="planes">
   <div class="s-label rev">03 — Planes</div>
   <div class="s-h2 rev rev-d1">Elegí tu<br>plan</div>
-  <p class="planes-intro rev rev-d2">Tres paquetes pensados para distintos momentos de un negocio. Sin letra chica, sin sorpresas.</p>
+  <p class="planes-intro rev rev-d2">Tres paquetes pensados para distintos momentos de un negocio. Sin letra chica, sin sorpresas. Permanencia mínima de 6 meses.</p>
   <div class="planes-grid">
-
     <div class="plan rev">
       <div class="plan-ribbon"></div>
       <div class="plan-tier">01 / Plan</div>
@@ -651,7 +435,6 @@ footer{
       <div class="plan-ideal">Ideal para negocios nuevos, en crisis o temporadas de alta demanda</div>
       <a href="https://wa.me/543718615261?text=Hola,%20quiero%20el%20Plan%20Activaci%C3%B3n" target="_blank" class="plan-cta">Consultar →</a>
     </div>
-
     <div class="plan hot rev rev-d1">
       <div class="plan-ribbon"></div>
       <div class="plan-tier">02 / Plan</div>
@@ -675,7 +458,6 @@ footer{
       <div class="plan-ideal">Ideal para comercios y estudios que quieren crecer de forma consistente</div>
       <a href="https://wa.me/543718615261?text=Hola,%20quiero%20el%20Plan%20Presencia" target="_blank" class="plan-cta">Consultar →</a>
     </div>
-
     <div class="plan rev rev-d2">
       <div class="plan-ribbon"></div>
       <div class="plan-tier">03 / Plan</div>
@@ -698,10 +480,9 @@ footer{
       <div class="plan-ideal">Ideal para concesionarias, constructoras y estudios jurídicos líderes</div>
       <a href="https://wa.me/543718615261?text=Hola,%20quiero%20el%20Plan%20Autoridad" target="_blank" class="plan-cta">Consultar →</a>
     </div>
-
   </div>
   <div class="plan-nota rev">
-    <strong>Presupuesto publicitario:</strong> El dinero que se le paga a Facebook/Instagram para mostrar los anuncios es <strong>siempre aparte</strong> del precio del servicio. Para Clorinda recomendamos entre $30.000 y $80.000 ARS mensuales según el objetivo y el rubro.
+    <strong>Presupuesto publicitario:</strong> El dinero que se le paga a Facebook/Instagram para mostrar los anuncios es <strong>siempre aparte</strong> del precio del servicio. Recomendamos entre $30.000 y $80.000 ARS mensuales según el objetivo y el rubro.
   </div>
 </section>
 
@@ -710,30 +491,10 @@ footer{
   <div class="s-label rev">04 — Proceso</div>
   <div class="s-h2 rev rev-d1">Cómo<br>trabajamos</div>
   <div class="proc-grid">
-    <div class="proc-step rev">
-      <div class="proc-num">01</div>
-      <div class="proc-icon">◎</div>
-      <div class="proc-title">Diagnóstico</div>
-      <div class="proc-desc">Analizamos tu negocio, tu competencia local y tu situación actual en redes. Sin costo, sin compromiso. Una charla de 30 minutos alcanza.</div>
-    </div>
-    <div class="proc-step rev rev-d1">
-      <div class="proc-num">02</div>
-      <div class="proc-icon">◈</div>
-      <div class="proc-title">Estrategia</div>
-      <div class="proc-desc">Definimos qué publicar, cuándo, a quién apuntarle con publicidad y qué mensaje genera más consultas en tu rubro específico.</div>
-    </div>
-    <div class="proc-step rev rev-d2">
-      <div class="proc-num">03</div>
-      <div class="proc-icon">◉</div>
-      <div class="proc-title">Ejecución</div>
-      <div class="proc-desc">Nos hacemos cargo de todo. Publicaciones, anuncios, diseño, respuestas. Vos solo abrís el negocio y atendés las consultas que llegan.</div>
-    </div>
-    <div class="proc-step rev rev-d3">
-      <div class="proc-num">04</div>
-      <div class="proc-icon">◐</div>
-      <div class="proc-title">Resultados</div>
-      <div class="proc-desc">Cada mes te mostramos en números qué pasó: alcance, consultas, conversiones. Sin tecnicismos, con información accionable.</div>
-    </div>
+    <div class="proc-step rev"><div class="proc-num">01</div><div class="proc-icon">◎</div><div class="proc-title">Diagnóstico</div><div class="proc-desc">Analizamos tu negocio, tu competencia local y tu situación actual en redes. Sin costo, sin compromiso. Una charla de 30 minutos alcanza.</div></div>
+    <div class="proc-step rev rev-d1"><div class="proc-num">02</div><div class="proc-icon">◈</div><div class="proc-title">Estrategia</div><div class="proc-desc">Definimos qué publicar, cuándo, a quién apuntarle con publicidad y qué mensaje genera más consultas en tu rubro específico.</div></div>
+    <div class="proc-step rev rev-d2"><div class="proc-num">03</div><div class="proc-icon">◉</div><div class="proc-title">Ejecución</div><div class="proc-desc">Nos hacemos cargo de todo. Publicaciones, anuncios, diseño, respuestas. Vos solo abrís el negocio y atendés las consultas que llegan.</div></div>
+    <div class="proc-step rev rev-d3"><div class="proc-num">04</div><div class="proc-icon">◐</div><div class="proc-title">Resultados</div><div class="proc-desc">Cada mes te mostramos en números qué pasó: alcance, consultas, conversiones. Sin tecnicismos, con información accionable.</div></div>
   </div>
 </section>
 
@@ -742,24 +503,9 @@ footer{
   <div class="s-label rev">05 — Clientes</div>
   <div class="s-h2-serif rev rev-d1">"Lo que dicen<br>nuestros clientes"</div>
   <div class="prueba-grid">
-    <div class="prueba-card rev">
-      <div class="prueba-stars">★★★★★</div>
-      <div class="prueba-quote">"En el primer mes de publicidad nos llegaron más consultas que en todo el trimestre anterior. No lo podía creer."</div>
-      <div class="prueba-client">Carlos M.</div>
-      <div class="prueba-biz">Corralón de construcción · Clorinda</div>
-    </div>
-    <div class="prueba-card rev rev-d1">
-      <div class="prueba-stars">★★★★★</div>
-      <div class="prueba-quote">"Gaudian entiende cómo es el mercado de acá. Eso es lo que más valoro. No son recetas genéricas, son soluciones reales."</div>
-      <div class="prueba-client">Dra. Laura V.</div>
-      <div class="prueba-biz">Estudio jurídico · Clorinda</div>
-    </div>
-    <div class="prueba-card rev rev-d2">
-      <div class="prueba-stars">★★★★★</div>
-      <div class="prueba-quote">"Yo no sabía nada de redes y ellos se encargaron de todo. Ahora tenemos consultas todos los días por WhatsApp."</div>
-      <div class="prueba-client">Roberto A.</div>
-      <div class="prueba-biz">Concesionaria automotriz · Formosa</div>
-    </div>
+    <div class="prueba-card rev"><div class="prueba-stars">★★★★★</div><div class="prueba-quote">"En el primer mes de publicidad nos llegaron más consultas que en todo el trimestre anterior."</div><div class="prueba-client">Carlos M.</div><div class="prueba-biz">Corralón de construcción · Clorinda</div></div>
+    <div class="prueba-card rev rev-d1"><div class="prueba-stars">★★★★★</div><div class="prueba-quote">"Gaudian entiende cómo es el mercado de acá. No son recetas genéricas, son soluciones reales."</div><div class="prueba-client">Dra. Laura V.</div><div class="prueba-biz">Estudio jurídico · Clorinda</div></div>
+    <div class="prueba-card rev rev-d2"><div class="prueba-stars">★★★★★</div><div class="prueba-quote">"Yo no sabía nada de redes y ellos se encargaron de todo. Ahora tenemos consultas todos los días."</div><div class="prueba-client">Roberto A.</div><div class="prueba-biz">Concesionaria automotriz · Formosa</div></div>
   </div>
 </section>
 
@@ -769,56 +515,102 @@ footer{
   <div class="contacto-hero rev rev-d1">
     <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=1600&q=80&auto=format&fit=crop" alt="Equipo Gaudian">
     <div class="contacto-hero-overlay"></div>
-    <div class="contacto-hero-inner">
-      <div class="contacto-h">Hablemos<br>de tu negocio</div>
-    </div>
+    <div class="contacto-hero-inner"><div class="contacto-h">Hablemos<br>de tu negocio</div></div>
   </div>
   <div class="contacto-block">
     <div class="ct-info rev">
       <p>No necesitás saber de marketing para hablar con nosotros. Contanos qué hace tu negocio y en menos de 24 horas te decimos cómo podemos ayudarte.</p>
       <div class="ct-dato"><span class="ct-dato-l">Ubicación</span><span class="ct-dato-v">Clorinda, Formosa, Argentina</span></div>
-      <div class="ct-dato"><span class="ct-dato-l">WhatsApp</span><span class="ct-dato-v">+54 3718 615261</span></div>
+      <div class="ct-dato"><span class="ct-dato-l">Email</span><span class="ct-dato-v"><a href="mailto:lic.gaudinofraco@gmail.com">lic.gaudinofraco@gmail.com</a></span></div>
+      <div class="ct-dato"><span class="ct-dato-l">WhatsApp</span><span class="ct-dato-v"><a href="https://wa.me/543718615261" target="_blank">+54 3718 615261</a></span></div>
       <div class="ct-dato"><span class="ct-dato-l">Horario</span><span class="ct-dato-v">Lunes a viernes, 8 a 18 hs</span></div>
       <a href="https://wa.me/543718615261?text=Hola%20Gaudian,%20quiero%20consultar%20sobre%20sus%20servicios" target="_blank" class="wa-btn">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Escribinos ahora
       </a>
-    </div>
-    <div class="rev rev-d1">
-      <div class="ct-rubros">
-        <div class="ct-rubros-label">Trabajamos con estos rubros</div>
-        <div class="ct-rubros-list">
-          <span class="ct-rubro">Corralones</span>
-          <span class="ct-rubro">Estudios jurídicos</span>
-          <span class="ct-rubro">Constructoras</span>
-          <span class="ct-rubro">Concesionarias</span>
-          <span class="ct-rubro">Comercios</span>
-          <span class="ct-rubro">Consultorios</span>
-          <span class="ct-rubro">Ferreterías</span>
-          <span class="ct-rubro">Restaurantes</span>
-        </div>
+      <div class="ct-social">
+        <span class="ct-social-label">Seguinos</span>
+        <a href="https://instagram.com/gaudian.estudio" target="_blank" rel="noopener" class="ct-social-link" aria-label="Instagram de Gaudian">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
       </div>
+    </div>
+
+    <!-- FORMULARIO DE CONTACTO con Formspree -->
+    <div class="rev rev-d1">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/xzzbbkqo" method="POST">
+        <div class="form-group">
+          <label class="form-label" for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Juan García" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Correo electrónico *</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="telefono">Teléfono / WhatsApp</label>
+          <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="+54 3718 xxxxxx">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="plan">Plan de interés</label>
+          <select id="plan" name="plan" class="form-select form-input">
+            <option value="">Seleccioná un plan...</option>
+            <option>Plan Activación — $180.000/mes</option>
+            <option>Plan Presencia — $270.000/mes</option>
+            <option>Plan Autoridad — $370.000/mes</option>
+            <option>Todavía no sé, quiero asesoramiento</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" class="form-textarea" placeholder="Contanos brevemente qué hace tu negocio y en qué podemos ayudarte..." required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Nueva consulta desde el sitio web de Gaudian">
+        <input type="hidden" name="_replyto" value="lic.gaudinofraco@gmail.com">
+        <button type="submit" class="form-submit" id="submitBtn">Enviar consulta →</button>
+        <p class="form-note">Al enviar este formulario aceptás nuestros <a href="terminos.html" style="color:var(--gold);border-bottom:1px solid transparent">Términos y Condiciones</a>. Respondemos en menos de 24 horas hábiles.</p>
+        <div class="form-success" id="formSuccess">✓ Mensaje recibido. Te contactamos dentro de las próximas 24 horas hábiles.</div>
+        <div class="form-error" id="formError">Hubo un problema al enviar. Por favor escribinos directamente a <a href="mailto:lic.gaudinofraco@gmail.com" style="color:var(--gold)">lic.gaudinofraco@gmail.com</a></div>
+      </form>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="ft-logo">
-    <svg class="ft-logo-svg" viewBox="0 0 320 40" xmlns="http://www.w3.org/2000/svg">
-      <text font-family="'Bebas Neue', sans-serif" font-size="38" letter-spacing="6" fill="currentColor" y="36" x="0">GAUDIAN</text>
-    </svg>
-    <div class="ft-sep"></div>
-    <span class="ft-tag">Estudio boutique de comunicación</span>
+  <div class="footer-top">
+    <div class="ft-logo">
+      <svg height="22" viewBox="0 0 340 44" xmlns="http://www.w3.org/2000/svg" style="fill:#ede9e0;width:auto">
+        <text font-family="'Bebas Neue',sans-serif" font-size="44" letter-spacing="5" y="40" x="0">GAUDIAN</text>
+      </svg>
+      <div class="ft-sep"></div>
+      <span class="ft-tag">Estudio boutique de comunicación</span>
+    </div>
+    <ul class="ft-links">
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="terminos.html">Términos</a></li>
+    </ul>
+    <div class="ft-social">
+      <a href="https://instagram.com/gaudian.estudio" target="_blank" rel="noopener" class="ft-social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+    </div>
   </div>
-  <ul class="ft-links">
-    <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#planes">Planes</a></li>
-    <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-  <p class="ft-copy">© 2025 Gaudian · Clorinda, Formosa, Argentina</p>
+  <div class="footer-bottom">
+    <div class="ft-legal">
+      <strong>Franco Gaudino</strong> · CUIL 20-40486958-3 · Agencia Gaudian<br>
+      Clorinda, Formosa, Argentina · <a href="mailto:lic.gaudinofraco@gmail.com" style="color:var(--muted)">lic.gaudinofraco@gmail.com</a> · +54 3718 615261<br>
+      <a href="https://instagram.com/gaudian.estudio" target="_blank" style="color:var(--muted)">instagram.com/gaudian.estudio</a>
+    </div>
+    <div class="ft-copy">
+      © 2025 Agencia Gaudian · Todos los derechos reservados<br>
+      <a href="terminos.html" style="color:var(--muted)">Términos y Condiciones</a>
+    </div>
+  </div>
 </footer>
 
 <script>
@@ -832,7 +624,7 @@ document.querySelectorAll('a,button,.srv-card,.plan,.proc-step,.prueba-card').fo
   el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
 });
 
-/* NAV SCROLL */
+/* NAV */
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
 
@@ -841,9 +633,38 @@ let open=false;
 function toggleMM(){open=!open;document.getElementById('mm').classList.toggle('open',open);document.body.style.overflow=open?'hidden':''}
 function closeMM(){open=false;document.getElementById('mm').classList.remove('open');document.body.style.overflow=''}
 
-/* SCROLL REVEAL */
+/* REVEAL */
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.1});
 document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+
+/* FORMULARIO */
+const form=document.getElementById('contactForm');
+const submitBtn=document.getElementById('submitBtn');
+const successMsg=document.getElementById('formSuccess');
+const errorMsg=document.getElementById('formError');
+
+form.addEventListener('submit',async function(e){
+  e.preventDefault();
+  submitBtn.textContent='Enviando...';
+  submitBtn.disabled=true;
+  successMsg.style.display='none';
+  errorMsg.style.display='none';
+  try{
+    const data=new FormData(form);
+    const res=await fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});
+    if(res.ok){
+      successMsg.style.display='block';
+      form.reset();
+      submitBtn.textContent='Enviado ✓';
+    } else {
+      throw new Error('Error en el servidor');
+    }
+  } catch(err){
+    errorMsg.style.display='block';
+    submitBtn.textContent='Enviar consulta →';
+    submitBtn.disabled=false;
+  }
+});
 </script>
 </body>
 </html>
