@@ -7,7 +7,7 @@ import Reveal from "../components/motion/Reveal";
 import MagneticButton from "../components/motion/MagneticButton";
 import SEOHead from "../components/SEOHead";
 
-const FORMSPREE = "https://formspree.io/f/xzzbbkqo";
+const FORMSPREE = "https://formspree.io/f/xjgljgry";
 const HERO_IMG = "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1600&q=75&auto=format&fit=crop";
 
 export default function Cotizar() {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const FORMSPREE = "https://formspree.io/f/xzzbbkqo";
+const FORMSPREE = "https://formspree.io/f/xykolkjn";
 
 export default function ExitIntent() {
   const [show, setShow] = useState(false);

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRegion } from "../context/RegionContext";
 import Reveal from "./motion/Reveal";
 
-const FORMSPREE = "https://formspree.io/f/xzzbbkqo";
+const FORMSPREE = "https://formspree.io/f/maqvaqjj";
 
 export default function LeadMagnet() {
   const { region } = useRegion();
