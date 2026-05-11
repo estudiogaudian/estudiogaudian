@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useParams, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { RegionProvider } from "./context/RegionContext";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -75,6 +76,7 @@ function Layout({ children }) {
 export default function App() {
   return (
     <BrowserRouter>
+      <SpeedInsights />
       <ScrollToTop />
       <Routes>
         <Route
