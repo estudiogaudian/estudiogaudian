@@ -8,7 +8,7 @@ export const QUIZ_STEPS = [
     pregunta: "¿Cuál es el rubro de tu negocio?",
     sub: "Esto nos ayuda a entender el contexto y la competencia.",
     placeholder: "Ej: Concesionaria, Estudio jurídico, Inmobiliaria…",
-    chips: ["Concesionaria", "Inmobiliaria", "Estudio jurídico", "Salud / Estética", "Comercio retail", "Gastronomía", "Construcción", "Profesional independiente", "Otro"],
+    chips: ["Emprendimiento", "Odontólogo", "Concesionaria", "Inmobiliaria", "Estudio jurídico", "Salud / Estética", "Comercio retail", "Gastronomía", "Construcción", "Profesional independiente", "Otro"],
     required: true,
   },
   {
@@ -20,6 +20,7 @@ export const QUIZ_STEPS = [
       { value: "nueva", label: "Recién empezamos", desc: "Sin marca formal o con identidad muy básica" },
       { value: "renovar", label: "Tenemos marca pero hay que renovar", desc: "Logo y comunicación quedaron viejos" },
       { value: "consolidada", label: "Marca consolidada queremos escalar", desc: "Identidad sólida, falta crecimiento" },
+      { value: "redes", label: "Redes Sociales", desc: "Queremos tener más clientes por redes sociales" },
     ],
     required: true,
   },
@@ -36,6 +37,8 @@ export const QUIZ_STEPS = [
       { value: "contenido", label: "Contenido editorial (Reels, Carruseles)" },
       { value: "estrategia", label: "Estrategia de comunicación" },
       { value: "fotos", label: "Producción fotográfica" },
+      { value: "drone", label: "Fotografía / Video con Drone" },
+      { value: "otro", label: "Otro servicio" },
     ],
     required: true,
     min: 1,
@@ -59,9 +62,12 @@ export const QUIZ_STEPS = [
     pregunta: "¿Desde dónde nos contactás?",
     sub: "Para adaptar precios, ejemplos y casos.",
     opciones: [
-      { value: "ar", label: "🇦🇷 Argentina", desc: "Clorinda, Formosa, NEA o resto del país" },
-      { value: "py", label: "🇵🇾 Paraguay", desc: "Asunción, CDE, Encarnación o resto" },
-      { value: "global", label: "🌎 Otra parte de Latam o el mundo", desc: "Trabajamos remoto" },
+      { value: "ar_local", label: "🇦🇷 Argentina — Clorinda o Formosa", desc: "Clientes locales del NEA" },
+      { value: "ar_resto", label: "🇦🇷 Argentina — Resto del país", desc: "CABA, Córdoba, Rosario, interior" },
+      { value: "py", label: "🇵🇾 Paraguay", desc: "Asunción, Ciudad del Este, Encarnación" },
+      { value: "latam", label: "🌎 LATAM", desc: "Chile, Uruguay, Perú, Colombia, Ecuador, Venezuela" },
+      { value: "norteam", label: "🇺🇸 EEUU y Norteamérica", desc: "USA, México y otros" },
+      { value: "europa", label: "🇪🇺 Europa", desc: "Unión Europea" },
     ],
     required: true,
   },
@@ -71,7 +77,8 @@ export const QUIZ_STEPS = [
     pregunta: "¿Qué inversión mensual estimás para comunicación?",
     sub: "Sin pauta publicitaria. Solo el servicio del estudio.",
     opciones: [
-      { value: "menor300", label: "Menos de US$ 300 / mes", desc: "Equiv. AR$ 375.000 · ₲ 2.2M" },
+      { value: "menor150", label: "US$ 150 / mes", desc: "Equiv. AR$ 187k · ₲ 1.1M" },
+      { value: "150_300", label: "US$ 150 — 300 / mes", desc: "Equiv. AR$ 187k–375k · ₲ 1.1–2.2M" },
       { value: "300_600", label: "US$ 300 — 600 / mes", desc: "Equiv. AR$ 375k–750k · ₲ 2.2–4.4M" },
       { value: "600_1000", label: "US$ 600 — 1.000 / mes", desc: "Equiv. AR$ 750k–1.25M · ₲ 4.4–7.3M" },
       { value: "mayor1000", label: "Más de US$ 1.000 / mes", desc: "Cuentas premium" },
@@ -121,11 +128,13 @@ export function recommendPlan(answers) {
   if (necesidades.includes("ads")) score += 1;
   if (necesidades.includes("contenido")) score += 1;
   if (necesidades.includes("fotos")) score += 2;
+  if (necesidades.includes("drone")) score += 2;
   // Presupuesto alto sube
   if (presupuesto === "mayor1000") score += 4;
   else if (presupuesto === "600_1000") score += 3;
   else if (presupuesto === "300_600") score += 2;
-  else if (presupuesto === "menor300") score += 0;
+  else if (presupuesto === "150_300") score += 1;
+  else if (presupuesto === "menor150") score += 0;
   else if (presupuesto === "noseasi") score += 1;
   // Objetivos complejos suben
   if (objetivo === "rebrand" || objetivo === "lanzamiento") score += 2;

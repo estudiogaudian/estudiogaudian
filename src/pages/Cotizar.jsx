@@ -428,98 +428,39 @@ function Result({ plan, planKey, email, nombre, scenarios, onAnother }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="px-[5vw] py-20 lg:py-28 min-h-[90vh]"
+      className="px-[5vw] py-20 lg:py-28 min-h-[90vh] flex items-center"
     >
-      <div className="max-w-[1000px] mx-auto">
+      <div className="max-w-[900px] mx-auto w-full">
         {/* Confirmación */}
         <Reveal>
-          <div className="s-label text-gold">✓ Solicitud enviada</div>
+          <div className="s-label text-gold">✓ Solicitud recibida</div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h1 className="font-display text-cream" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", lineHeight: 0.95, letterSpacing: "0.02em" }}>
+          <h1 className="font-display text-cream" style={{ fontSize: "clamp(2.8rem, 7vw, 5.5rem)", lineHeight: 0.95, letterSpacing: "0.02em" }}>
             Gracias{nombre ? `, ${nombre.split(" ")[0]}` : ""}.
           </h1>
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="font-serif italic text-gold mt-2 mb-8" style={{ fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)", fontWeight: 300 }}>
-            Tu presupuesto va camino a {email || "tu email"}.
+          <p className="font-serif italic text-gold mt-3 mb-10" style={{ fontSize: "clamp(1.4rem, 3vw, 2.2rem)", fontWeight: 300 }}>
+            Nos contactaremos a la inmediatez con vos.
           </p>
         </Reveal>
         <Reveal delay={0.3}>
-          <p className="font-light text-warm leading-[1.75] max-w-2xl" style={{ fontSize: "1.05rem" }}>
-            En menos de 24 hs hábiles vas a recibir un PDF detallado con la propuesta personalizada según tus respuestas. Mientras tanto, te dejamos un preview de la dirección que recomendamos.
-          </p>
-        </Reveal>
-
-        {/* Plan recomendado */}
-        <Reveal delay={0.4}>
-          <div className="mt-12 border-2 border-gold p-8 lg:p-12 bg-gradient-to-br from-gold/5 to-transparent">
-            <div className="flex items-baseline justify-between flex-wrap gap-3 mb-6">
-              <div className="font-sans uppercase text-gold" style={{ fontSize: "11px", letterSpacing: "0.22em" }}>
-                Plan recomendado para vos
-              </div>
-              {plan.destacado && (
-                <div className="font-sans uppercase text-ink bg-gold px-3 py-1" style={{ fontSize: "9px", letterSpacing: "0.2em", fontWeight: 600 }}>
-                  ◆ Más elegido
-                </div>
-              )}
-            </div>
-            <h2 className="font-display text-cream" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", lineHeight: 0.92, letterSpacing: "0.03em" }}>
-              {plan.nombre}
-            </h2>
-            <p className="font-serif italic text-gold mt-2" style={{ fontSize: "1.4rem", fontWeight: 300 }}>
-              {plan.para}
-            </p>
-            <p className="font-light text-warm mt-4 leading-[1.7] max-w-2xl" style={{ fontSize: "0.95rem" }}>
-              {plan.descripcion}
-            </p>
-
-            <div className="mt-8 pt-6 border-t border-border-soft">
-              <div className="font-sans uppercase text-muted mb-4" style={{ fontSize: "10px", letterSpacing: "0.2em" }}>
-                Incluye
-              </div>
-              <ul className="grid sm:grid-cols-2 gap-y-2.5 gap-x-6">
-                {plan.incluye.map((it) => (
-                  <li key={it} className="flex items-start gap-2.5 font-light text-warm leading-[1.55]" style={{ fontSize: "13px" }}>
-                    <span className="text-gold mt-1" style={{ fontSize: "10px" }}>—</span>
-                    {it}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <p className="mt-8 font-light text-muted leading-[1.65]" style={{ fontSize: "12px" }}>
-              <strong className="text-warm font-normal">Inversión exacta:</strong> la cotización detallada con precios en tu moneda llega a tu email. Si querés acelerar, escribinos por WhatsApp y arrancamos hoy mismo.
+          <div className="border-l-2 border-gold pl-6 py-2 max-w-2xl">
+            <p className="font-light text-warm leading-[1.8]" style={{ fontSize: "1.05rem" }}>
+              Recibimos tu solicitud y la estamos revisando. En las próximas horas vas a tener noticias nuestras{email ? <> en <strong className="text-cream font-normal">{email}</strong></> : ""} con una propuesta a medida.
             </p>
           </div>
         </Reveal>
 
-        {/* Scenarios anteriores en esta sesión */}
-        {scenarios.length > 1 && (
-          <Reveal delay={0.5}>
-            <div className="mt-8 p-5 border border-border-soft">
-              <div className="font-sans uppercase text-muted mb-3" style={{ fontSize: "10px", letterSpacing: "0.2em" }}>
-                Tus presupuestos solicitados en esta sesión ({scenarios.length})
-              </div>
-              <ul className="space-y-1.5">
-                {scenarios.map((s, i) => (
-                  <li key={i} className="font-light text-warm" style={{ fontSize: "12px" }}>
-                    {String(i + 1).padStart(2, "0")} · Plan <strong className="text-gold">{PLAN_DETAILS[s.plan].nombre}</strong> — objetivo {s.objetivo} — {s.necesidades?.length || 0} servicios
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-        )}
-
         {/* Acciones */}
-        <Reveal delay={0.6}>
-          <div className="mt-12 flex flex-col sm:flex-row gap-3">
+        <Reveal delay={0.5}>
+          <div className="mt-12 flex flex-col sm:flex-row flex-wrap gap-3">
             <MagneticButton as="button" onClick={onAnother} className="btn-p">
               + Cotizar otro proyecto
             </MagneticButton>
             <MagneticButton href={waLink} target="_blank" rel="noopener noreferrer" className="btn-o">
-              Adelantar la conversación por WhatsApp
+              Adelantar por WhatsApp
             </MagneticButton>
             <MagneticButton href={brand.calendly} target="_blank" rel="noopener noreferrer" className="btn-o">
               Agendar reunión 20 min
@@ -527,9 +468,17 @@ function Result({ plan, planKey, email, nombre, scenarios, onAnother }) {
           </div>
         </Reveal>
 
+        {scenarios.length > 1 && (
+          <Reveal delay={0.6}>
+            <p className="mt-10 font-sans uppercase text-muted" style={{ fontSize: "10px", letterSpacing: "0.18em" }}>
+              Solicitudes enviadas en esta sesión: {scenarios.length}
+            </p>
+          </Reveal>
+        )}
+
         <Reveal delay={0.7}>
-          <p className="mt-8 font-sans uppercase text-muted" style={{ fontSize: "10px", letterSpacing: "0.18em" }}>
-            ¿Tenés más de un proyecto? Solicitá tantos presupuestos como quieras — todos llegan al mismo email.
+          <p className="mt-8 font-light text-muted max-w-xl leading-[1.6]" style={{ fontSize: "12px" }}>
+            ¿Tenés más de un proyecto? Solicitá tantos presupuestos como quieras — todos llegan al mismo email y los agrupamos en una sola conversación.
           </p>
         </Reveal>
       </div>
