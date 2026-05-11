@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 import { brand, waLink } from "../data/site";
 import { useRegion } from "../context/RegionContext";
 import MagneticButton from "./motion/MagneticButton";
@@ -87,8 +88,8 @@ export default function Hero() {
             {region.heroSubtitle}
           </p>
           <div className="flex flex-col items-start lg:items-end gap-3">
-            <MagneticButton href="#planes" className="btn-p">
-              Ver planes <span className="text-base">→</span>
+            <MagneticButton as={Link} to="/cotizar" className="btn-p">
+              Solicitar presupuesto <span className="text-base">→</span>
             </MagneticButton>
             <MagneticButton href={waLink} target="_blank" rel="noopener noreferrer" className="btn-o">
               Hablar por WhatsApp

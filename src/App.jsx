@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import LandingServicio from "./pages/LandingServicio";
 import Portfolio from "./pages/Portfolio";
 import Promo from "./pages/Promo";
+import Cotizar from "./pages/Cotizar";
 import Terminos from "./pages/Terminos";
 import Privacidad from "./pages/Privacidad";
 import NotFound from "./pages/NotFound";
@@ -103,6 +104,16 @@ export default function App() {
               <ScrollProgress />
               <CursorFollower />
               <PageWrapper><Promo /></PageWrapper>
+            </RegionProvider>
+          }
+        />
+        {/* Cotizador: layout standalone sin distracciones */}
+        <Route
+          path="/cotizar"
+          element={
+            <RegionProvider>
+              <CursorFollower />
+              <PageWrapper><Cotizar /></PageWrapper>
             </RegionProvider>
           }
         />

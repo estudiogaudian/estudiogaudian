@@ -45,6 +45,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://estudiogaudian.com/cotizar</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://estudiogaudian.com/promo</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>

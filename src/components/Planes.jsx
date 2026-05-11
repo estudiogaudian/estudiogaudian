@@ -1,34 +1,27 @@
 import { motion } from "framer-motion";
-import { planes, planesNota, brand, waLink } from "../data/site";
-import { useRegion } from "../context/RegionContext";
+import { Link } from "react-router-dom";
+import { planes, brand, waLink } from "../data/site";
 import Reveal, { RevealStagger, RevealItem } from "./motion/Reveal";
+import MagneticButton from "./motion/MagneticButton";
 
 export default function Planes() {
-  const { region } = useRegion();
-
-  const planesLocalized = planes.map((p, i) => ({
-    ...p,
-    precio: region.plans[i]?.precio || p.precio,
-    periodo: region.plans[i]?.periodo || p.periodo,
-  }));
-
   return (
     <section id="planes" className="bg-graphite py-32 lg:py-40 relative overflow-hidden">
       <div className="container-x">
         <Reveal>
-          <div className="s-label">06 — Planes · {region.flag} {region.name}</div>
+          <div className="s-label">06 — Planes</div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="s-h2">Elegí tu<br/>plan</h2>
+          <h2 className="s-h2">Tres caminos.<br/><span className="font-serif italic font-light text-gold">Cada marca, su precio.</span></h2>
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="font-light leading-[1.7] text-warm mt-5 mb-14 max-w-[480px]" style={{ fontSize: "1rem" }}>
-            Tres paquetes pensados para distintos momentos de marca. Sin letra chica, sin sorpresas. Permanencia mínima de 6 meses. Precios en {region.currency}.
+          <p className="font-light leading-[1.7] text-warm mt-5 mb-14 max-w-[560px]" style={{ fontSize: "1rem" }}>
+            No publicamos tarifas genéricas porque no creemos en planes copy-paste. Cada marca tiene su rubro, su etapa y sus objetivos. Respondé 8 preguntas y te enviamos un presupuesto a medida en menos de 24 hs.
           </p>
         </Reveal>
 
         <RevealStagger className="grid lg:grid-cols-3 border border-border-soft bg-border-soft gap-px">
-          {planesLocalized.map((p) => {
+          {planes.map((p) => {
             const hot = p.destacado;
             return (
               <RevealItem key={p.nombre} y={40}>
@@ -37,7 +30,6 @@ export default function Planes() {
                   transition={{ type: "spring", stiffness: 200, damping: 22 }}
                   className={`p-10 flex flex-col h-full relative overflow-hidden ${hot ? "bg-cream text-ink" : "bg-graphite text-cream"}`}
                 >
-                  {/* Ribbon superior */}
                   <div className={`absolute top-0 left-0 right-0 h-[2px] ${hot ? "bg-ink" : "bg-gold"}`} />
 
                   <div className={`font-sans uppercase mb-5 ${hot ? "text-ink/50" : "text-muted"}`} style={{ fontSize: "9px", letterSpacing: "0.2em" }}>
@@ -54,20 +46,13 @@ export default function Planes() {
                   <h3 className={`font-display ${hot ? "text-ink" : "text-cream"}`} style={{ fontSize: "2.4rem", letterSpacing: "0.05em" }}>
                     {p.nombre}
                   </h3>
-                  <p className={`font-light leading-[1.5] mb-6 ${hot ? "text-ink/60" : "text-muted"}`} style={{ fontSize: "11px" }}>
+                  <p className={`font-serif italic mb-3 ${hot ? "text-ink/70" : "text-gold"}`} style={{ fontSize: "1.05rem", fontWeight: 300 }}>
                     {p.para}
                   </p>
 
-                  <div className={`font-display leading-none ${hot ? "text-ink" : "text-cream"}`} style={{ fontSize: "3.2rem", letterSpacing: "0.03em" }}>
-                    {p.precio}
-                  </div>
-                  <div className={`font-sans uppercase mb-6 ${hot ? "text-ink/50" : "text-muted"}`} style={{ fontSize: "9px", letterSpacing: "0.14em" }}>
-                    {p.periodo}
-                  </div>
+                  <hr className={`border-0 border-t my-5 ${hot ? "border-ink/12" : "border-border-soft"}`} />
 
-                  <hr className={`border-0 border-t mb-5 ${hot ? "border-ink/12" : "border-border-soft"}`} />
-
-                  <ul className="list-none flex-1 mb-6">
+                  <ul className="list-none flex-1 mb-8">
                     {p.incluye.map((it, idx) => (
                       <motion.li
                         key={it}
@@ -84,27 +69,39 @@ export default function Planes() {
                     ))}
                   </ul>
 
-                  <a
-                    href={waLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`mt-auto inline-flex items-center gap-2 py-3 font-sans font-medium uppercase border-b transition-all hover:gap-3.5 ${hot ? "text-ink border-ink/20" : "text-cream border-border-mid"}`}
+                  <Link
+                    to="/cotizar"
+                    className={`mt-auto inline-flex items-center justify-center gap-2 py-3 font-sans font-medium uppercase border-b transition-all hover:gap-3.5 ${hot ? "text-ink border-ink/20" : "text-cream border-border-mid"}`}
                     style={{ fontSize: "11px", letterSpacing: "0.12em" }}
                   >
-                    {p.cta} →
-                  </a>
+                    Cotizar este plan →
+                  </Link>
                 </motion.article>
               </RevealItem>
             );
           })}
         </RevealStagger>
 
-        <Reveal delay={0.2}>
-          <div className="mt-10 p-6 border border-border-soft text-muted font-light leading-[1.65]" style={{ fontSize: "12px" }}>
-            <strong className="text-warm font-normal">{planesNota}</strong> ·{" "}
-            <a href={brand.calendly} target="_blank" rel="noopener noreferrer" className="text-gold hover:underline underline-offset-4">
-              ¿Dudas? Coordiná una reunión sin compromiso
-            </a>
+        {/* CTA principal a cotizador */}
+        <Reveal delay={0.3}>
+          <div className="mt-12 border border-border-soft p-8 lg:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+            <div>
+              <div className="s-label">¿Querés un presupuesto exacto?</div>
+              <h3 className="font-display text-cream mt-2" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)", letterSpacing: "0.03em", lineHeight: 1.05 }}>
+                Armemos tu plan a medida.
+              </h3>
+              <p className="font-serif italic text-gold mt-1" style={{ fontSize: "1.1rem", fontWeight: 300 }}>
+                8 preguntas · 2 minutos · Sin compromiso.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <MagneticButton as={Link} to="/cotizar" className="btn-p">
+                Solicitar presupuesto →
+              </MagneticButton>
+              <MagneticButton href={brand.calendly} target="_blank" rel="noopener noreferrer" className="btn-o">
+                Reservar reunión
+              </MagneticButton>
+            </div>
           </div>
         </Reveal>
       </div>
