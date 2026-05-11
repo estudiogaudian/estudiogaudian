@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    @apply bg-ink text-cream font-sans antialiased;
+    overflow-x: hidden;
+    font-weight: 300;
+  }
+  h1, h2, h3, h4 { @apply font-display; font-weight: 400; }
+  ::selection { @apply bg-gold/40 text-ink; }
+
+  /* Grain noise global - feel celuloide */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+  @media (max-width: 768px) {
+    body::before { display: none; }
+  }
+
+  /* Scrollbar custom */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #0c0c0b; }
+  ::-webkit-scrollbar-thumb { background: rgba(237,233,224,0.15); }
+  ::-webkit-scrollbar-thumb:hover { background: #b8a882; }
+
+  @media (pointer: fine) {
+    a, button, [data-cursor='hover'] { cursor: pointer; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-[1400px] px-[5vw]; }
+
+  /* Eyebrow editorial con línea */
+  .s-label {
+    @apply font-sans text-[10px] tracking-wider2 uppercase text-muted flex items-center gap-3 mb-5;
+    font-weight: 400;
+  }
+  .s-label::before {
+    content: '';
+    @apply w-[18px] h-px bg-muted;
+  }
+
+  /* Titulares Bebas Neue gigantes editorial */
+  .s-h2 {
+    @apply font-display text-cream;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 0.88;
+    letter-spacing: 0.03em;
+  }
+  .s-h2-serif {
+    @apply font-serif font-light text-cream;
+    font-size: clamp(2.5rem, 5.5vw, 5rem);
+    line-height: 1.05;
+  }
+
+  .h-display {
+    @apply font-display text-cream;
+    font-weight: 400;
+    line-height: 0.88;
+    letter-spacing: 0.03em;
+  }
+
+  .italic-serif {
+    @apply font-serif italic text-gold;
+    font-weight: 300;
+  }
+
+  /* Botones editorial finos */
+  .btn-p {
+    @apply inline-flex items-center justify-center gap-2.5 bg-cream text-ink font-sans uppercase whitespace-nowrap;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    padding: 15px 36px;
+    transition: opacity .2s, transform .2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-p:hover { opacity: .85; transform: translateY(-2px); }
+
+  .btn-o {
+    @apply inline-flex items-center justify-center gap-2.5 text-cream font-sans uppercase whitespace-nowrap;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.13em;
+    padding: 15px 36px;
+    border: 1px solid rgba(237,233,224,0.22);
+    background: none;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+  }
+  .btn-o:hover { border-color: #ede9e0; background: rgba(237,233,224,0.06); }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2.5 bg-gold text-ink font-sans uppercase whitespace-nowrap;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    padding: 15px 36px;
+    transition: opacity .2s, transform .2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-gold:hover { opacity: .88; transform: translateY(-2px); }
+
+  /* Aliases para no romper componentes ya escritos */
+  .btn-primary { @apply btn-p; }
+  .btn-ghost { @apply btn-o; }
+
+  .card {
+    @apply bg-graphite border border-border-soft p-8 transition-all duration-300;
+  }
+  .card:hover {
+    background: #161614;
+  }
+
+  .rule { @apply h-px w-full bg-border-soft; }
+  .num-eyebrow {
+    @apply font-sans text-muted;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+}

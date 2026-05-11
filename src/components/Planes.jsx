@@ -1,0 +1,113 @@
+import { motion } from "framer-motion";
+import { planes, planesNota, brand, waLink } from "../data/site";
+import { useRegion } from "../context/RegionContext";
+import Reveal, { RevealStagger, RevealItem } from "./motion/Reveal";
+
+export default function Planes() {
+  const { region } = useRegion();
+
+  const planesLocalized = planes.map((p, i) => ({
+    ...p,
+    precio: region.plans[i]?.precio || p.precio,
+    periodo: region.plans[i]?.periodo || p.periodo,
+  }));
+
+  return (
+    <section id="planes" className="bg-graphite py-32 lg:py-40 relative overflow-hidden">
+      <div className="container-x">
+        <Reveal>
+          <div className="s-label">06 — Planes · {region.flag} {region.name}</div>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="s-h2">Elegí tu<br/>plan</h2>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="font-light leading-[1.7] text-warm mt-5 mb-14 max-w-[480px]" style={{ fontSize: "1rem" }}>
+            Tres paquetes pensados para distintos momentos de marca. Sin letra chica, sin sorpresas. Permanencia mínima de 6 meses. Precios en {region.currency}.
+          </p>
+        </Reveal>
+
+        <RevealStagger className="grid lg:grid-cols-3 border border-border-soft bg-border-soft gap-px">
+          {planesLocalized.map((p) => {
+            const hot = p.destacado;
+            return (
+              <RevealItem key={p.nombre} y={40}>
+                <motion.article
+                  whileHover={{ y: -4 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 22 }}
+                  className={`p-10 flex flex-col h-full relative overflow-hidden ${hot ? "bg-cream text-ink" : "bg-graphite text-cream"}`}
+                >
+                  {/* Ribbon superior */}
+                  <div className={`absolute top-0 left-0 right-0 h-[2px] ${hot ? "bg-ink" : "bg-gold"}`} />
+
+                  <div className={`font-sans uppercase mb-5 ${hot ? "text-ink/50" : "text-muted"}`} style={{ fontSize: "9px", letterSpacing: "0.2em" }}>
+                    Plan
+                  </div>
+
+                  {p.badge && (
+                    <div className={`inline-block w-fit mb-5 font-sans font-medium uppercase ${hot ? "bg-ink text-cream" : "bg-cream text-ink"}`}
+                         style={{ fontSize: "9px", letterSpacing: "0.14em", padding: "4px 10px" }}>
+                      {p.badge}
+                    </div>
+                  )}
+
+                  <h3 className={`font-display ${hot ? "text-ink" : "text-cream"}`} style={{ fontSize: "2.4rem", letterSpacing: "0.05em" }}>
+                    {p.nombre}
+                  </h3>
+                  <p className={`font-light leading-[1.5] mb-6 ${hot ? "text-ink/60" : "text-muted"}`} style={{ fontSize: "11px" }}>
+                    {p.para}
+                  </p>
+
+                  <div className={`font-display leading-none ${hot ? "text-ink" : "text-cream"}`} style={{ fontSize: "3.2rem", letterSpacing: "0.03em" }}>
+                    {p.precio}
+                  </div>
+                  <div className={`font-sans uppercase mb-6 ${hot ? "text-ink/50" : "text-muted"}`} style={{ fontSize: "9px", letterSpacing: "0.14em" }}>
+                    {p.periodo}
+                  </div>
+
+                  <hr className={`border-0 border-t mb-5 ${hot ? "border-ink/12" : "border-border-soft"}`} />
+
+                  <ul className="list-none flex-1 mb-6">
+                    {p.incluye.map((it, idx) => (
+                      <motion.li
+                        key={it}
+                        initial={{ opacity: 0, x: -8 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 + idx * 0.04, duration: 0.4 }}
+                        className={`flex items-start gap-2 py-1.5 font-light leading-[1.5] ${hot ? "text-ink/75 border-b border-ink/8" : "text-warm border-b border-border-soft"} last:border-b-0`}
+                        style={{ fontSize: "12px" }}
+                      >
+                        <span className={`flex-shrink-0 mt-0.5 ${hot ? "text-emerald-700" : "text-emerald-500"}`} style={{ fontSize: "10px" }}>✓</span>
+                        {it}
+                      </motion.li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href={waLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`mt-auto inline-flex items-center gap-2 py-3 font-sans font-medium uppercase border-b transition-all hover:gap-3.5 ${hot ? "text-ink border-ink/20" : "text-cream border-border-mid"}`}
+                    style={{ fontSize: "11px", letterSpacing: "0.12em" }}
+                  >
+                    {p.cta} →
+                  </a>
+                </motion.article>
+              </RevealItem>
+            );
+          })}
+        </RevealStagger>
+
+        <Reveal delay={0.2}>
+          <div className="mt-10 p-6 border border-border-soft text-muted font-light leading-[1.65]" style={{ fontSize: "12px" }}>
+            <strong className="text-warm font-normal">{planesNota}</strong> ·{" "}
+            <a href={brand.calendly} target="_blank" rel="noopener noreferrer" className="text-gold hover:underline underline-offset-4">
+              ¿Dudas? Coordiná una reunión sin compromiso
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
