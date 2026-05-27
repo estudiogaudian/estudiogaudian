@@ -17,6 +17,7 @@ import Terminos from "./pages/Terminos";
 import Privacidad from "./pages/Privacidad";
 import NotFound from "./pages/NotFound";
 import WelcomePopup from "./components/WelcomePopup";
+import Onboarding from "./pages/Onboarding";
 import { LANDINGS } from "./pages/landings";
 
 function ScrollToTop() {
@@ -130,6 +131,16 @@ export default function App() {
           element={
             <RegionProvider>
               <Layout><Privacidad /></Layout>
+            </RegionProvider>
+          }
+        />
+        {/* Onboarding: layout standalone sin distracciones */}
+        <Route
+          path="/onboarding"
+          element={
+            <RegionProvider>
+              <CursorFollower />
+              <PageWrapper><Onboarding /></PageWrapper>
             </RegionProvider>
           }
         />
