@@ -29,7 +29,7 @@
     { "source": "/wp-config.php", "destination": "/404", "statusCode": 404 }
   ],
   "rewrites": [
-    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "trailingSlash": false,
   "cleanUrls": true
