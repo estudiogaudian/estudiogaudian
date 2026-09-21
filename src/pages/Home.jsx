@@ -1,15 +1,13 @@
-import Hero from "../components/Hero";
-import Servicios from "../components/Servicios";
-import Proceso from "../components/Proceso";
-import Casos from "../components/Casos";
-import Testimonios from "../components/Testimonios";
-import Planes from "../components/Planes";
-import Estudio from "../components/Estudio";
-import LeadMagnet from "../components/LeadMagnet";
-import FAQ from "../components/FAQ";
-import Contacto from "../components/Contacto";
 import SEOHead from "../components/SEOHead";
 import { useRegion } from "../context/RegionContext";
+import Pipe from "../components/home/Pipe";
+import Hero from "../components/home/Hero";
+import Fuga from "../components/home/Fuga";
+import Sistema from "../components/home/Sistema";
+import CasosReales from "../components/home/CasosReales";
+import Escalera from "../components/home/Escalera";
+import { Estudio, Faq } from "../components/home/EstudioFaq";
+import Cierre from "../components/home/Cierre";
 
 export default function Home() {
   const { region } = useRegion();
@@ -21,16 +19,15 @@ export default function Home() {
         canonical={`https://estudiogaudian.com/${region.code === "ar" ? "" : region.code}`}
         region={region}
       />
+      <Pipe />
       <Hero />
-      <Servicios />
-      <Proceso />
-      <Casos />
-      <Testimonios />
-      <Planes />
+      <Fuga />
+      <Sistema />
+      <CasosReales />
+      <Escalera />
       <Estudio />
-      <LeadMagnet />
-      <FAQ />
-      <Contacto />
+      <Faq />
+      <Cierre />
     </>
   );
 }

@@ -1,82 +1,84 @@
-﻿import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { List, X, ArrowRight } from "@phosphor-icons/react";
 import { brand, nav, waLink } from "../data/site";
-import { useRegion } from "../context/RegionContext";
+import { ctas } from "../data/home";
 import RegionSwitcher from "./RegionSwitcher";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const { region } = useRegion();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (y) => setScrolled(y > 16));
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 h-[68px] px-[5vw] flex items-center justify-between transition-all duration-500 border-b ${
-          scrolled ? "bg-ink/90 backdrop-blur-xl border-border-soft" : "border-transparent"
+        className={`fixed inset-x-0 top-0 z-40 border-b transition-colors duration-300 ${
+          scrolled || open ? "border-hairline bg-canvas/85 backdrop-blur-xl" : "border-transparent"
         }`}
       >
-        <Link to="/" className="flex items-center gap-3.5" aria-label="GAUDIAN inicio">
-          <span
-            className="font-display text-cream"
-            style={{ fontSize: "28px", letterSpacing: "0.15em", lineHeight: 1 }}
-          >
+        <div className="wrap flex h-16 items-center justify-between gap-6">
+          <Link to="/" className="font-sans text-[19px] font-semibold tracking-[0.14em] text-fg" aria-label="GAUDIAN, inicio">
             GAUDIAN
-          </span>
-          <span className="w-px h-5 bg-border-mid" />
-          <span className="hidden md:inline font-sans text-muted uppercase whitespace-nowrap" style={{ fontSize: "9px", fontWeight: 300, letterSpacing: "0.2em" }}>
-            Marketing · AI · Automation
-          </span>
-        </Link>
+          </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
-          {nav.map((n) => (
-            <a key={n.href} href={n.href} className="font-sans uppercase text-muted hover:text-cream transition" style={{ fontSize: "11px", letterSpacing: "0.13em" }}>
-              {n.label}
+          <nav aria-label="Principal" className="hidden items-center gap-7 lg:flex">
+            {nav.map((n) => (
+              <a key={n.href} href={`/${n.href}`} className="text-[14px] text-fg-muted transition-colors hover:text-fg">
+                {n.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="hidden items-center gap-4 lg:flex">
+            <RegionSwitcher inverted />
+            <a href={brand.calendly} target="_blank" rel="noopener noreferrer" className="cta-primary !min-h-0 !py-2.5 !text-[14px]">
+              {ctas.auditoria}
+              <ArrowRight size={16} weight="bold" className="cta-arrow" aria-hidden />
             </a>
-          ))}
-          <Link to="/portfolio" className="font-sans uppercase text-muted hover:text-cream transition" style={{ fontSize: "11px", letterSpacing: "0.13em" }}>
-            Portfolio
-          </Link>
-        </nav>
+          </div>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <RegionSwitcher inverted />
-          <Link to="/cotizar" className="inline-flex items-center gap-2 font-sans uppercase bg-cream text-ink hover:bg-gold transition-all" style={{ fontSize: "11px", fontWeight: 500, letterSpacing: "0.1em", padding: "9px 18px" }}>
-            Cotizar →
-          </Link>
+          <button
+            type="button"
+            className="-mr-2 flex h-11 w-11 items-center justify-center text-fg lg:hidden"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="menu-movil"
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          >
+            {open ? <X size={24} /> : <List size={24} />}
+          </button>
         </div>
-
-        <button className="lg:hidden flex flex-col gap-1.5 z-50" onClick={() => setOpen((v) => !v)} aria-label="Menú">
-          <span className="block w-5 h-px bg-cream" />
-          <span className="block w-5 h-px bg-cream" />
-          <span className="block w-5 h-px bg-cream" />
-        </button>
       </header>
 
       {open && (
-        <div className="fixed inset-0 z-40 bg-ink flex flex-col items-center justify-center gap-8 lg:hidden">
-          {nav.map((n) => (
-            <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="font-display text-cream" style={{ fontSize: "3.2rem", letterSpacing: "0.08em" }}>
-              {n.label}
-            </a>
-          ))}
-          <Link to="/cotizar" onClick={() => setOpen(false)} className="font-display text-gold" style={{ fontSize: "3.2rem", letterSpacing: "0.08em" }}>
-            Cotizar
-          </Link>
-          <Link to="/portfolio" onClick={() => setOpen(false)} className="font-display text-cream" style={{ fontSize: "3.2rem", letterSpacing: "0.08em" }}>
-            Portfolio
-          </Link>
-          <RegionSwitcher />
-          <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn-p mt-4">WhatsApp</a>
-        </div>
+        <motion.div
+          id="menu-movil"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.2 }}
+          className="fixed inset-0 top-16 z-[45] flex flex-col bg-canvas px-5 pb-8 pt-6 lg:hidden"
+        >
+          <nav aria-label="Menú móvil" className="flex flex-col">
+            {nav.map((n) => (
+              <a
+                key={n.href}
+                href={`/${n.href}`}
+                onClick={() => setOpen(false)}
+                className="border-b border-hairline py-4 text-[28px] font-semibold tracking-[-0.02em] text-fg"
+              >
+                {n.label}
+              </a>
+            ))}
+          </nav>
+          <div className="mt-6"><RegionSwitcher /></div>
+          <div className="mt-auto flex flex-col gap-3">
+            <a href={brand.calendly} target="_blank" rel="noopener noreferrer" className="cta-primary w-full">{ctas.auditoria}</a>
+            <a href={waLink} target="_blank" rel="noopener noreferrer" className="cta-ghost w-full">{ctas.whatsapp}</a>
+          </div>
+        </motion.div>
       )}
     </>
   );

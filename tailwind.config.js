@@ -15,6 +15,22 @@ export default {
         muted: "#7d8598", // texto apagado
         gold: "#3B82F6", // acento principal → AZUL IA
         "gold-deep": "#2563EB",
+        // Tokens del rediseño "La fuga, en vivo" (fuente: DESIGN.md)
+        canvas: "#050505",
+        "surface-1": "#0C0D12",
+        "surface-2": "#12141B",
+        "surface-3": "#181B24",
+        hairline: "#1F2330",
+        "hairline-strong": "#2E3446",
+        fg: "#F4F6FB",
+        "fg-muted": "#B9C2D4",
+        "fg-subtle": "#8C95A8",
+        primary: "#2563EB",
+        "primary-hover": "#1D4ED8",
+        "accent-text": "#60A5FA",
+        live: "#22D3EE",
+        ok: "#34D399",
+        lost: "#F87171",
         // Nuevos tokens 2.0
         "ai-blue": "#3B82F6",
         "ai-violet": "#A855F7",
@@ -33,7 +49,7 @@ export default {
         display: ['"Inter"', "system-ui", "sans-serif"],
         serif: ['"Inter"', "system-ui", "sans-serif"],
         sans: ['"Inter"', "system-ui", "sans-serif"],
-        mono: ['"Inter"', "system-ui", "monospace"],
+        mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
       },
       letterSpacing: {
         brand: "0.18em",
@@ -41,6 +57,12 @@ export default {
       },
       maxWidth: {
         prose: "65ch",
+        wrap: "1240px",
+      },
+      borderRadius: {
+        panel: "20px",
+        inner: "12px",
+        chip: "4px",
       },
       backgroundImage: {
         "gradient-brand": "linear-gradient(90deg, #3B82F6 0%, #A855F7 50%, #22D3EE 100%)",

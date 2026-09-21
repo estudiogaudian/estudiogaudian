@@ -18,7 +18,7 @@ export const TERMINOS_SECTIONS = [
       { type: "p", text: "Para cualquier consulta, reclamo o ejercicio de derechos, podés comunicarte a través de los siguientes canales:" },
       { type: "ul", items: [
         'Correo electrónico: <a href="mailto:lic.gaudinofranco@gmail.com">lic.gaudinofranco@gmail.com</a>',
-        'WhatsApp: <a href="https://wa.me/543718615261" target="_blank" rel="noopener noreferrer">+54 3718 615261</a>',
+        'WhatsApp: <a href="https://wa.me/5493718615261" target="_blank" rel="noopener noreferrer">+54 3718 615261</a>',
         'Instagram: <a href="https://instagram.com/estudiogaudian" target="_blank" rel="noopener noreferrer">@estudiogaudian</a>',
         'Atención: solo con cita previa vía Calendly',
       ]},
@@ -162,7 +162,7 @@ export const PRIVACIDAD_SECTIONS = [
     titulo: "Responsable del tratamiento",
     body: [
       { type: "p", text: "El responsable del tratamiento de datos personales recolectados a través de este sitio web es <strong>Franco Gaudino</strong> (CUIL 20-40486958-3), bajo el nombre comercial <strong>GAUDIAN — Marketing · AI · Automation</strong>, con base en Clorinda, Formosa, República Argentina." },
-      { type: "p", text: 'Contacto del responsable: <a href="mailto:lic.gaudinofranco@gmail.com">lic.gaudinofranco@gmail.com</a> · WhatsApp <a href="https://wa.me/543718615261" target="_blank" rel="noopener noreferrer">+54 3718 615261</a>.' },
+      { type: "p", text: 'Contacto del responsable: <a href="mailto:lic.gaudinofranco@gmail.com">lic.gaudinofranco@gmail.com</a> · WhatsApp <a href="https://wa.me/5493718615261" target="_blank" rel="noopener noreferrer">+54 3718 615261</a>.' },
     ],
   },
   {

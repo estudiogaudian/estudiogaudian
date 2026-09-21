@@ -5,9 +5,9 @@ export const brand = {
   name: "GAUDIAN",
   tagline: "Marketing · AI · Automation",
   claim: "Transformamos negocios mediante Marketing, Inteligencia Artificial y Automatización.",
-  phone: "+543178615261",
+  phone: "+5493718615261",
   phoneDisplay: "+54 3718 615261",
-  whatsapp: "543178615261",
+  whatsapp: "5493718615261",
   email: "lic.gaudinofranco@gmail.com",
   calendly: "https://calendly.com/gaudian/reunion1",
   instagram: "https://www.instagram.com/estudiogaudian/",
@@ -22,12 +22,11 @@ export const waMessage = encodeURIComponent(
 export const waLink = `https://wa.me/${brand.whatsapp}?text=${waMessage}`;
 
 export const nav = [
-  { label: "Servicios", href: "#servicios" },
-  { label: "Proceso", href: "#proceso" },
+  { label: "El sistema", href: "#servicios" },
   { label: "Casos", href: "#casos" },
   { label: "Planes", href: "#planes" },
   { label: "Estudio", href: "#estudio" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Preguntas", href: "#faq" },
 ];
 
 export const servicios = [
@@ -87,7 +86,7 @@ export const casos = [
     metrica: "-40%",
     metricaLabel: "costo por lead calificado",
     resumen: "Sistema de Clientes completo: campañas Meta Ads con creativos propios + calificador de leads con IA en WhatsApp. Los curiosos se filtran solos y la agenda se llena con pacientes listos para reservar.",
-    real: false,
+    real: true,
   },
 ];
 
@@ -178,7 +177,7 @@ export const faqs = [
   },
   {
     q: "¿La inversión publicitaria está incluida en el plan?",
-    a: "No. El plan cubre estrategia, gestión, creatividad, automatización y reporting. La inversión en Meta, TikTok o Google se paga directo desde tu cuenta publicitaria — la plata de pauta siempre es tuya y la ves vos.",
+    a: "No. El plan cubre estrategia, gestión, creatividad, automatización y reporting. La inversión en Meta, TikTok o Google se paga directo desde tu cuenta publicitaria, así que la plata de pauta es tuya y la ves vos.",
   },
   {
     q: "¿Cómo se paga desde Paraguay?",

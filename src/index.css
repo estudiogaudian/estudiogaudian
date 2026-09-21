@@ -10,10 +10,14 @@
   body {
     @apply bg-ink text-cream font-sans antialiased;
     overflow-x: hidden;
-    font-weight: 300;
+    font-weight: 400;
   }
   h1, h2, h3, h4 { @apply font-display; font-weight: 700; letter-spacing: -0.02em; }
-  ::selection { @apply bg-gold/40 text-cream; }
+  ::selection { @apply bg-primary/50 text-fg; }
+  :focus-visible { outline: 2px solid #60A5FA; outline-offset: 3px; }
+  input, textarea { caret-color: #60A5FA; }
+  p, li { text-wrap: pretty; }
+  h1, h2, h3 { text-wrap: balance; }
 
   /* Grain noise global - feel celuloide */
   body::before {
@@ -155,4 +159,59 @@
     text-transform: uppercase;
     font-weight: 400;
   }
+}
+
+/* ============================================================
+   Rediseño "La fuga, en vivo" — ver DESIGN.md
+   ============================================================ */
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-wrap px-5 lg:px-10; }
+
+  .t-display {
+    @apply font-sans text-fg;
+    font-weight: 600;
+    font-size: clamp(2.75rem, 1.4rem + 5.4vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+  }
+  .t-h2 {
+    @apply font-sans text-fg;
+    font-weight: 600;
+    font-size: clamp(2rem, 1.2rem + 3.2vw, 3.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+  }
+  .t-h3 {
+    @apply font-sans text-fg;
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+  .t-lead { @apply text-fg-muted; font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); line-height: 1.55; }
+  .t-body { @apply text-fg-muted; font-size: 1rem; line-height: 1.6; }
+  .t-mono { @apply font-mono text-fg-subtle; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+  .tnum { font-variant-numeric: tabular-nums; }
+
+  .cta {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-sans font-medium;
+    font-size: 15px;
+    padding: 14px 22px;
+    min-height: 48px;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .15s ease;
+  }
+  .cta:active { transform: scale(0.98); }
+  .cta .cta-arrow { transition: transform .25s cubic-bezier(0.16, 1, 0.3, 1); }
+  .cta:hover .cta-arrow { transform: translateX(3px); }
+  .cta-primary { @apply cta bg-primary text-white; }
+  .cta-primary:hover { @apply bg-primary-hover; }
+  .cta-inverse { @apply cta bg-fg text-canvas; }
+  .cta-inverse:hover { background: #ffffff; }
+  .cta-ghost { @apply cta text-fg border border-hairline-strong; }
+  .cta-ghost:hover { @apply border-fg-subtle bg-surface-2; }
+
+  .panel { @apply rounded-panel border border-hairline bg-surface-1; }
+
+  .link-u { @apply text-accent-text underline decoration-accent-text/40 underline-offset-4; transition: text-decoration-color .2s; }
+  .link-u:hover { @apply decoration-accent-text; }
 }

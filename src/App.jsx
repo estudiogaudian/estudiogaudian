@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 import WhatsAppFAB from "./components/WhatsAppFAB";
 import ExitIntent from "./components/ExitIntent";
 import ScrollProgress from "./components/motion/ScrollProgress";
-import CursorFollower from "./components/motion/CursorFollower";
 import Home from "./pages/Home";
 import LandingServicio from "./pages/LandingServicio";
 import Portfolio from "./pages/Portfolio";
@@ -17,7 +16,6 @@ import Cotizar from "./pages/Cotizar";
 import Terminos from "./pages/Terminos";
 import Privacidad from "./pages/Privacidad";
 import NotFound from "./pages/NotFound";
-import WelcomePopup from "./components/WelcomePopup";
 import Onboarding from "./pages/Onboarding";
 import { LANDINGS } from "./pages/landings";
 
@@ -62,14 +60,11 @@ function RegionHome({ fixed }) {
 function Layout({ children }) {
   return (
     <>
-      <ScrollProgress />
-      <CursorFollower />
       <Nav />
       <main><PageWrapper>{children}</PageWrapper></main>
       <Footer />
       <WhatsAppFAB />
       <ExitIntent />
-      <WelcomePopup />
     </>
   );
 }
@@ -104,7 +99,6 @@ export default function App() {
           element={
             <RegionProvider>
               <ScrollProgress />
-              <CursorFollower />
               <PageWrapper><Promo /></PageWrapper>
             </RegionProvider>
           }
@@ -115,7 +109,6 @@ export default function App() {
           element={
             <RegionProvider fixed="py">
               <ScrollProgress />
-              <CursorFollower />
               <PageWrapper><PromoParaguay /></PageWrapper>
             </RegionProvider>
           }
@@ -125,7 +118,6 @@ export default function App() {
           path="/cotizar"
           element={
             <RegionProvider>
-              <CursorFollower />
               <PageWrapper><Cotizar /></PageWrapper>
             </RegionProvider>
           }
@@ -151,7 +143,6 @@ export default function App() {
           path="/onboarding"
           element={
             <RegionProvider>
-              <CursorFollower />
               <PageWrapper><Onboarding /></PageWrapper>
             </RegionProvider>
           }
