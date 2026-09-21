@@ -25,12 +25,13 @@ export function RegionProvider({ children, fixed }) {
   );
   const [detected, setDetected] = useState(null);
   const [loading, setLoading] = useState(!initial);
+  // La IP se detecta siempre, también en rutas con región fija, porque los precios dependen solo de la IP.
+  const [detecting, setDetecting] = useState(true);
 
   useEffect(() => {
     if (fixed) {
       setRegionState(pickRegion(fixed));
       setLoading(false);
-      return;
     }
     let abort = false;
     const run = async () => {
@@ -47,11 +48,14 @@ export function RegionProvider({ children, fixed }) {
         const saved = (() => {
           try { return localStorage.getItem(STORAGE_KEY); } catch { return null; }
         })();
-        if (!saved) setRegionState(r);
+        if (!fixed && !saved) setRegionState(r);
       } catch {
-        // fallback silencioso → AR
+        // fallback silencioso → región de la ruta o AR
       } finally {
-        if (!abort) setLoading(false);
+        if (!abort) {
+          setLoading(false);
+          setDetecting(false);
+        }
       }
     };
     run();
@@ -65,8 +69,8 @@ export function RegionProvider({ children, fixed }) {
   };
 
   const value = useMemo(
-    () => ({ region, setRegion, detected, loading }),
-    [region, detected, loading]
+    () => ({ region, setRegion, detected, loading, detecting }),
+    [region, detected, loading, detecting]
   );
 
   return <RegionContext.Provider value={value}>{children}</RegionContext.Provider>;

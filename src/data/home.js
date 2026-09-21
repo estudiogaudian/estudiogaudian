@@ -102,7 +102,6 @@ export const casosIntro = {
 
 export const oferta = {
   title: "Un plan, todo incluido.",
-  selector: "¿Dónde está tu negocio?",
   nombre: "Performance Meta",
   desc: "Tus anuncios de Instagram y Facebook, hechos y manejados por el estudio.",
   incluye: [
@@ -190,7 +189,11 @@ export const faqIntro = {
 export const faqs = [
   {
     q: "¿Cuánto tengo que invertir en publicidad?",
-    a: "El mínimo por mes es de ARS 120.000 en Formosa, ARS 200.000 en el resto de Argentina, Gs. 1.000.000 en Paraguay y USD 300 en otros países. Esa plata va directo a Meta desde tu cuenta; nuestro honorario va aparte.",
+    // Se completa con la pauta mínima de la zona del visitante; sin zona, queda la versión general.
+    a: (zona) =>
+      zona
+        ? `Recomendamos arrancar con ${zona.pautaMin} por mes como mínimo. Esa plata va directo a Meta desde tu cuenta; nuestro honorario va aparte.`
+        : "Depende de tu zona y tu rubro. Esa plata va directo a Meta desde tu cuenta; nuestro honorario va aparte.",
   },
   {
     q: "¿La inversión en anuncios está incluida en el plan?",

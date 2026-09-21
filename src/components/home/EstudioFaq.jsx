@@ -1,5 +1,6 @@
 import { estudioCopy, faqIntro, faqs } from "../../data/home";
 import Reveal from "./Plain";
+import usePricingZone from "./usePricingZone";
 
 export function Estudio() {
   return (
@@ -34,6 +35,7 @@ export function Estudio() {
 }
 
 export function Faq() {
+  const { zona, listo } = usePricingZone();
   return (
     <section id="faq" className="border-t border-hairline py-24 lg:py-36">
       <div className="wrap">
@@ -44,7 +46,7 @@ export function Faq() {
           {faqs.map((f) => (
             <Reveal key={f.q} y={16}>
               <dt className="text-[17px] font-semibold tracking-[-0.01em] text-fg">{f.q}</dt>
-              <dd className="t-body mt-3">{f.a}</dd>
+              <dd className="t-body mt-3">{typeof f.a === "function" ? f.a(listo ? zona : null) : f.a}</dd>
             </Reveal>
           ))}
         </dl>

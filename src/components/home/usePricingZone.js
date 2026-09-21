@@ -1,41 +1,35 @@
-import { useState } from "react";
 import { useRegion } from "../../context/RegionContext";
 import { zonas } from "../../data/home";
 
-const STORAGE_KEY = "gaudian_zona_precios";
-
-// Zona sugerida a partir de la región detectada (país + provincia de ipapi).
-function zonaSugerida(region, detected) {
-  if (region.code === "py") return "paraguay";
-  if (region.code === "global") return "mundo";
+// Zona a partir de la IP (país + provincia de ipapi). Si la detección falla, usa la región de la ruta.
+function zonaDetectada(region, detected) {
+  const pais = detected?.countryCode || (region.code === "py" ? "PY" : region.code === "global" ? "" : "AR");
+  if (pais === "PY") return "paraguay";
+  if (pais !== "AR") return "mundo";
   const provincia = (detected?.province || "").toLowerCase();
   return provincia.includes("formosa") ? "formosa" : "argentina";
 }
 
-function leerGuardada() {
+// Vista previa interna: ?zona=formosa|argentina|paraguay|mundo. No hay ningún enlace visible a esto.
+function zonaDeUrl() {
   try {
-    const v = localStorage.getItem(STORAGE_KEY);
+    const v = new URLSearchParams(window.location.search).get("zona");
     return zonas.some((z) => z.id === v) ? v : null;
   } catch {
     return null;
   }
 }
 
-/** Zona de precios activa. La elección manual del visitante gana sobre la detección. */
+/**
+ * Zona de precios del visitante, resuelta solo por IP.
+ * `listo` es false mientras se detecta, para no mostrar un precio que después cambia.
+ */
 export default function usePricingZone() {
-  const { region, detected } = useRegion();
-  const [elegida, setElegida] = useState(leerGuardada);
-  const sugerida = zonaSugerida(region, detected);
-
-  const elegir = (id) => {
-    setElegida(id);
-    try {
-      localStorage.setItem(STORAGE_KEY, id);
-    } catch {
-      // Sin almacenamiento: la elección vale solo para esta visita.
-    }
+  const { region, detected, detecting } = useRegion();
+  const forzada = zonaDeUrl();
+  const id = forzada || zonaDetectada(region, detected);
+  return {
+    zona: zonas.find((z) => z.id === id) || zonas[1],
+    listo: Boolean(forzada) || !detecting,
   };
-
-  const id = elegida || sugerida;
-  return { zona: zonas.find((z) => z.id === id) || zonas[1], elegir };
 }

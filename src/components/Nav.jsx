@@ -4,7 +4,6 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { List, X, ArrowRight } from "@phosphor-icons/react";
 import { brand, nav, waLink } from "../data/site";
 import { ctas } from "../data/home";
-import RegionSwitcher from "./RegionSwitcher";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,7 +32,6 @@ export default function Nav() {
           </nav>
 
           <div className="hidden items-center gap-4 lg:flex">
-            <RegionSwitcher inverted />
             <a href={brand.calendly} target="_blank" rel="noopener noreferrer" className="cta-primary !min-h-0 !py-2.5 !text-[14px]">
               {ctas.auditoriaCorta}
               <ArrowRight size={16} weight="bold" className="cta-arrow" aria-hidden />
@@ -73,7 +71,6 @@ export default function Nav() {
               </a>
             ))}
           </nav>
-          <div className="mt-6"><RegionSwitcher /></div>
           <div className="mt-auto flex flex-col gap-3">
             <a href={brand.calendly} target="_blank" rel="noopener noreferrer" className="cta-primary w-full">{ctas.auditoria}</a>
             <a href={waLink} target="_blank" rel="noopener noreferrer" className="cta-ghost w-full">{ctas.whatsapp}</a>
