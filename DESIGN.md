@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: GAUDIAN — La pieza y la pauta
+name: GAUDIAN — Más clientes para tu negocio
 description: "Sitio de GAUDIAN (Marketing · IA · Automatización). Lienzo negro profundo, paneles hairline y una sola tubería de color: el degradado de marca azul→violeta→cyan recorre la página como el camino que hace una pieza de contenido: se diseña, se pauta en Meta y se mide. Inter para la voz, JetBrains Mono para los datos del sistema."
 
 colors:
@@ -174,13 +174,15 @@ components:
     textColor: "{colors.on-live}"
 ---
 
-# GAUDIAN — La pieza y la pauta
+# GAUDIAN — Más clientes para tu negocio
 
 ## Overview
 
-GAUDIAN es un estudio especialista en Meta Ads que además produce el contenido que pauta: reels, carruseles y piezas estáticas pensadas como anuncio. La gestión de redes y el bot de WhatsApp con IA son servicios complementarios. La idea que atraviesa el sitio: la pieza y la pauta, en el mismo equipo. Cada pieza aparece con su número (conversaciones, costo por conversación), como en un Administrador de Anuncios, y el recorrido de la página sigue el de una pieza: se crea, se pauta, trae conversaciones y se mide.
+Web de conversión. GAUDIAN le consigue clientes a pymes con anuncios en Instagram y Facebook: hace los anuncios (reels, carruseles, piezas), los pauta en Meta y mide cuánto cuesta cada cliente. El dueño delega y recupera tiempo para atender su negocio. Gestión de redes y bot de WhatsApp con IA son complementos.
 
-Personalidad: técnico, directo, con calma. Nada de euforia de agencia. La autoridad sale de mostrar el mecanismo y los números, no de adjetivos. Público: dueños de pymes y marcas de Paraguay y el NEA argentino (clínicas, peluquerías, inmobiliarias, gastronomía, comercios) que ya publican en redes pero no saben qué de eso vende.
+Cada sección empuja a un solo paso: la auditoría gratis por videollamada (WhatsApp como alternativa). Mucha fotografía documental de dueños de negocios de la región, con luz natural, para que el visitante se vea reflejado. Sobre las fotos, tarjetas de UI (avisos de nueva consulta, métricas) que muestran el resultado, siempre rotuladas como ejemplo cuando no son datos reales.
+
+Personalidad: cercana, directa, segura. Habla de resultados y de tiempo, no de técnica. Público: dueños de clínicas, peluquerías, gastronomía, inmobiliarias y comercios de Paraguay y el NEA argentino.
 
 ## Colors
 
@@ -229,11 +231,12 @@ Paneles con 20px de radio, elementos internos con 12px, chips de estado con 4px.
 
 ## Do's and Don'ts
 
-- Hacé que cada sección muestre una parte real del mecanismo (reporte, comparación, recorrido, piezas).
+- Hacé que cada sección tenga una foto real del mundo del cliente o un dato real.
+- Repetí el mismo botón principal en hero, delegación, oferta y cierre.
 - Usá cyan solo cuando algo esté pasando en vivo.
 - Escribí con datos concretos y con los casos reales que existen.
 - No uses el degradado como fondo, en textos ni en botones.
-- No uses fotos de stock de oficinas ni equipos.
+- No uses fotos de stock de oficinas corporativas; las fotos muestran negocios reales de la región.
 - No repitas grillas de cards iguales; si hay pasos, van en diagrama.
 - No uses popups al entrar a la página.
 - No animes la entrada de cada sección. Los momentos en movimiento son el reporte del hero (números que suben), la tubería, la tabla comparativa y el recorrido del diagrama.

@@ -35,7 +35,7 @@ export default function Nav() {
           <div className="hidden items-center gap-4 lg:flex">
             <RegionSwitcher inverted />
             <a href={brand.calendly} target="_blank" rel="noopener noreferrer" className="cta-primary !min-h-0 !py-2.5 !text-[14px]">
-              {ctas.auditoria}
+              {ctas.auditoriaCorta}
               <ArrowRight size={16} weight="bold" className="cta-arrow" aria-hidden />
             </a>
           </div>

@@ -22,8 +22,7 @@ export const waMessage = encodeURIComponent(
 export const waLink = `https://wa.me/${brand.whatsapp}?text=${waMessage}`;
 
 export const nav = [
-  { label: "Servicios", href: "#servicios" },
-  { label: "Trabajo", href: "#trabajo" },
+  { label: "Cómo funciona", href: "#servicios" },
   { label: "Casos", href: "#casos" },
   { label: "Planes", href: "#planes" },
   { label: "Preguntas", href: "#faq" },
@@ -83,7 +82,7 @@ export const casos = [
   {
     cliente: "Clínica Estética Aura",
     rubro: "Estética & Salud · Asunción",
-    metrica: "-40%",
+    metrica: "−40%",
     metricaLabel: "costo por lead calificado",
     resumen: "Campañas en Meta Ads con creativos propios y un calificador de leads con IA en WhatsApp. Los curiosos se filtran solos y la agenda se llena con pacientes listos para reservar.",
     real: true,

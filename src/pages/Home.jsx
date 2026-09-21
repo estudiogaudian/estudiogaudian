@@ -2,12 +2,11 @@ import SEOHead from "../components/SEOHead";
 import { useRegion } from "../context/RegionContext";
 import Pipe from "../components/home/Pipe";
 import Hero from "../components/home/Hero";
-import Problema from "../components/home/Problema";
-import Servicios from "../components/home/Servicios";
-import Proceso from "../components/home/Proceso";
-import Trabajo from "../components/home/Trabajo";
+import Rubros from "../components/home/Rubros";
+import { ParaVos, Delega } from "../components/home/Beneficios";
+import Pasos from "../components/home/Pasos";
 import CasosReales from "../components/home/CasosReales";
-import Escalera from "../components/home/Escalera";
+import Oferta from "../components/home/Oferta";
 import { Estudio, Faq } from "../components/home/EstudioFaq";
 import Cierre from "../components/home/Cierre";
 
@@ -23,12 +22,12 @@ export default function Home() {
       />
       <Pipe />
       <Hero />
-      <Problema />
-      <Servicios />
-      <Proceso />
-      <Trabajo />
+      <Rubros />
+      <ParaVos />
+      <Delega />
+      <Pasos />
       <CasosReales />
-      <Escalera />
+      <Oferta />
       <Estudio />
       <Faq />
       <Cierre />
