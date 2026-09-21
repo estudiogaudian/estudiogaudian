@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
-// Diagrama de proceso: 4 etapas en línea, 1 nodo focal (responder = la IA),
-// derivación a "vos" desde filtrar y retorno punteado medir → atraer.
+// Diagrama de proceso: 4 etapas en línea, 1 nodo focal (pautar = Meta Ads),
+// derivación desde crear hacia el perfil orgánico y retorno punteado medir → crear.
 // Colores: tokens de DESIGN.md. Conectores ortogonales con esquinas r=8.
 
 const C = {
@@ -17,10 +17,10 @@ const C = {
 };
 
 const NODES_H = [
-  { k: "atraer", sub: "anuncio Meta", x: 24 },
-  { k: "responder", sub: "IA en WhatsApp", x: 272, focal: true },
-  { k: "filtrar", sub: "preguntas clave", x: 520 },
-  { k: "agendar y medir", sub: "turno + tablero", x: 768 },
+  { k: "crear", sub: "reel, carrusel, estática", x: 24 },
+  { k: "pautar", sub: "Meta Ads", x: 272, focal: true },
+  { k: "atender", sub: "WhatsApp o bot", x: 520 },
+  { k: "medir", sub: "reporte semanal", x: 768 },
 ];
 
 function Node({ x, y, w, h, k, sub, focal }) {
@@ -57,9 +57,9 @@ export function DiagramHorizontal() {
   const main = `M ${24 + nw} ${mid} H ${768}`;
   return (
     <svg viewBox={`0 0 ${W} 260`} role="img" aria-labelledby="sistema-h-title sistema-h-desc" className="h-auto w-full">
-      <title id="sistema-h-title">El recorrido de un lead en el sistema GAUDIAN</title>
+      <title id="sistema-h-title">El recorrido de una pieza, del diseño al cliente</title>
       <desc id="sistema-h-desc">
-        Un anuncio de Meta trae la consulta, la IA la responde en WhatsApp, la filtra con preguntas clave y deja el turno agendado y medido. Las consultas delicadas pasan a una persona y los datos del tablero vuelven a ajustar los anuncios cada semana.
+        El estudio crea la pieza, que se publica en el perfil de la marca y se pauta en Meta Ads. Las conversaciones llegan a WhatsApp, donde contesta el equipo o un bot, y el reporte semanal decide qué piezas se vuelven a producir.
       </desc>
       <defs>
         <marker id="sh-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
@@ -72,14 +72,14 @@ export function DiagramHorizontal() {
         <line key={n.k} x1={n.x + nw} y1={mid} x2={n.x + 248 - 2} y2={mid} stroke={C.line} strokeWidth="1.2" markerEnd="url(#sh-arrow)" />
       ))}
 
-      {/* derivación filtrar → vos */}
-      <path d={`M ${520 + nw / 2} ${y + nh} V ${y + nh + 60}`} stroke={C.line} strokeWidth="1.2" fill="none" strokeDasharray="4,3" markerEnd="url(#sh-arrow)" />
-      <rect x={520 + nw / 2 + 10} y={y + nh + 18} width="118" height="16" rx="2" fill={C.bg} />
-      <text x={520 + nw / 2 + 14} y={y + nh + 30} fill={C.sub} fontSize="10.5" fontFamily="'JetBrains Mono', monospace">si es delicada</text>
-      <rect x={520 + nw / 2 - 72} y={y + nh + 64} width="144" height="44" rx="8" fill={C.bg} stroke={C.stroke} strokeDasharray="4,3" />
-      <text x={520 + nw / 2} y={y + nh + 91} fill={C.text} fontSize="13" fontWeight="600" fontFamily="Inter, sans-serif" textAnchor="middle">vos o tu equipo</text>
+      {/* derivación crear → perfil orgánico */}
+      <path d={`M ${24 + nw / 2} ${y + nh} V ${y + nh + 60}`} stroke={C.line} strokeWidth="1.2" fill="none" strokeDasharray="4,3" markerEnd="url(#sh-arrow)" />
+      <rect x={24 + nw / 2 + 10} y={y + nh + 18} width="118" height="16" rx="2" fill={C.bg} />
+      <text x={24 + nw / 2 + 14} y={y + nh + 30} fill={C.sub} fontSize="10.5" fontFamily="'JetBrains Mono', monospace">también se publica</text>
+      <rect x={24 + nw / 2 - 72} y={y + nh + 64} width="144" height="44" rx="8" fill={C.bg} stroke={C.stroke} strokeDasharray="4,3" />
+      <text x={24 + nw / 2} y={y + nh + 91} fill={C.text} fontSize="13" fontWeight="600" fontFamily="Inter, sans-serif" textAnchor="middle">tu perfil</text>
 
-      {/* retorno medir → atraer (optimización semanal) */}
+      {/* retorno medir → crear (lo que vende se vuelve a producir) */}
       <path
         d={`M ${768 + nw / 2} ${y} V ${y - 28} Q ${768 + nw / 2} ${y - 36} ${768 + nw / 2 - 8} ${y - 36} H ${24 + nw / 2 + 8} Q ${24 + nw / 2} ${y - 36} ${24 + nw / 2} ${y - 28} V ${y - 2}`}
         stroke={C.line}
@@ -88,9 +88,9 @@ export function DiagramHorizontal() {
         strokeDasharray="5,4"
         markerEnd="url(#sh-arrow)"
       />
-      <rect x={W / 2 - 120} y={y - 60} width="240" height="16" rx="2" fill={C.bg} />
+      <rect x={W / 2 - 170} y={y - 60} width="340" height="16" rx="2" fill={C.bg} />
       <text x={W / 2} y={y - 48} fill={C.sub} fontSize="10.5" fontFamily="'JetBrains Mono', monospace" textAnchor="middle">
-        cada semana: ajuste de anuncios
+        cada semana: lo que vende se vuelve a producir
       </text>
 
       <Traveler path={main} reduce={reduce} />
@@ -112,16 +112,16 @@ export function DiagramVertical() {
   const cx = x + nw / 2;
   const main = `M ${cx} ${ys[0] + nh} V ${ys[3]}`;
   const labels = [
-    ["atraer", "anuncio Meta"],
-    ["responder", "IA en WhatsApp", true],
-    ["filtrar", "preguntas clave"],
-    ["agendar y medir", "turno + tablero"],
+    ["crear", "reel, carrusel, estática"],
+    ["pautar", "Meta Ads", true],
+    ["atender", "WhatsApp o bot"],
+    ["medir", "reporte semanal"],
   ];
   return (
-    <svg viewBox="0 0 340 540" role="img" aria-labelledby="sistema-v-title sistema-v-desc" className="mx-auto h-auto w-full max-w-[380px]">
-      <title id="sistema-v-title">El recorrido de un lead en el sistema GAUDIAN</title>
+    <svg viewBox="0 0 356 540" role="img" aria-labelledby="sistema-v-title sistema-v-desc" className="mx-auto h-auto w-full max-w-[380px]">
+      <title id="sistema-v-title">El recorrido de una pieza, del diseño al cliente</title>
       <desc id="sistema-v-desc">
-        Un anuncio de Meta trae la consulta, la IA la responde en WhatsApp, la filtra y deja el turno agendado y medido. Las consultas delicadas pasan a una persona.
+        El estudio crea la pieza, la pauta en Meta Ads, las conversaciones llegan a WhatsApp y el reporte semanal mide cada pieza. La pieza también se publica en el perfil de la marca.
       </desc>
       <defs>
         <marker id="sv-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
@@ -131,10 +131,10 @@ export function DiagramVertical() {
       {ys.slice(0, 3).map((y0) => (
         <line key={y0} x1={cx} y1={y0 + nh} x2={cx} y2={y0 + nh + gap - 2} stroke={C.line} strokeWidth="1.2" markerEnd="url(#sv-arrow)" />
       ))}
-      {/* derivación lateral desde filtrar */}
-      <path d={`M ${x + nw} ${ys[2] + nh / 2} H ${x + nw + 36}`} stroke={C.line} strokeWidth="1.2" strokeDasharray="4,3" markerEnd="url(#sv-arrow)" />
-      <rect x={x + nw + 38} y={ys[2] + nh / 2 - 20} width="40" height="40" rx="8" fill={C.bg} stroke={C.stroke} strokeDasharray="4,3" />
-      <text x={x + nw + 58} y={ys[2] + nh / 2 + 4} fill={C.text} fontSize="11" fontWeight="600" fontFamily="Inter, sans-serif" textAnchor="middle">vos</text>
+      {/* derivación lateral desde crear hacia el perfil */}
+      <path d={`M ${x + nw} ${ys[0] + nh / 2} H ${x + nw + 36}`} stroke={C.line} strokeWidth="1.2" strokeDasharray="4,3" markerEnd="url(#sv-arrow)" />
+      <rect x={x + nw + 38} y={ys[0] + nh / 2 - 20} width="56" height="40" rx="8" fill={C.bg} stroke={C.stroke} strokeDasharray="4,3" />
+      <text x={x + nw + 66} y={ys[0] + nh / 2 + 4} fill={C.text} fontSize="11" fontWeight="600" fontFamily="Inter, sans-serif" textAnchor="middle">perfil</text>
       <Traveler path={main} reduce={reduce} />
       {ys.map((y0, i) => (
         <Node key={y0} x={x} y={y0} w={nw} h={nh} k={labels[i][0]} sub={labels[i][1]} focal={labels[i][2]} />

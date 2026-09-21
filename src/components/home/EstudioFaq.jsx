@@ -1,5 +1,4 @@
-import { faqs } from "../../data/site";
-import { estudioCopy, faqIntro } from "../../data/home";
+import { estudioCopy, faqIntro, faqs } from "../../data/home";
 import Reveal from "./Plain";
 
 export function Estudio() {

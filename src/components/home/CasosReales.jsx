@@ -60,7 +60,10 @@ function Caso({ caso }) {
 }
 
 export default function CasosReales() {
-  const [principal, ...resto] = casos;
+  const ordenados = casosIntro.orden
+    .map((nombre) => casos.find((c) => c.cliente === nombre))
+    .filter(Boolean);
+  const [principal, ...resto] = ordenados;
   return (
     <section id="casos" className="py-24 lg:py-36">
       <div className="wrap">

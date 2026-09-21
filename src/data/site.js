@@ -17,15 +17,15 @@ export const brand = {
 };
 
 export const waMessage = encodeURIComponent(
-  "Hola Franco, vi la web de GAUDIAN y quiero una Auditoría de Fuga de Ventas gratuita."
+  "Hola Franco, vi la web de GAUDIAN y quiero una auditoría gratis de mi pauta y mis redes."
 );
 export const waLink = `https://wa.me/${brand.whatsapp}?text=${waMessage}`;
 
 export const nav = [
-  { label: "El sistema", href: "#servicios" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Trabajo", href: "#trabajo" },
   { label: "Casos", href: "#casos" },
   { label: "Planes", href: "#planes" },
-  { label: "Estudio", href: "#estudio" },
   { label: "Preguntas", href: "#faq" },
 ];
 
@@ -85,7 +85,7 @@ export const casos = [
     rubro: "Estética & Salud · Asunción",
     metrica: "-40%",
     metricaLabel: "costo por lead calificado",
-    resumen: "Sistema de Clientes completo: campañas Meta Ads con creativos propios + calificador de leads con IA en WhatsApp. Los curiosos se filtran solos y la agenda se llena con pacientes listos para reservar.",
+    resumen: "Campañas en Meta Ads con creativos propios y un calificador de leads con IA en WhatsApp. Los curiosos se filtran solos y la agenda se llena con pacientes listos para reservar.",
     real: true,
   },
 ];

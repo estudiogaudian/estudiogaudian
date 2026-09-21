@@ -25,9 +25,9 @@ export const REGIONS = {
     heroSubtitle:
       "Marketing Performance, chatbots con IA y automatización para negocios argentinos que quieren crecer con tecnología, no con promesas.",
     metaTitle:
-      "GAUDIAN · Marketing, IA y Automatización en Argentina",
+      "GAUDIAN · Especialistas en Meta Ads y contenido para redes en Argentina",
     metaDescription:
-      "Estudio de Marketing, Inteligencia Artificial y Automatización. Meta Ads, Google Ads, chatbots IA para WhatsApp y sistemas de captación de clientes.",
+      "Estudio especialista en Meta Ads. Hacemos reels, carruseles y piezas para tus redes, los pautamos en Facebook e Instagram y medimos cuál vende. También bots de WhatsApp con IA.",
     plans: [
       { precio: "US$ 250", periodo: "/mes" },
       { precio: "US$ 650", periodo: "/mes" },
@@ -57,9 +57,9 @@ export const REGIONS = {
     heroSubtitle:
       "Campañas que traen leads calificados a tu WhatsApp y una IA que los atiende 24/7. Marketing, Inteligencia Artificial y Automatización para negocios de Asunción y todo Paraguay.",
     metaTitle:
-      "GAUDIAN · Marketing, IA y Automatización en Asunción, Paraguay",
+      "GAUDIAN · Meta Ads y contenido para redes en Asunción, Paraguay",
     metaDescription:
-      "Meta Ads, TikTok Ads, Google Ads, chatbots con IA para WhatsApp y automatización de ventas para negocios paraguayos. Resultados medibles.",
+      "Especialistas en Meta Ads para negocios de Paraguay. Reels, carruseles y piezas estáticas pensadas para anunciar, gestión de redes y bots de WhatsApp con IA.",
     plans: [
       { precio: "US$ 250", periodo: "/mes" },
       { precio: "US$ 650", periodo: "/mes" },
@@ -89,9 +89,9 @@ export const REGIONS = {
     heroSubtitle:
       "Marketing Performance, chatbots con IA y automatización de ventas. Trabajamos remoto con negocios hispanohablantes en cualquier parte del mundo.",
     metaTitle:
-      "GAUDIAN · Marketing, AI & Automation studio",
+      "GAUDIAN · Meta Ads y contenido para redes",
     metaDescription:
-      "Performance marketing, AI chatbots and sales automation systems for Spanish-speaking businesses worldwide. Remote-first.",
+      "Estudio especialista en Meta Ads y contenido para redes. Trabajamos remoto con negocios hispanohablantes: reels, carruseles, pauta en Facebook e Instagram y bots de WhatsApp.",
     plans: [
       { precio: "US$ 250", periodo: "/month" },
       { precio: "US$ 650", periodo: "/month" },

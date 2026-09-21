@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "@phosphor-icons/react";
 import { brand, waLink } from "../../data/site";
-import { escalones, planesIntro, ctas } from "../../data/home";
+import { escalones, destacado, planesIntro, ctas } from "../../data/home";
 import Reveal, { RevealStagger, RevealItem } from "./Plain";
 
 function StepLink({ href, children, className }) {
@@ -20,8 +20,7 @@ function Price({ precio, periodo, big }) {
 }
 
 export default function Escalera() {
-  const destacado = escalones.find((e) => e.destacado);
-  const resto = escalones.filter((e) => !e.destacado);
+  const resto = escalones;
 
   return (
     <section id="planes" className="border-t border-hairline py-24 lg:py-36">

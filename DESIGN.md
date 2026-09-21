@@ -1,7 +1,7 @@
 ---
 version: alpha
-name: GAUDIAN — La fuga, en vivo
-description: "Sitio de GAUDIAN (Marketing · IA · Automatización). Lienzo negro profundo, paneles hairline y una sola tubería de color: el degradado de marca azul→violeta→cyan recorre la página como el camino que hace un lead desde el anuncio hasta el turno agendado. Inter para la voz, JetBrains Mono para los datos del sistema."
+name: GAUDIAN — La pieza y la pauta
+description: "Sitio de GAUDIAN (Marketing · IA · Automatización). Lienzo negro profundo, paneles hairline y una sola tubería de color: el degradado de marca azul→violeta→cyan recorre la página como el camino que hace una pieza de contenido: se diseña, se pauta en Meta y se mide. Inter para la voz, JetBrains Mono para los datos del sistema."
 
 colors:
   primary: "#2563EB"
@@ -174,13 +174,13 @@ components:
     textColor: "{colors.on-live}"
 ---
 
-# GAUDIAN — La fuga, en vivo
+# GAUDIAN — La pieza y la pauta
 
 ## Overview
 
-GAUDIAN vende un sistema: pauta que trae personas, IA que las atiende en WhatsApp y un tablero que muestra qué pasó. El sitio se comporta como ese sistema. Cada sección es una etapa del recorrido de un lead (el anuncio, el mensaje de las 23:47, la respuesta en segundos, la calificación, el turno agendado) y los datos aparecen con marcas de hora en mono, como un registro.
+GAUDIAN es un estudio especialista en Meta Ads que además produce el contenido que pauta: reels, carruseles y piezas estáticas pensadas como anuncio. La gestión de redes y el bot de WhatsApp con IA son servicios complementarios. La idea que atraviesa el sitio: la pieza y la pauta, en el mismo equipo. Cada pieza aparece con su número (conversaciones, costo por conversación), como en un Administrador de Anuncios, y el recorrido de la página sigue el de una pieza: se crea, se pauta, trae conversaciones y se mide.
 
-Personalidad: técnico, directo, con calma. Nada de euforia de agencia. La autoridad sale de mostrar el mecanismo, no de adjetivos. Público: dueños de pymes de Paraguay y el NEA argentino (clínicas, peluquerías, inmobiliarias, gastronomía) que hoy pierden consultas por no responder a tiempo.
+Personalidad: técnico, directo, con calma. Nada de euforia de agencia. La autoridad sale de mostrar el mecanismo y los números, no de adjetivos. Público: dueños de pymes y marcas de Paraguay y el NEA argentino (clínicas, peluquerías, inmobiliarias, gastronomía, comercios) que ya publican en redes pero no saben qué de eso vende.
 
 ## Colors
 
@@ -188,12 +188,12 @@ Personalidad: técnico, directo, con calma. Nada de euforia de agencia. La autor
 - **Surfaces (#0C0D12 → #181B24):** tres niveles de panel, apenas azulados, para jerarquía sin sombras.
 - **Hairline (#1F2330 / #2E3446):** los bordes definen la estructura, como en un tablero.
 - **Ink (#F4F6FB) / Muted (#B9C2D4) / Subtle (#8C95A8):** blanco frío para titulares, gris azulado para texto corrido, gris más bajo solo para etiquetas mono.
-- **Primary (#2563EB):** el azul de marca oscurecido para que el texto blanco pase AA. Es el único color de acción: botones primarios y la burbuja de la IA.
+- **Primary (#2563EB):** el azul de marca oscurecido para que el texto blanco pase AA. Es el único color de acción: botones primarios, el servicio principal (Meta Ads) y la burbuja del bot.
 - **Accent text (#60A5FA):** azul claro para links y palabras marcadas sobre oscuro.
-- **Live (#22D3EE):** cyan reservado para "el sistema está actuando": puntos pulsantes, estado en vivo, el instante en que la IA responde.
+- **Live (#22D3EE):** cyan reservado para lo que está rindiendo ahora: la pieza ganadora del reporte, estados activos.
 - **Violet (#A855F7):** no se usa solo. Existe dentro del degradado de marca.
-- **La tubería:** `linear-gradient(180deg, #3B82F6, #A855F7, #22D3EE)`. Aparece en un único elemento: la línea vertical que recorre la página y se va "llenando" con el scroll. Si el degradado aparece en otro lado, está mal usado.
-- **Success / Danger:** verde y rojo suaves solo para estados de datos (lead atendido / lead perdido).
+- **La tubería:** `linear-gradient(180deg, #3B82F6, #A855F7, #22D3EE)`. Aparece en un único elemento: la línea vertical que recorre la página y se va "llenando" con el scroll, como el recorrido de una pieza. Si el degradado aparece en otro lado, está mal usado.
+- **Success / Danger:** verde y rojo suaves solo para estados y comparaciones de datos.
 
 ## Typography
 
@@ -220,19 +220,21 @@ Paneles con 20px de radio, elementos internos con 12px, chips de estado con 4px.
 - **Botón primario:** píldora azul `primary` con texto blanco. Hover: `primary-hover` más una flecha que se desplaza 3px. Presionado: `scale(0.98)`. Foco: anillo de 2px en `accent-text` con 3px de separación.
 - **Botón inverso:** píldora blanca con texto negro, para el CTA de WhatsApp en el hero.
 - **Panel:** `surface-1`, borde hairline, radio lg. Se ilumina el borde bajo el cursor (spotlight) solo en desktop.
-- **Burbujas:** entrante en `surface-3`, respuesta de la IA en `primary`. Hora en mono debajo.
+- **Panel de reporte (hero):** tabla tipo Administrador de Anuncios, una fila por pieza (formato, conversaciones, costo por conversación, estado). Siempre rotulada como ejemplo mientras no haya datos reales.
+- **Marcos de formato:** 9:16 (reel), 4:5 (carrusel), 1:1 (estática), radio 12px. Sin pieza real, borde punteado y rótulo mono "pieza pendiente".
+- **Burbujas del bot:** entrante en `surface-3`, respuesta en `primary`. Hora en mono debajo.
 - **Chip live:** cyan con texto negro, mono, radio xs, con punto pulsante (se desactiva con reduced motion).
 - **Sin etiquetas sobre los titulares:** ni eyebrows ni números de sección. El titular se sostiene solo; la mono se reserva para datos (horas, precios, estados, orden de etapas).
 - **Métrica:** Inter 600 grande con cifras tabulares y etiqueta mono debajo.
 
 ## Do's and Don'ts
 
-- Hacé que cada sección muestre una parte real del mecanismo (conversación, tabla, trace).
+- Hacé que cada sección muestre una parte real del mecanismo (reporte, comparación, recorrido, piezas).
 - Usá cyan solo cuando algo esté pasando en vivo.
 - Escribí con datos concretos y con los casos reales que existen.
 - No uses el degradado como fondo, en textos ni en botones.
 - No uses fotos de stock de oficinas ni equipos.
 - No repitas grillas de cards iguales; si hay pasos, van en diagrama.
 - No uses popups al entrar a la página.
-- No animes la entrada de cada sección. Los momentos en movimiento son la conversación del hero, la tubería, el registro de la fuga y el recorrido del diagrama.
+- No animes la entrada de cada sección. Los momentos en movimiento son el reporte del hero (números que suben), la tubería, la tabla comparativa y el recorrido del diagrama.
 - No uses emojis como íconos.

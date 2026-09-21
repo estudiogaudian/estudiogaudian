@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="wrap grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Link to="/" className="font-sans text-[19px] font-semibold tracking-[0.14em] text-fg">GAUDIAN</Link>
-          <p className="t-body mt-4 max-w-[34ch]">Estudio de marketing, IA y automatización. Anuncios que traen consultas y una IA que las atiende.</p>
+          <p className="t-body mt-4 max-w-[34ch]">Especialistas en Meta Ads. Hacemos el contenido de tu marca y lo pautamos en Facebook e Instagram.</p>
         </div>
 
         <nav aria-label="Pie de página">
