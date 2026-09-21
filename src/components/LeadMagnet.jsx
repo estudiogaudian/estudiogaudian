@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { useRegion } from "../context/RegionContext";
 import Reveal from "./motion/Reveal";
 
@@ -29,7 +29,7 @@ export default function LeadMagnet() {
         body: JSON.stringify({
           email,
           _gotcha: hp,
-          _subject: "Nueva descarga del Lead Magnet — GAUDIAN",
+          _subject: "Nueva descarga — Guía de Automatización GAUDIAN",
           source: "lead-magnet",
           region: region.code,
         }),
@@ -48,19 +48,19 @@ export default function LeadMagnet() {
       <div
         aria-hidden
         className="absolute inset-0 opacity-[0.05]"
-        style={{ background: "linear-gradient(135deg, transparent 0%, #b8a882 50%, transparent 100%)" }}
+        style={{ background: "linear-gradient(135deg, transparent 0%, #3B82F6 50%, transparent 100%)" }}
       />
       <div className="container-x relative grid lg:grid-cols-12 gap-10 items-center">
         <Reveal className="lg:col-span-7">
           <div className="s-label">Recurso gratuito</div>
-          <h2 className="font-display text-cream" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", lineHeight: 0.9, letterSpacing: "0.03em" }}>
-            12 errores que matan
+          <h2 className="font-display text-cream" style={{ fontSize: "clamp(2rem, 4vw, 3.6rem)", lineHeight: 1.02, letterSpacing: "-0.02em" }}>
+            Dónde sería útil
           </h2>
-          <p className="font-serif italic text-gold mt-2" style={{ fontSize: "clamp(1.4rem, 3vw, 2.4rem)", fontWeight: 300, letterSpacing: "0.05em" }}>
-            tu Instagram en {region.code === "py" ? "Paraguay" : region.code === "global" ? "tu mercado" : "Formosa o Paraguay"}.
+          <p className="italic-serif mt-2" style={{ fontSize: "clamp(1.6rem, 3.4vw, 2.8rem)", fontWeight: 600, letterSpacing: "-0.01em" }}>
+            automatizar tu negocio.
           </p>
           <p className="mt-6 text-warm leading-[1.7] max-w-xl font-light" style={{ fontSize: "1rem" }}>
-            Una guía editorial de 6 páginas con los errores que cometen el 90% de las marcas locales y cómo corregirlos esta semana.
+            Una guía práctica para detectar los procesos que hoy te consumen tiempo — mensajes, consultas, seguimiento de leads — y que podrían funcionar solos con IA y automatización.
           </p>
         </Reveal>
 
@@ -94,7 +94,7 @@ export default function LeadMagnet() {
                 </button>
                 {error && <p className="text-red-400 font-light" style={{ fontSize: "11px" }}>{error}</p>}
                 <p className="text-muted font-light leading-[1.6]" style={{ fontSize: "10px" }}>
-                  Sin spam. Te enviamos el PDF y, ocasionalmente, contenido editorial sobre marca y conversión.
+                  Sin spam. Te enviamos la guía y, ocasionalmente, contenido sobre IA y automatización para negocios.
                 </p>
               </form>
             ) : (

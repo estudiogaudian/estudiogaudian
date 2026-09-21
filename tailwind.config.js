@@ -4,30 +4,36 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Paleta cálida editorial (de la original)
-        ink: "#0c0c0b",
-        graphite: "#111110",
-        graphite2: "#161614",
-        cream: "#ede9e0",
-        warm: "#c8c2b4",
-        muted: "#7a7670",
-        gold: "#b8a882",
-        "gold-deep": "#a8956d",
+        // GAUDIAN 2.0 — Marketing · AI · Automation (brand guide 2026)
+        // Se conservan los NOMBRES de tokens 1.0 remapeados a la nueva paleta
+        // para que todos los componentes existentes se rebrandeen sin tocarlos.
+        ink: "#050505", // negro principal
+        graphite: "#0B0B10",
+        graphite2: "#10101a",
+        cream: "#F4F6FB", // texto principal (blanco frío)
+        warm: "#B9C2d4", // texto secundario
+        muted: "#7d8598", // texto apagado
+        gold: "#3B82F6", // acento principal → AZUL IA
+        "gold-deep": "#2563EB",
+        // Nuevos tokens 2.0
+        "ai-blue": "#3B82F6",
+        "ai-violet": "#A855F7",
+        "ai-cyan": "#22D3EE",
         // Aliases retro-compatibles
-        bone: "#ede9e0",
-        paper: "#ede9e0",
-        smoke: "#7a7670",
-        ash: "#7a7670",
-        "gold-soft": "#c8c2b4",
+        bone: "#F4F6FB",
+        paper: "#F4F6FB",
+        smoke: "#7d8598",
+        ash: "#7d8598",
+        "gold-soft": "#B9C2D4",
         // bordes
-        "border-soft": "rgba(237,233,224,0.10)",
-        "border-mid": "rgba(237,233,224,0.22)",
+        "border-soft": "rgba(244,246,251,0.10)",
+        "border-mid": "rgba(244,246,251,0.22)",
       },
       fontFamily: {
-        display: ['"Bebas Neue"', "system-ui", "sans-serif"],
-        serif: ['"Cormorant Garamond"', "Georgia", "serif"],
-        sans: ['"DM Sans"', "Inter", "system-ui", "sans-serif"],
-        mono: ['"DM Sans"', "system-ui", "monospace"],
+        display: ['"Inter"', "system-ui", "sans-serif"],
+        serif: ['"Inter"', "system-ui", "sans-serif"],
+        sans: ['"Inter"', "system-ui", "sans-serif"],
+        mono: ['"Inter"', "system-ui", "monospace"],
       },
       letterSpacing: {
         brand: "0.18em",
@@ -35,6 +41,9 @@ export default {
       },
       maxWidth: {
         prose: "65ch",
+      },
+      backgroundImage: {
+        "gradient-brand": "linear-gradient(90deg, #3B82F6 0%, #A855F7 50%, #22D3EE 100%)",
       },
       animation: {
         "fade-up": "fadeUp 0.7s ease-out both",

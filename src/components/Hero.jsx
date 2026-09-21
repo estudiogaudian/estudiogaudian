@@ -36,7 +36,7 @@ export default function Hero() {
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, rgba(12,12,11,.1) 0%, rgba(12,12,11,.55) 60%, rgba(12,12,11,1) 100%)" }}
+        style={{ background: "linear-gradient(to bottom, rgba(5,5,5,.1) 0%, rgba(5,5,5,.55) 60%, rgba(5,5,5,1) 100%)" }}
       />
 
       {/* Contenido editorial */}
@@ -63,7 +63,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-cream"
-          style={{ fontSize: "clamp(6rem, 18vw, 16rem)", lineHeight: 0.85, letterSpacing: "0.025em", marginBottom: "0.4rem" }}
+          style={{ fontSize: "clamp(4.2rem, 13vw, 11rem)", lineHeight: 0.95, letterSpacing: "-0.03em", fontWeight: 800, marginBottom: "0.4rem" }}
         >
           GAUDIAN
         </motion.h1>
@@ -72,10 +72,10 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.5 }}
-          className="font-serif italic text-warm"
-          style={{ fontSize: "clamp(1.1rem, 2.2vw, 1.5rem)", fontWeight: 300, letterSpacing: "0.12em", marginBottom: "3.5rem" }}
+          className="italic-serif"
+          style={{ fontSize: "clamp(1.1rem, 2.2vw, 1.5rem)", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "3.5rem" }}
         >
-          Estudio boutique de comunicación
+          Marketing · AI · Automation
         </motion.p>
 
         <motion.div
@@ -106,7 +106,7 @@ export default function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 text-muted z-10 pointer-events-none animate-scroll-pulse"
         style={{ fontSize: "9px", letterSpacing: "0.2em", textTransform: "uppercase" }}
       >
-        <div className="w-px h-[52px]" style={{ background: "linear-gradient(to bottom, #7a7670, transparent)" }} />
+        <div className="w-px h-[52px]" style={{ background: "linear-gradient(to bottom, #7d8598, transparent)" }} />
         <span>Scroll</span>
       </motion.div>
 
@@ -114,14 +114,14 @@ export default function Hero() {
       <div className="relative z-10 border-t border-b border-border-soft py-[1.1rem] overflow-hidden bg-ink">
         <Marquee
           items={[
-            "Branding · Estrategia",
-            "Diseño Web Premium",
+            "Marketing Performance",
+            "Meta · TikTok · Google Ads",
+            "Chatbots con IA",
+            "Automatización de ventas",
+            "Calificación de leads",
             "Gestión de Redes",
-            "Meta Ads",
-            "Reels & Contenido",
-            "SEO Local",
-            "Imagen que convierte",
-            "Clorinda · Asunción",
+            "Más clientes · Menos trabajo manual",
+            "Asunción · Clorinda",
           ]}
           speed={36}
           gap={56}

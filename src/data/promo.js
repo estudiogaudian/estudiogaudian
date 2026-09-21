@@ -1,10 +1,10 @@
-// Datos de la landing /promo — tráfico de Meta Ads / Google Ads.
+﻿// Datos de la landing /promo — tráfico de Meta Ads / Google Ads.
 // Precios coherentes con análisis financiero (TC mayo 2026, USD/ARS 1.250, USD/PYG 7.300).
 
 export const PROMO_TOPBAR = "Cupos limitados de mayo · Tomamos 4 marcas nuevas por mes";
 
 export const PROMO_HERO = {
-  eyebrow: "Estudio boutique · Meta Ads",
+  eyebrow: "Marketing Performance · Meta Ads",
   h1Line1: "Más clientes.",
   h1Line2: "Menos ruido.",
   sub: "Estrategia publicitaria, dirección de arte y gestión de Meta Ads para marcas premium en Argentina y Paraguay. Sin permanencia obligatoria. Sin promesas vacías.",

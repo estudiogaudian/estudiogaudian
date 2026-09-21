@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { brand, waLink } from "../data/site";
 import Reveal from "../components/motion/Reveal";
@@ -46,7 +46,7 @@ export default function Portfolio() {
   return (
     <>
       <SEOHead
-        title="Portfolio · GAUDIAN — Estudio boutique de comunicación"
+        title="Portfolio · GAUDIAN — Marketing · AI · Automation"
         description="Portfolio editorial de GAUDIAN. Identidad corporativa, branding, diseño gráfico y marketing digital para marcas en Argentina y Paraguay."
         canonical="https://estudiogaudian.com/portfolio"
         region={region}

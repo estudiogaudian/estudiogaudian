@@ -1,4 +1,4 @@
-import { brand, waLink } from "../data/site";
+﻿import { brand, waLink } from "../data/site";
 import { useRegion } from "../context/RegionContext";
 import Planes from "../components/Planes";
 import LeadMagnet from "../components/LeadMagnet";
@@ -13,7 +13,7 @@ const HEADER_IMG = "https://images.unsplash.com/photo-1497366754035-f200968a6e72
 
 export default function LandingServicio({ servicio, ciudad, intro, beneficios, eyebrow, slug }) {
   const { region } = useRegion();
-  const meta = `${servicio} en ${ciudad} · GAUDIAN — Estudio boutique de comunicación, diseño y publicidad.`;
+  const meta = `${servicio} en ${ciudad} · GAUDIAN — Marketing · AI · Automation, diseño y publicidad.`;
 
   return (
     <>
@@ -73,7 +73,7 @@ export default function LandingServicio({ servicio, ciudad, intro, beneficios, e
           <Reveal delay={0.1}>
             <h2 className="s-h2">
               Para marcas<br/>
-              <span className="italic-serif" style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic" }}>en {ciudad}.</span>
+              <span className="italic-serif" style={{ fontWeight: 600 }}>en {ciudad}.</span>
             </h2>
           </Reveal>
 
@@ -81,7 +81,7 @@ export default function LandingServicio({ servicio, ciudad, intro, beneficios, e
             {beneficios.map((b, i) => (
               <RevealItem key={b.titulo}>
                 <motion.article
-                  whileHover={{ backgroundColor: "#0c0c0b" }}
+                  whileHover={{ backgroundColor: "#050505" }}
                   className="bg-graphite p-10 h-full transition-colors"
                 >
                   <div className="font-display text-gold mb-5" style={{ fontSize: "2rem", letterSpacing: "0.04em" }}>

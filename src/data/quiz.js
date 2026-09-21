@@ -1,4 +1,4 @@
-// Quiz de cotización personalizada — 8 pasos
+﻿// Quiz de cotización personalizada — 8 pasos
 // Cada paso tiene: id, tipo, pregunta, opciones (opcional), required
 
 export const QUIZ_STEPS = [
@@ -151,7 +151,7 @@ export const PLAN_DETAILS = {
   esencial: {
     nombre: "Esencial",
     para: "Para empezar con dirección.",
-    descripcion: "Plan boutique de entrada. Perfecto si recién consolidás tu presencia digital o necesitás un piso de calidad sostenible.",
+    descripcion: "Plan de entrada. Perfecto si recién consolidás tu presencia digital o necesitás un piso de calidad sostenible.",
     incluye: [
       "Dirección de marca aplicada a piezas mensuales",
       "8 piezas mensuales para redes sociales",

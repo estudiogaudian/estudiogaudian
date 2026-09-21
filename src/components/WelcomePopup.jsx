@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useRegion } from "../context/RegionContext";
@@ -131,7 +131,7 @@ export default function WelcomePopup() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.15 + i * 0.08, duration: 0.5 }}
-                    whileHover={{ backgroundColor: "#0c0c0b" }}
+                    whileHover={{ backgroundColor: "#050505" }}
                     onClick={() => choose(o.code)}
                     className="bg-graphite p-5 text-left transition-colors group"
                   >

@@ -1,4 +1,4 @@
-// Configuración de landings geo-servicio.
+﻿// Configuración de landings geo-servicio.
 // Cada landing combina servicio + ciudad para SEO local específico.
 
 export const LANDINGS = {
@@ -22,7 +22,7 @@ export const LANDINGS = {
     ciudad: "Asunción",
     eyebrow: "Diseño Web · Asunción · Paraguay",
     intro:
-      "Sitios web boutique para marcas premium paraguayas. Branding, performance y campañas Meta integradas. Operamos 100% remoto desde Argentina con agenda paraguaya.",
+      "Webs de conversión para negocios paraguayos. Performance, automatización IA y campañas Meta integradas. Operamos 100% remoto desde Argentina con agenda paraguaya.",
     beneficios: [
       { titulo: "Estética premium internacional", desc: "Diseño editorial al nivel de estudios de Buenos Aires o São Paulo, con sensibilidad para el mercado paraguayo." },
       { titulo: "SEO local Paraguay", desc: "Optimización para búsquedas en .py, schema LocalBusiness y posicionamiento en Google Paraguay." },

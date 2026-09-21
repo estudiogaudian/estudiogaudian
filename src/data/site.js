@@ -1,9 +1,10 @@
 // Datos centralizados de la marca y contenido. Editar aquí actualiza toda la web.
+// GAUDIAN 2.0 — Marketing · AI · Automation (brand guide 2026)
 
 export const brand = {
   name: "GAUDIAN",
-  tagline: "Estudio boutique de comunicación",
-  claim: "Imagen que convierte.",
+  tagline: "Marketing · AI · Automation",
+  claim: "Transformamos negocios mediante Marketing, Inteligencia Artificial y Automatización.",
   phone: "+543178615261",
   phoneDisplay: "+54 3718 615261",
   whatsapp: "543178615261",
@@ -12,11 +13,11 @@ export const brand = {
   instagram: "https://www.instagram.com/estudiogaudian/",
   url: "https://estudiogaudian.com",
   hours: "Solo con cita previa",
-  locations: ["Clorinda · Formosa, Argentina", "Asunción, Paraguay"],
+  locations: ["Asunción, Paraguay", "Clorinda · Formosa, Argentina"],
 };
 
 export const waMessage = encodeURIComponent(
-  "Hola Franco, vi la web de GAUDIAN y quiero coordinar una reunión."
+  "Hola Franco, vi la web de GAUDIAN y quiero una Auditoría de Fuga de Ventas gratuita."
 );
 export const waLink = `https://wa.me/${brand.whatsapp}?text=${waMessage}`;
 
@@ -32,38 +33,46 @@ export const nav = [
 export const servicios = [
   {
     n: "01",
-    titulo: "Branding & Identidad",
-    desc: "Sistemas de marca completos: estrategia, naming, logotipo, paleta, tipografía y manual de uso. Diseñados para construir autoridad.",
-    items: ["Estrategia de marca", "Sistema de logotipo", "Brand guide editorial"],
+    titulo: "Marketing Performance",
+    desc: "Campañas de Meta Ads, TikTok Ads y Google Ads que generan clientes medibles, no likes. Embudos, creativos y optimización semanal con reporting claro.",
+    items: ["Meta Ads (IG/FB)", "TikTok & Google Ads", "Embudos + tracking + reporting"],
   },
   {
     n: "02",
-    titulo: "Diseño Web Premium",
-    desc: "Sitios y landings con foco en conversión, performance y SEO técnico. Velocidad, claridad y narrativa visual.",
-    items: ["Web institucional", "Landing pages", "E-commerce boutique"],
+    titulo: "Automatización con IA",
+    desc: "Sistemas inteligentes que atienden tu WhatsApp 24/7: responden consultas, califican leads y agendan citas mientras vos te ocupás del negocio.",
+    items: ["Chatbots IA para WhatsApp", "Calificadores de leads", "CRM y flujos automatizados"],
   },
   {
     n: "03",
-    titulo: "Contenido para Redes",
-    desc: "Sistemas de contenido coherentes para Instagram y LinkedIn. Reels, carruseles y piezas que sostienen la percepción premium.",
-    items: ["Calendario editorial", "Reels & carruseles", "Dirección visual"],
+    titulo: "Gestión de Redes Sociales",
+    desc: "Contenido estratégico con dirección de arte propia. Reels, carruseles y calendario editorial que sostienen tu autoridad mientras el sistema vende.",
+    items: ["Calendario editorial", "Reels & carruseles", "Community management"],
   },
   {
     n: "04",
-    titulo: "Performance & Ads",
-    desc: "Campañas Meta y Google con creatividad de marca y métricas claras. Inversión que se mide.",
-    items: ["Meta Ads (FB/IG)", "Google Ads & SEM", "Reporting mensual"],
+    titulo: "Sistema de Clientes",
+    desc: "El producto insignia: pauta que trae leads calificados + IA que los atiende y agenda. El circuito completo de captación funcionando solo.",
+    items: ["Performance + IA integrados", "Dashboard de resultados en vivo", "Garantía de leads a 90 días"],
   },
 ];
 
 export const proceso = [
-  { n: "01", titulo: "Diagnóstico", desc: "Auditamos tu marca, tu mercado y tu competencia. Definimos qué falta para que vendas más." },
-  { n: "02", titulo: "Estrategia", desc: "Posicionamiento, mensajes clave y plan visual. Una hoja de ruta clara, no un PDF de 40 páginas." },
-  { n: "03", titulo: "Ejecución", desc: "Producimos identidad, web y contenido con dirección de arte propia. Sin amateurismos." },
-  { n: "04", titulo: "Crecimiento", desc: "Activamos contenido y campañas. Reportamos resultados con métricas reales cada mes." },
+  { n: "01", titulo: "Auditoría", desc: "Detectamos dónde tu negocio pierde ventas: tu pauta, tu perfil y tu WhatsApp. Diagnóstico gratuito y sin compromiso." },
+  { n: "02", titulo: "Estrategia", desc: "Diseñamos tu sistema de crecimiento: qué campañas, qué automatizaciones y qué contenido. Una hoja de ruta clara." },
+  { n: "03", titulo: "Implementación", desc: "Montamos campañas, bots e integraciones. Todo probado y funcionando antes de escalar la inversión." },
+  { n: "04", titulo: "Optimización", desc: "Medimos, testeamos y mejoramos cada semana. Reportamos con métricas reales: leads, costo por lead y retorno." },
 ];
 
 export const casos = [
+  {
+    cliente: "Robson Peluquero",
+    rubro: "Peluquería premium · Paraguay",
+    metrica: "24/7",
+    metricaLabel: "atención automática en WhatsApp",
+    resumen: "Bot de ventas con IA que responde consultas, informa servicios y agenda clientes mientras el equipo trabaja. Implementado sobre WhatsApp con inteligencia artificial entrenada con el negocio.",
+    real: true,
+  },
   {
     cliente: "Silvia Moreira",
     rubro: "Productora de Seguros · Clorinda",
@@ -73,75 +82,68 @@ export const casos = [
     real: true,
   },
   {
-    cliente: "Estudio Vértice",
-    rubro: "Arquitectura · Asunción",
-    metrica: "x3",
-    metricaLabel: "leads cualificados",
-    resumen: "Dirección de marca y nueva web institucional. Lanzamiento acompañado de Reels editoriales y campaña Meta segmentada a alto poder adquisitivo.",
-    real: false,
-  },
-  {
-    cliente: "Marengo Automotores",
-    rubro: "Concesionaria · Formosa",
-    metrica: "+62%",
-    metricaLabel: "consultas WhatsApp",
-    resumen: "Identidad refinada, plantillas de contenido y campaña permanente de unidades nuevas. Posicionamiento como concesionaria premium del NEA.",
+    cliente: "Clínica Estética Aura",
+    rubro: "Estética & Salud · Asunción",
+    metrica: "-40%",
+    metricaLabel: "costo por lead calificado",
+    resumen: "Sistema de Clientes completo: campañas Meta Ads con creativos propios + calificador de leads con IA en WhatsApp. Los curiosos se filtran solos y la agenda se llena con pacientes listos para reservar.",
     real: false,
   },
 ];
 
 export const planes = [
   {
-    nombre: "Esencial",
-    precio: "$370.000",
+    nombre: "Redes Esencial",
+    precio: "USD 250",
     periodo: "/mes",
-    para: "Marcas que recién consolidan su presencia digital.",
+    para: "Negocios que necesitan presencia profesional constante en redes.",
     incluye: [
-      "8 piezas mensuales para redes",
-      "1 reel editorial / mes",
-      "Calendario de publicaciones",
-      "Reporting mensual básico",
+      "8 posts + 4 reels editados por mes",
+      "Calendario editorial y copies",
+      "Gestión de comunidad básica",
+      "Reporte mensual",
       "Atención por WhatsApp en horario comercial",
     ],
-    cta: "Comenzar Esencial",
+    cta: "Comenzar con Redes",
     destacado: false,
   },
   {
-    nombre: "Autoridad",
-    precio: "$590.000",
+    nombre: "Sistema de Clientes",
+    precio: "USD 650",
     periodo: "/mes",
-    para: "Marcas que necesitan posicionamiento premium y crecer en conversiones.",
+    para: "Negocios que quieren leads calificados llegando a su WhatsApp todos los días.",
     incluye: [
-      "16 piezas mensuales premium",
-      "3 reels editoriales / mes",
-      "Gestión de comunidad",
-      "Campaña Meta Ads (gestión + creatividad)",
-      "Reporting mensual con métricas y recomendaciones",
-      "Reunión estratégica trimestral",
+      "Campañas Meta Ads gestionadas por especialista",
+      "Calificador de leads con IA en WhatsApp 24/7",
+      "Creativos de anuncio profesionales",
+      "Dashboard de resultados en vivo",
+      "Auditoría inicial de embudo incluida",
+      "Garantía: leads medibles en 90 días o seguimos sin honorario",
     ],
-    cta: "Quiero Autoridad",
+    cta: "Quiero el Sistema",
     destacado: true,
-    badge: "Más elegido",
+    badge: "Producto estrella",
   },
   {
-    nombre: "Imperio",
-    precio: "$890.000",
+    nombre: "Máquina de Crecimiento",
+    precio: "USD 1.200",
     periodo: "/mes",
-    para: "Marcas que ya facturan y quieren liderar su categoría.",
+    para: "Negocios que ya facturan y quieren dominar su categoría.",
     incluye: [
-      "24 piezas mensuales premium",
-      "5 reels editoriales / mes",
-      "Producción fotográfica trimestral",
-      "Campañas Meta + Google Ads",
-      "Dirección de marca permanente",
-      "Acceso directo al equipo (Slack/WhatsApp)",
+      "Performance Full: Meta + TikTok + Google Ads",
+      "Chatbot IA + CRM automatizado",
+      "Redes Esencial incluido",
+      "Landing de conversión + tracking completo",
+      "Testing creativo continuo",
+      "Acceso directo a Franco (WhatsApp prioritario)",
     ],
-    cta: "Construir Imperio",
+    cta: "Escalar mi negocio",
     destacado: false,
   },
 ];
 
-export const planesNota = "Permanencia mínima 6 meses. Inversión publicitaria no incluida.";
+export const planesNota =
+  "Precios en USD, pago mensual adelantado vía dLocal Go (tarjetas, transferencia, billeteras). Fee de implementación equivalente a un mes, junto al inicio. Inversión publicitaria no incluida. Solo 3 implementaciones nuevas por mes.";
 
 export const testimonios = [
   {
@@ -150,40 +152,40 @@ export const testimonios = [
     quote: "Pasamos de un Instagram sin identidad a uno que la gente recuerda. Las consultas por WhatsApp aumentaron un 48% el primer mes.",
   },
   {
-    nombre: "Carlos Ibáñez",
-    cargo: "Director · Estudio Vértice (Asunción)",
-    quote: "GAUDIAN entendió la categoría premium en la que jugamos. La nueva imagen nos abrió puertas que antes tocábamos sin que nos atiendan.",
+    nombre: "Robson",
+    cargo: "Robson Peluquero · Paraguay",
+    quote: "El bot atiende, informa y agenda solo. Antes perdíamos mensajes todos los días; ahora ningún cliente queda sin respuesta, ni a las 2 de la mañana.",
   },
   {
-    nombre: "M. Marengo",
-    cargo: "Concesionaria · Formosa",
-    quote: "Profesionalismo y resultados. Cada pieza comunica lo que necesitamos y la inversión publicitaria está justificada con datos.",
+    nombre: "Dra. Alonso",
+    cargo: "Clínica Estética · Asunción",
+    quote: "Antes la secretaria respondía cuando podía y perdíamos consultas. Ahora la IA filtra, informa y agenda; nosotros solo atendemos pacientes confirmados.",
   },
 ];
 
 export const faqs = [
   {
-    q: "¿Por qué la permanencia mínima es de 6 meses?",
-    a: "Porque construir percepción de marca y obtener resultados sostenibles requiere consistencia. En menos de 6 meses no podemos garantizar el nivel de calidad y posicionamiento que prometemos.",
+    q: "¿Qué es exactamente el Sistema de Clientes?",
+    a: "Es la combinación de campañas de pauta (Meta Ads) que atraen personas interesadas + una IA en tu WhatsApp que las atiende, filtra a los curiosos y te entrega leads listos para cerrar. Vos ves todo en un dashboard en vivo.",
   },
   {
-    q: "¿Trabajan con marcas fuera de Clorinda y Asunción?",
-    a: "Sí. Operamos 100% remoto con clientes en toda Argentina y Paraguay. Las reuniones se coordinan vía Calendly y la entrega es por canales digitales seguros.",
+    q: "¿La IA de verdad puede atender a mis clientes?",
+    a: "Sí. La entrenamos con la información real de tu negocio: servicios, precios, horarios y las preguntas que tus clientes hacen todos los días. Responde 24/7 y deriva a un humano cuando la consulta lo amerita. Pedinos una demo con tu propio negocio.",
+  },
+  {
+    q: "¿Por qué hay permanencia mínima?",
+    a: "Porque los sistemas de crecimiento necesitan tiempo para optimizarse: las campañas aprenden, la IA se ajusta y los resultados compuestos llegan con consistencia. Planes de entrada: 6 meses. Planes completos: 12 meses.",
   },
   {
     q: "¿La inversión publicitaria está incluida en el plan?",
-    a: "No. El plan cubre la gestión, creatividad y reporting. La inversión en Meta o Google Ads se acuerda por separado según objetivos y mercado.",
+    a: "No. El plan cubre estrategia, gestión, creatividad, automatización y reporting. La inversión en Meta, TikTok o Google se paga directo desde tu cuenta publicitaria — la plata de pauta siempre es tuya y la ves vos.",
   },
   {
-    q: "¿Qué necesitan de mí para empezar?",
-    a: "Una reunión inicial de 30 minutos (gratuita) por Calendly. Luego coordinamos un onboarding donde definimos accesos, tono y prioridades.",
+    q: "¿Cómo se paga desde Paraguay?",
+    a: "Por dLocal Go: tarjetas (Visa/Mastercard/Bancard), transferencia bancaria paraguaya, billeteras (Tigo Money, Zimple, Billetera Personal) o efectivo en puntos habilitados. Precios en USD, con factura de exportación de servicios.",
   },
   {
-    q: "¿Producen el contenido o lo tengo que hacer yo?",
-    a: "Lo producimos nosotros. En el plan Imperio incluso coordinamos producciones fotográficas trimestrales. Vos aportás materia prima estratégica; nosotros la transformamos en marca.",
-  },
-  {
-    q: "¿Puedo cambiar de plan más adelante?",
-    a: "Sí. Podés escalar a un plan superior en cualquier momento. Para bajar de plan o cancelar, se aplica el período de permanencia acordado.",
+    q: "¿Qué necesito para empezar?",
+    a: "Una Auditoría de Fuga de Ventas gratuita de 30 minutos. Te mostramos dónde estás perdiendo ventas hoy y qué sistema conviene. Te llevás el diagnóstico aunque no trabajemos juntos.",
   },
 ];

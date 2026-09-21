@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 
 const FORMSPREE_ID = "xykvbbga";
 
@@ -92,7 +92,7 @@ function PackCard({ value, name, price, desc, selected, onClick }) {
       <p className="text-[11px] text-muted leading-tight">{desc}</p>
       {selected && (
         <div className="w-4 h-4 rounded-full bg-gold mx-auto mt-3 flex items-center justify-center">
-          <svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 3L3 5L7 1" stroke="#0c0c0b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <svg width="8" height="6" viewBox="0 0 8 6" fill="none"><path d="M1 3L3 5L7 1" stroke="#050505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
       )}
     </label>
@@ -152,7 +152,7 @@ export default function Onboarding() {
       <div className="min-h-screen bg-ink flex items-center justify-center px-6">
         <div className="text-center max-w-md">
           <div className="w-14 h-14 rounded-full border border-gold mx-auto mb-6 flex items-center justify-center">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b8a882" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </div>

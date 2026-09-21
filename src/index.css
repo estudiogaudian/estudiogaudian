@@ -12,8 +12,8 @@
     overflow-x: hidden;
     font-weight: 300;
   }
-  h1, h2, h3, h4 { @apply font-display; font-weight: 400; }
-  ::selection { @apply bg-gold/40 text-ink; }
+  h1, h2, h3, h4 { @apply font-display; font-weight: 700; letter-spacing: -0.02em; }
+  ::selection { @apply bg-gold/40 text-cream; }
 
   /* Grain noise global - feel celuloide */
   body::before {
@@ -32,9 +32,9 @@
 
   /* Scrollbar custom */
   ::-webkit-scrollbar { width: 8px; height: 8px; }
-  ::-webkit-scrollbar-track { background: #0c0c0b; }
-  ::-webkit-scrollbar-thumb { background: rgba(237,233,224,0.15); }
-  ::-webkit-scrollbar-thumb:hover { background: #b8a882; }
+  ::-webkit-scrollbar-track { background: #050505; }
+  ::-webkit-scrollbar-thumb { background: rgba(244,246,251,0.15); }
+  ::-webkit-scrollbar-thumb:hover { background: #3B82F6; }
 
   @media (pointer: fine) {
     a, button, [data-cursor='hover'] { cursor: pointer; }
@@ -63,29 +63,38 @@
     @apply w-[18px] h-px bg-muted;
   }
 
-  /* Titulares Bebas Neue gigantes editorial */
+  /* Titulares Inter bold — GAUDIAN 2.0 */
   .s-h2 {
     @apply font-display text-cream;
-    font-size: clamp(3rem, 7vw, 6.5rem);
-    line-height: 0.88;
-    letter-spacing: 0.03em;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 6vw, 5.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
   }
   .s-h2-serif {
-    @apply font-serif font-light text-cream;
-    font-size: clamp(2.5rem, 5.5vw, 5rem);
-    line-height: 1.05;
+    @apply font-serif text-cream;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 4.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
   }
 
   .h-display {
     @apply font-display text-cream;
-    font-weight: 400;
-    line-height: 0.88;
-    letter-spacing: 0.03em;
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
   }
 
+  /* Palabra destacada: gradiente oficial azul→violeta→cyan */
   .italic-serif {
-    @apply font-serif italic text-gold;
-    font-weight: 300;
+    @apply font-serif;
+    font-weight: 600;
+    font-style: normal;
+    background: linear-gradient(90deg, #3B82F6 0%, #A855F7 55%, #22D3EE 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   /* Botones editorial finos */
@@ -115,7 +124,7 @@
   .btn-o:hover { border-color: #ede9e0; background: rgba(237,233,224,0.06); }
 
   .btn-gold {
-    @apply inline-flex items-center justify-center gap-2.5 bg-gold text-ink font-sans uppercase whitespace-nowrap;
+    @apply inline-flex items-center justify-center gap-2.5 bg-gold text-white font-sans uppercase whitespace-nowrap;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.13em;
@@ -134,7 +143,8 @@
     @apply bg-graphite border border-border-soft p-8 transition-all duration-300;
   }
   .card:hover {
-    background: #161614;
+    background: #10101a;
+    border-color: rgba(59,130,246,0.35);
   }
 
   .rule { @apply h-px w-full bg-border-soft; }

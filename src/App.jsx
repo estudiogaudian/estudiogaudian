@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import LandingServicio from "./pages/LandingServicio";
 import Portfolio from "./pages/Portfolio";
 import Promo from "./pages/Promo";
+import PromoParaguay from "./pages/PromoParaguay";
 import Cotizar from "./pages/Cotizar";
 import Terminos from "./pages/Terminos";
 import Privacidad from "./pages/Privacidad";
@@ -105,6 +106,17 @@ export default function App() {
               <ScrollProgress />
               <CursorFollower />
               <PageWrapper><Promo /></PageWrapper>
+            </RegionProvider>
+          }
+        />
+        {/* Lanzamiento Paraguay: landing standalone para ads, sin nav/footer/popups globales */}
+        <Route
+          path="/paraguay"
+          element={
+            <RegionProvider fixed="py">
+              <ScrollProgress />
+              <CursorFollower />
+              <PageWrapper><PromoParaguay /></PageWrapper>
             </RegionProvider>
           }
         />

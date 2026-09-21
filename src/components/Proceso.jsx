@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { proceso } from "../data/site";
 import Reveal, { RevealStagger, RevealItem } from "./motion/Reveal";
+import DrawLine from "./motion/DrawLine";
 
 export default function Proceso() {
   return (
@@ -12,6 +13,7 @@ export default function Proceso() {
         <Reveal delay={0.1}>
           <h2 className="s-h2">Cómo<br/>trabajamos</h2>
         </Reveal>
+        <DrawLine className="mt-6 max-w-[120px]" delay={0.3} />
         <Reveal delay={0.2}>
           <p className="font-serif italic text-warm font-light my-10 max-w-[600px]" style={{ fontSize: "clamp(1.3rem, 2.4vw, 1.8rem)", lineHeight: 1.55 }}>
             Cuatro pasos. Sin improvisaciones.

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { brand, nav, waLink } from "../data/site";
 import { useRegion } from "../context/RegionContext";
@@ -32,7 +32,7 @@ export default function Nav() {
           </span>
           <span className="w-px h-5 bg-border-mid" />
           <span className="hidden md:inline font-sans text-muted uppercase whitespace-nowrap" style={{ fontSize: "9px", fontWeight: 300, letterSpacing: "0.2em" }}>
-            Estudio boutique de comunicación
+            Marketing · AI · Automation
           </span>
         </Link>
 

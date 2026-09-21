@@ -1,11 +1,11 @@
-// Contenido legal aprobado del sitio original.
+﻿// Contenido legal aprobado del sitio original.
 
 export const TERMINOS_META = {
   responsable: "Franco Gaudino",
   cuil: "20-40486958-3",
-  comercial: "Agencia Gaudian",
+  comercial: "GAUDIAN — Marketing · AI · Automation",
   email: "lic.gaudinofranco@gmail.com",
-  actualizado: "Mayo 2026",
+  actualizado: "Julio 2026",
 };
 
 export const TERMINOS_SECTIONS = [
@@ -14,7 +14,7 @@ export const TERMINOS_SECTIONS = [
     n: "01",
     titulo: "Información del prestador",
     body: [
-      { type: "p", text: "El presente sitio web y los servicios ofrecidos en él son prestados por <strong>Franco Gaudino</strong> (CUIL 20-40486958-3), actuando bajo el nombre comercial <strong>Agencia Gaudian</strong>, con base operativa en la ciudad de Clorinda, provincia de Formosa, República Argentina." },
+      { type: "p", text: "El presente sitio web y los servicios ofrecidos en él son prestados por <strong>Franco Gaudino</strong> (CUIL 20-40486958-3), actuando bajo el nombre comercial <strong>GAUDIAN — Marketing · AI · Automation</strong>, con base operativa en la ciudad de Clorinda, provincia de Formosa, República Argentina. Los servicios a clientes en Paraguay se prestan de forma remota como exportación de servicios desde Argentina." },
       { type: "p", text: "Para cualquier consulta, reclamo o ejercicio de derechos, podés comunicarte a través de los siguientes canales:" },
       { type: "ul", items: [
         'Correo electrónico: <a href="mailto:lic.gaudinofranco@gmail.com">lic.gaudinofranco@gmail.com</a>',
@@ -29,17 +29,16 @@ export const TERMINOS_SECTIONS = [
     n: "02",
     titulo: "Descripción del servicio",
     body: [
-      { type: "p", text: "GAUDIAN es un <strong>estudio boutique de comunicación digital</strong> que presta servicios personalizados de marketing a marcas premium. Los servicios incluyen, según el plan contratado:" },
+      { type: "p", text: "GAUDIAN es un <strong>estudio de Marketing, Inteligencia Artificial y Automatización</strong> que diseña sistemas de crecimiento para negocios. Los servicios incluyen, según el plan contratado:" },
       { type: "ul", items: [
-        "Gestión de redes sociales (Instagram y/o Facebook)",
-        "Creación de contenido gráfico y audiovisual (imágenes, reels, stories)",
-        "Gestión de publicidad paga en plataformas Meta (Facebook Ads e Instagram Ads)",
-        "Diseño de estrategia mensual de comunicación digital",
-        "Redacción de textos y copys para publicaciones y anuncios",
-        "Reportes periódicos de resultados y métricas",
+        "<strong>Marketing Performance:</strong> gestión de campañas de publicidad paga en Meta (Facebook/Instagram Ads), TikTok Ads y Google Ads, incluyendo estrategia, creativos, embudos, tracking y optimización",
+        "<strong>Automatización con IA:</strong> implementación de chatbots con inteligencia artificial para WhatsApp, calificadores de leads, agendamiento automático, CRM y flujos de automatización a medida",
+        "<strong>Gestión de redes sociales:</strong> calendario editorial, creación de contenido gráfico y audiovisual (posts, reels, stories), redacción de copys y community management",
+        "Diseño de estrategia de crecimiento digital y landing pages de conversión",
+        "Reportes periódicos de resultados y métricas (leads, costo por lead, retorno)",
       ]},
-      { type: "highlight", text: "Se trata de un <strong>servicio personalizado</strong>: cada cliente recibe una propuesta adaptada a su rubro, su mercado local y sus objetivos específicos. GAUDIAN no utiliza plantillas genéricas ni estrategias replicadas entre clientes." },
-      { type: "p", text: "El presupuesto destinado a publicidad paga en plataformas de terceros (Meta Ads) no forma parte del precio del plan y es gestionado de forma separada según lo acordado en el contrato de prestación." },
+      { type: "highlight", text: "Se trata de un <strong>servicio personalizado</strong>: cada cliente recibe una propuesta adaptada a su rubro, su mercado local y sus objetivos específicos. Los sistemas de IA se entrenan con la información propia de cada negocio; GAUDIAN no utiliza plantillas genéricas ni estrategias replicadas entre clientes." },
+      { type: "p", text: "El presupuesto destinado a publicidad paga en plataformas de terceros (Meta, TikTok, Google) <strong>no forma parte del precio del plan</strong> y se abona directamente desde la cuenta publicitaria del cliente. Asimismo, los costos de servicios de terceros necesarios para las automatizaciones (por ejemplo, API de WhatsApp o proveedores de modelos de IA) se detallan y acuerdan en la propuesta." },
     ],
   },
   {
@@ -62,9 +61,9 @@ export const TERMINOS_SECTIONS = [
     n: "04",
     titulo: "Precios y formas de pago",
     body: [
-      { type: "p", text: "Los precios se publican en pesos argentinos (ARS), guaraníes paraguayos (PYG) o dólares estadounidenses (USD) según la región del cliente, y se confirman en la propuesta personalizada." },
-      { type: "p", text: "GAUDIAN acepta los siguientes medios de pago: transferencia bancaria, MercadoPago, Wise, PayPal y otros medios digitales disponibles. La modalidad de pago quedará especificada en el contrato." },
-      { type: "p", text: "El pago es mensual y debe realizarse dentro de los primeros 5 días hábiles de cada mes calendario, salvo que se acuerde otra modalidad expresamente en el contrato." },
+      { type: "p", text: "Los precios se publican en <strong>dólares estadounidenses (USD)</strong> y se confirman en la propuesta personalizada. Para clientes en Paraguay, el cobro se procesa a través de <strong>dLocal Go</strong>, que admite tarjetas (Visa, Mastercard, Bancard), transferencia bancaria paraguaya, billeteras digitales (Tigo Money, Zimple, Billetera Personal) y efectivo en puntos habilitados. Por cada pago se emite la factura correspondiente (Factura E de exportación de servicios desde Argentina)." },
+      { type: "p", text: "Adicionalmente al honorario mensual, los planes contemplan un <strong>fee de implementación</strong> equivalente a un honorario mensual, que se abona junto con el primer mes y no es reembolsable. Cubre la configuración inicial de campañas, sistemas y automatizaciones." },
+      { type: "p", text: "El pago es <strong>mensual y adelantado</strong>, y debe realizarse dentro de los primeros 10 días hábiles de cada mes calendario, salvo que se acuerde otra modalidad expresamente en el contrato." },
       { type: "highlight", text: "Los precios pueden ser actualizados por GAUDIAN con un <strong>preaviso mínimo de 30 días corridos</strong> al cliente. El cliente podrá rescindir el contrato sin penalidad si no acepta la actualización de precios, siempre que lo comunique dentro de los 10 días hábiles siguientes a la notificación." },
     ],
   },
@@ -73,9 +72,9 @@ export const TERMINOS_SECTIONS = [
     n: "05",
     titulo: "Permanencia mínima y cancelación",
     body: [
-      { type: "p", text: "Los servicios de GAUDIAN tienen una <strong>permanencia mínima de 6 (seis) meses</strong> contados desde la fecha de firma del contrato. Esta condición existe porque los resultados del marketing digital y la construcción de marca son acumulativos y requieren tiempo para consolidarse; resultados significativos no son posibles de garantizar en períodos inferiores." },
-      { type: "p", text: "Una vez cumplido el período de permanencia mínima, cualquiera de las partes puede dar por finalizado el servicio con un <strong>preaviso de 30 días corridos</strong>, comunicado por escrito (correo electrónico o WhatsApp con constancia)." },
-      { type: "highlight", text: "En caso de rescisión anticipada por parte del cliente antes de cumplirse los 6 meses, se deberán abonar los meses restantes del período de permanencia como indemnización, salvo casos de fuerza mayor debidamente acreditados o acuerdo expreso entre las partes." },
+      { type: "p", text: "Los servicios de GAUDIAN tienen una <strong>permanencia mínima de 6 (seis) meses para los planes de entrada y de 12 (doce) meses para los planes completos</strong> (Sistema de Clientes, Máquina de Crecimiento y superiores), contados desde la fecha de firma del contrato. Esta condición existe porque los sistemas de marketing y automatización son acumulativos: las campañas necesitan período de aprendizaje y la IA se optimiza con datos reales del negocio." },
+      { type: "p", text: "Una vez cumplido el período de permanencia mínima, cualquiera de las partes puede dar por finalizado el servicio con un <strong>preaviso de 60 días corridos</strong>, comunicado por escrito (correo electrónico o WhatsApp con constancia)." },
+      { type: "highlight", text: "En caso de rescisión anticipada por parte del cliente antes de cumplirse la permanencia mínima, se aplicará la cláusula penal prevista en el contrato de prestación de servicios, salvo casos de fuerza mayor debidamente acreditados o acuerdo expreso entre las partes. El fee de implementación no es reembolsable en ningún caso." },
       { type: "p", text: "GAUDIAN se reserva el derecho de rescindir el contrato de forma inmediata y sin penalidad en caso de: incumplimiento de pago por parte del cliente por más de 10 días hábiles; conductas que perjudiquen la reputación del estudio; o solicitud de acciones que contravengan la legislación vigente." },
     ],
   },
@@ -94,7 +93,9 @@ export const TERMINOS_SECTIONS = [
       ]},
       { type: "p", text: "<strong>El cliente se compromete a:</strong>" },
       { type: "ul", items: [
-        "Proveer acceso a las cuentas de redes sociales y plataformas necesarias para el desarrollo del trabajo.",
+        "Proveer acceso a las cuentas de redes sociales, cuentas publicitarias, número de WhatsApp comercial y plataformas necesarias para el desarrollo del trabajo.",
+        "Mantener una inversión publicitaria mínima acorde a lo acordado en la propuesta, cuando el plan incluya gestión de campañas.",
+        "Proveer la información necesaria para el entrenamiento de los sistemas de IA (servicios, precios, horarios, preguntas frecuentes) y validar sus respuestas antes de la puesta en producción.",
         "Abonar el servicio en tiempo y forma según lo estipulado en el contrato.",
         "Brindar información veraz y actualizada sobre su negocio para la elaboración del contenido.",
         "Respetar los plazos de revisión y aprobación de materiales que se acuerden.",
@@ -109,6 +110,7 @@ export const TERMINOS_SECTIONS = [
     body: [
       { type: "p", text: "Todo el contenido creado por GAUDIAN para el cliente (imágenes, textos, videos, diseños, estrategias) pasa a ser <strong>propiedad del cliente</strong> una vez finalizada la relación contractual y siempre que el cliente se encuentre al día con los pagos correspondientes." },
       { type: "p", text: "Durante la vigencia del contrato, los materiales producidos son de uso exclusivo del cliente para los fines acordados. No podrán ser cedidos, sublicenciados ni modificados por el cliente sin consentimiento de GAUDIAN." },
+      { type: "p", text: "Los <strong>flujos de automatización, arquitecturas de bots y configuraciones técnicas</strong> desarrollados por GAUDIAN constituyen know-how propio del estudio. El cliente recibe el derecho de uso de los sistemas implementados mientras dure la relación contractual; las condiciones de entrega, migración o continuidad de las automatizaciones al finalizar el contrato se detallan en el contrato de prestación de servicios." },
       { type: "p", text: "GAUDIAN se reserva el derecho de incluir los trabajos realizados en su portfolio, sitio web y materiales de presentación comercial, salvo que el cliente solicite expresamente la confidencialidad de los materiales en el contrato." },
     ],
   },
@@ -117,15 +119,17 @@ export const TERMINOS_SECTIONS = [
     n: "08",
     titulo: "Limitación de responsabilidad",
     body: [
-      { type: "p", text: "GAUDIAN no garantiza resultados específicos en términos de ventas, número de seguidores, generación de leads o retorno de inversión, ya que estos dependen de múltiples factores externos al control del estudio, incluyendo:" },
+      { type: "p", text: "GAUDIAN no garantiza resultados específicos en términos de ventas, facturación, número de seguidores o retorno de inversión, ya que estos dependen de múltiples factores externos al control del estudio, incluyendo:" },
       { type: "ul", items: [
-        "Los algoritmos y políticas de plataformas de terceros (Meta, Instagram, Facebook, Google)",
-        "La calidad del producto o servicio ofrecido por el cliente",
+        "Los algoritmos y políticas de plataformas de terceros (Meta, Instagram, Facebook, TikTok, Google, WhatsApp)",
+        "La calidad del producto o servicio ofrecido por el cliente y su capacidad de atender los leads generados",
         "Las condiciones del mercado local y la competencia",
         "El presupuesto destinado a publicidad paga",
         "Factores económicos o sociales externos",
       ]},
-      { type: "p", text: "GAUDIAN no se responsabiliza por interrupciones, cambios de algoritmo o modificaciones en los términos de servicio de plataformas de terceros que puedan afectar el rendimiento de las campañas o la visibilidad del contenido." },
+      { type: "p", text: "Cuando una oferta comercial incluya una <strong>garantía condicionada</strong> (por ejemplo, generación de leads medibles en un plazo determinado), sus alcances, condiciones de cooperación del cliente e inversión publicitaria mínima quedarán detallados expresamente en el contrato. Dichas garantías refieren a la generación de leads u otras métricas operativas, nunca a niveles de facturación o ventas del cliente." },
+      { type: "p", text: "Los sistemas de inteligencia artificial implementados pueden ocasionalmente producir respuestas imprecisas. GAUDIAN los configura, entrena y supervisa con diligencia profesional, deriva a atención humana los casos previstos y corrige desvíos reportados, pero no garantiza la exactitud del 100% de las respuestas automatizadas. El cliente es responsable de validar la información comercial con la que se entrena el sistema." },
+      { type: "p", text: "GAUDIAN no se responsabiliza por interrupciones, cambios de algoritmo o modificaciones en los términos de servicio de plataformas de terceros (incluidas las API de WhatsApp y los proveedores de modelos de IA) que puedan afectar el rendimiento de las campañas, la visibilidad del contenido o la disponibilidad de las automatizaciones." },
     ],
   },
   {
@@ -157,7 +161,7 @@ export const PRIVACIDAD_SECTIONS = [
     n: "01",
     titulo: "Responsable del tratamiento",
     body: [
-      { type: "p", text: "El responsable del tratamiento de datos personales recolectados a través de este sitio web es <strong>Franco Gaudino</strong> (CUIL 20-40486958-3), bajo el nombre comercial <strong>GAUDIAN — Estudio boutique de comunicación</strong>, con base en Clorinda, Formosa, República Argentina." },
+      { type: "p", text: "El responsable del tratamiento de datos personales recolectados a través de este sitio web es <strong>Franco Gaudino</strong> (CUIL 20-40486958-3), bajo el nombre comercial <strong>GAUDIAN — Marketing · AI · Automation</strong>, con base en Clorinda, Formosa, República Argentina." },
       { type: "p", text: 'Contacto del responsable: <a href="mailto:lic.gaudinofranco@gmail.com">lic.gaudinofranco@gmail.com</a> · WhatsApp <a href="https://wa.me/543718615261" target="_blank" rel="noopener noreferrer">+54 3718 615261</a>.' },
     ],
   },
@@ -208,7 +212,7 @@ export const PRIVACIDAD_SECTIONS = [
         '<strong>Formspree:</strong> procesamiento del formulario de contacto y lead magnet. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Política</a>',
         '<strong>ipapi.co:</strong> geolocalización por IP para detección de región. <a href="https://ipapi.co/privacy/" target="_blank" rel="noopener noreferrer">Política</a>',
         '<strong>Calendly:</strong> agendamiento de reuniones. <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer">Política</a>',
-        '<strong>Google Fonts:</strong> tipografías web (Bebas Neue, Cormorant Garamond, DM Sans).',
+        '<strong>Google Fonts:</strong> tipografías web (Inter).',
         '<strong>Canva:</strong> embed del portfolio interactivo en la página /portfolio. <a href="https://www.canva.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer">Política</a>',
       ]},
     ],

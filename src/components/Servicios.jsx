@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { servicios } from "../data/site";
 import Reveal, { RevealStagger, RevealItem } from "./motion/Reveal";
+import DrawLine from "./motion/DrawLine";
 
 const SRV_IMGS = [
-  "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=70&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&q=70&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=70&auto=format&fit=crop",
+  { src: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&q=70&auto=format&fit=crop", label: "Redes Sociales" },
+  { src: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&q=70&auto=format&fit=crop", label: "Publicidad Meta" },
+  { src: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=70&auto=format&fit=crop", label: "Estrategia" },
 ];
 
 export default function Servicios() {
@@ -18,6 +19,7 @@ export default function Servicios() {
         <Reveal delay={0.1}>
           <h2 className="s-h2">Lo que<br/>hacemos</h2>
         </Reveal>
+        <DrawLine className="mt-6 max-w-[120px]" delay={0.3} />
         <Reveal delay={0.2}>
           <p className="font-serif italic text-warm font-light my-10 max-w-[600px]" style={{ fontSize: "clamp(1.3rem, 2.4vw, 1.8rem)", lineHeight: 1.55 }}>
             Cuatro disciplinas diseñadas para marcas que necesitan crecer, no experimentar.
@@ -61,19 +63,28 @@ export default function Servicios() {
           ))}
         </RevealStagger>
 
-        {/* Image row editorial */}
+        {/* Image row editorial con overlay (hover en PC · label visible en mobile) */}
         <Reveal delay={0.2}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 h-[260px] mt-px border border-border-soft overflow-hidden">
-            {SRV_IMGS.map((src, i) => (
-              <div key={i} className="overflow-hidden border-l border-border-soft first:border-l-0">
+          <div className="grid grid-cols-1 sm:grid-cols-3 h-[420px] sm:h-[260px] mt-px border border-border-soft overflow-hidden">
+            {SRV_IMGS.map((item, i) => (
+              <div key={i} className="relative overflow-hidden border-l border-border-soft first:border-l-0 group">
                 <img
-                  src={src}
-                  alt=""
+                  src={item.src}
+                  alt={item.label}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-[6000ms] ease-out hover:scale-110"
-                  style={{ filter: "brightness(.6) saturate(.7)" }}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  style={{ filter: "brightness(.5) saturate(.7)" }}
                 />
+                {/* Overlay dorado al hover */}
+                <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/15 transition-colors duration-500 pointer-events-none" />
+                {/* Label: en mobile visible, en PC sube al hover */}
+                <div className="absolute inset-x-0 bottom-0 p-5 flex items-end justify-between pointer-events-none">
+                  <span className="font-display uppercase text-cream transition-transform duration-500 sm:translate-y-2 sm:opacity-80 group-hover:translate-y-0 group-hover:opacity-100" style={{ fontSize: "1.3rem", letterSpacing: "0.05em" }}>
+                    {item.label}
+                  </span>
+                  <span className="font-display text-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ fontSize: "1.5rem" }}>→</span>
+                </div>
               </div>
             ))}
           </div>

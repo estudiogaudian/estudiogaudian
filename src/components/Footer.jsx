@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { brand, nav } from "../data/site";
 
 export default function Footer() {
@@ -12,7 +12,7 @@ export default function Footer() {
             </span>
             <span className="w-px h-4 bg-border-soft" />
             <span className="font-sans uppercase text-muted" style={{ fontSize: "9px", fontWeight: 300, letterSpacing: "0.18em" }}>
-              Estudio boutique de comunicación
+              Marketing · AI · Automation
             </span>
           </div>
           <ul className="flex flex-wrap gap-7 list-none lg:justify-center">

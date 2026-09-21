@@ -9,7 +9,7 @@ export default function FAQ() {
       <div className="container-x grid lg:grid-cols-12 gap-16">
         <Reveal className="lg:col-span-4">
           <div className="s-label">08 — FAQ</div>
-          <h2 className="s-h2">Preguntas<br/>frecuentes</h2>
+          <h2 className="s-h2" style={{ fontSize: "clamp(2rem, 4vw, 3.4rem)" }}>Preguntas<br/>frecuentes</h2>
           <p className="font-serif italic text-warm mt-6 max-w-sm" style={{ fontSize: "1.1rem", fontWeight: 300 }}>
             Lo que probablemente te estés preguntando.
           </p>
@@ -25,7 +25,7 @@ export default function FAQ() {
                     className="w-full flex items-center justify-between text-left py-6 group"
                     onClick={() => setOpen(isOpen ? -1 : i)}
                   >
-                    <span className="font-display uppercase pr-6 group-hover:text-gold transition text-cream" style={{ fontSize: "1.1rem", letterSpacing: "0.05em" }}>
+                    <span className="font-display pr-6 group-hover:text-gold transition text-cream" style={{ fontSize: "0.95rem", fontWeight: 600, letterSpacing: "0.01em" }}>
                       {f.q}
                     </span>
                     <span className={`text-2xl font-display font-light transition-transform duration-300 ${isOpen ? "rotate-45 text-gold" : "text-muted"}`}>

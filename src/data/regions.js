@@ -1,5 +1,6 @@
 // Configuración por región. Cada región tiene su moneda, precios, copy y locales.
 // La región se detecta automáticamente por IP (ipapi.co) o por ruta /ar /py /global.
+// GAUDIAN 2.0 — foco principal: Paraguay (Asunción). Precios en USD en todas las regiones.
 
 export const REGIONS = {
   ar: {
@@ -8,29 +9,29 @@ export const REGIONS = {
     name: "Argentina",
     flag: "🇦🇷",
     locale: "es-AR",
-    currency: "ARS",
-    currencySymbol: "$",
+    currency: "USD",
+    currencySymbol: "US$",
     phone: "+543178615261",
     phoneDisplay: "+54 3718 615261",
     location: "Clorinda · Formosa, Argentina",
     locationShort: "Clorinda",
-    heroEyebrow: "Estudio boutique · Argentina",
+    heroEyebrow: "Marketing · AI · Automation · Argentina",
     heroTitle: {
-      l1: "Construimos marcas",
-      l2: "visibles, profesionales",
+      l1: "Sistemas que generan",
+      l2: "clientes, optimizan procesos",
       l3a: "y ",
-      l3b: "memorables.",
+      l3b: "hacen crecer tu negocio.",
     },
     heroSubtitle:
-      "Comunicación estratégica, diseño con visión y performance digital para marcas premium en Argentina. Sin rodeos. Solo resultados.",
+      "Marketing Performance, chatbots con IA y automatización para negocios argentinos que quieren crecer con tecnología, no con promesas.",
     metaTitle:
-      "GAUDIAN · Estudio boutique de comunicación, diseño y publicidad en Argentina",
+      "GAUDIAN · Marketing, IA y Automatización en Argentina",
     metaDescription:
-      "Estudio boutique de diseño y marketing digital en Clorinda, Formosa. Branding, web y performance para marcas premium argentinas.",
+      "Estudio de Marketing, Inteligencia Artificial y Automatización. Meta Ads, Google Ads, chatbots IA para WhatsApp y sistemas de captación de clientes.",
     plans: [
-      { precio: "$370.000", periodo: "/mes ARS" },
-      { precio: "$590.000", periodo: "/mes ARS" },
-      { precio: "$890.000", periodo: "/mes ARS" },
+      { precio: "US$ 250", periodo: "/mes" },
+      { precio: "US$ 650", periodo: "/mes" },
+      { precio: "US$ 1.200", periodo: "/mes" },
     ],
     bandera: "🇦🇷",
   },
@@ -40,29 +41,29 @@ export const REGIONS = {
     name: "Paraguay",
     flag: "🇵🇾",
     locale: "es-PY",
-    currency: "PYG",
-    currencySymbol: "₲",
+    currency: "USD",
+    currencySymbol: "US$",
     phone: "+543178615261",
     phoneDisplay: "+54 3718 615261",
     location: "Asunción, Paraguay",
     locationShort: "Asunción",
-    heroEyebrow: "Estudio boutique · Paraguay",
+    heroEyebrow: "Marketing · AI · Automation · Paraguay",
     heroTitle: {
-      l1: "Construimos marcas",
-      l2: "visibles, profesionales",
+      l1: "Sistemas que generan",
+      l2: "clientes, optimizan procesos",
       l3a: "y ",
-      l3b: "memorables.",
+      l3b: "hacen crecer tu negocio.",
     },
     heroSubtitle:
-      "Comunicación estratégica, diseño con visión y performance digital para marcas paraguayas que buscan liderar su categoría.",
+      "Campañas que traen leads calificados a tu WhatsApp y una IA que los atiende 24/7. Marketing, Inteligencia Artificial y Automatización para negocios de Asunción y todo Paraguay.",
     metaTitle:
-      "GAUDIAN · Estudio de diseño y marketing digital en Paraguay",
+      "GAUDIAN · Marketing, IA y Automatización en Asunción, Paraguay",
     metaDescription:
-      "Estudio boutique especializado en branding, diseño web y campañas Meta para marcas premium en Asunción y todo Paraguay.",
+      "Meta Ads, TikTok Ads, Google Ads, chatbots con IA para WhatsApp y automatización de ventas para negocios paraguayos. Resultados medibles.",
     plans: [
-      { precio: "₲ 2.700.000", periodo: "/mes PYG" },
-      { precio: "₲ 4.300.000", periodo: "/mes PYG" },
-      { precio: "₲ 6.500.000", periodo: "/mes PYG" },
+      { precio: "US$ 250", periodo: "/mes" },
+      { precio: "US$ 650", periodo: "/mes" },
+      { precio: "US$ 1.200", periodo: "/mes" },
     ],
     bandera: "🇵🇾",
   },
@@ -78,37 +79,37 @@ export const REGIONS = {
     phoneDisplay: "+54 3718 615261",
     location: "Atención remota internacional",
     locationShort: "Internacional",
-    heroEyebrow: "Boutique studio · Worldwide",
+    heroEyebrow: "Marketing · AI · Automation · Worldwide",
     heroTitle: {
-      l1: "Brands that look",
-      l2: "premium, sound clear",
+      l1: "Growth systems:",
+      l2: "marketing, AI agents",
       l3a: "and ",
-      l3b: "actually convert.",
+      l3b: "automation that converts.",
     },
     heroSubtitle:
-      "Estudio boutique de comunicación, diseño y performance. Trabajamos remoto con marcas hispanohablantes en cualquier parte del mundo.",
+      "Marketing Performance, chatbots con IA y automatización de ventas. Trabajamos remoto con negocios hispanohablantes en cualquier parte del mundo.",
     metaTitle:
-      "GAUDIAN · Boutique brand & performance studio for premium Spanish-speaking brands",
+      "GAUDIAN · Marketing, AI & Automation studio",
     metaDescription:
-      "Boutique communication, design and digital performance studio for premium brands worldwide. Remote-first.",
+      "Performance marketing, AI chatbots and sales automation systems for Spanish-speaking businesses worldwide. Remote-first.",
     plans: [
-      { precio: "US$ 370", periodo: "/month" },
-      { precio: "US$ 590", periodo: "/month" },
-      { precio: "US$ 890", periodo: "/month" },
+      { precio: "US$ 250", periodo: "/month" },
+      { precio: "US$ 650", periodo: "/month" },
+      { precio: "US$ 1.200", periodo: "/month" },
     ],
     bandera: "🌐",
   },
 };
 
 export function pickRegion(code) {
-  if (!code) return REGIONS.ar;
-  return REGIONS[code.toLowerCase()] || REGIONS.ar;
+  if (!code) return REGIONS.py;
+  return REGIONS[code.toLowerCase()] || REGIONS.py;
 }
 
 export function regionFromCountryCode(cc) {
   const u = (cc || "").toUpperCase();
   if (u === "AR") return REGIONS.ar;
   if (u === "PY") return REGIONS.py;
-  if (!u) return REGIONS.ar;
+  if (!u) return REGIONS.py;
   return REGIONS.global;
 }

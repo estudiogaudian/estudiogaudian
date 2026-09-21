@@ -1,4 +1,4 @@
-import LegalPage from "./LegalPage";
+﻿import LegalPage from "./LegalPage";
 import { TERMINOS_SECTIONS, TERMINOS_META } from "../data/legal";
 
 export default function Terminos() {
@@ -14,11 +14,11 @@ export default function Terminos() {
       eyebrow="Legal · GAUDIAN"
       titleLine1="Términos y"
       titleLine2="Condiciones"
-      subtitle="Condiciones de prestación del servicio de comunicación digital, diseño y marketing para marcas premium."
+      subtitle="Condiciones de prestación de los servicios de marketing performance, automatización con IA y gestión de redes."
       meta={meta}
       sections={TERMINOS_SECTIONS}
       metaTitle="Términos y Condiciones · GAUDIAN"
-      metaDescription="Términos y condiciones del servicio de GAUDIAN, estudio boutique de comunicación. Permanencia, precios, propiedad intelectual y jurisdicción."
+      metaDescription="Términos y condiciones del servicio de GAUDIAN, estudio de Marketing, IA y Automatización. Permanencia, precios, propiedad intelectual y jurisdicción."
       canonical="https://estudiogaudian.com/terminos"
     />
   );

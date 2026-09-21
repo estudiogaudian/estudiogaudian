@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion } from "framer-motion";
 import { brand, waLink } from "../data/site";
 import {
@@ -61,7 +61,7 @@ export default function Promo() {
   return (
     <>
       <SEOHead
-        title="Meta Ads para PyMEs · GAUDIAN — Estudio boutique"
+        title="Meta Ads para PyMEs · GAUDIAN — Marketing · AI · Automation"
         description="Gestión profesional de Meta Ads y dirección de arte para marcas premium en Argentina y Paraguay. Cupos limitados. Sin permanencia obligatoria."
         canonical="https://estudiogaudian.com/promo"
         region={region}
@@ -155,7 +155,7 @@ export default function Promo() {
       {/* MARQUEE editorial */}
       <div className="border-y border-border-soft py-3 bg-ink overflow-hidden">
         <Marquee
-          items={["Meta Ads · Facebook + Instagram", "Dirección de arte editorial", "Estrategia regional AR · PY", "Reporting transparente", "Sin permanencia obligatoria", "Atención boutique · 4 cuentas/mes"]}
+          items={["Meta Ads · Facebook + Instagram", "Dirección de arte editorial", "Estrategia regional AR · PY", "Reporting transparente", "Sin permanencia obligatoria", "Cupo limitado · 4 cuentas/mes"]}
           speed={36}
         />
       </div>
@@ -198,7 +198,7 @@ export default function Promo() {
             {PROMO_RAZONES.map((r) => (
               <RevealItem key={r.n}>
                 <motion.div
-                  whileHover={{ backgroundColor: "#0c0c0b" }}
+                  whileHover={{ backgroundColor: "#050505" }}
                   className="bg-graphite p-8 h-full transition-colors min-h-[240px]"
                 >
                   <div className="font-display text-gold mb-5" style={{ fontSize: "2rem", letterSpacing: "0.04em" }}>

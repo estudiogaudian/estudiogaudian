@@ -1,6 +1,7 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+﻿import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Reveal from "./motion/Reveal";
+import DrawLine from "./motion/DrawLine";
 import Counter from "./motion/Counter";
 
 const IMG_A = "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=75&auto=format&fit=crop"; // estudio creativo principal
@@ -21,31 +22,32 @@ export default function Estudio() {
         <Reveal delay={0.1}>
           <h2 className="s-h2">Quiénes<br/>somos</h2>
         </Reveal>
+        <DrawLine className="mt-6 max-w-[120px]" delay={0.3} />
 
         <div className="grid lg:grid-cols-2 gap-20 items-start mt-16">
           {/* Texto */}
           <div className="space-y-6">
             <Reveal>
               <p className="font-light leading-[1.8] text-warm" style={{ fontSize: "1.05rem" }}>
-                <strong className="text-cream font-medium">GAUDIAN</strong> es un{" "}
-                <em className="font-serif italic text-gold" style={{ fontSize: "1.15em" }}>estudio boutique de comunicación</em>{" "}
-                con base en Clorinda, Formosa. No somos una agencia de Buenos Aires que manda soluciones genéricas desde lejos.
+                <strong className="text-cream font-medium">GAUDIAN</strong> es un estudio especializado en{" "}
+                <em className="italic-serif" style={{ fontSize: "1.1em" }}>Marketing, Inteligencia Artificial y Automatización</em>{" "}
+                que diseña sistemas para generar crecimiento real. No somos una agencia tradicional de redes sociales ni un proveedor de publicaciones.
               </p>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="font-light leading-[1.8] text-warm" style={{ fontSize: "1.05rem" }}>
-                Conocemos el mercado local. Sabemos cómo compra la gente de acá, cuáles son los negocios que crecen y por qué. Esa diferencia se nota en los resultados.
+                Vendemos crecimiento, eficiencia y captación de clientes. Conocemos el mercado de Asunción y la región: sabemos cómo compra la gente de acá, y usamos tecnología que la mayoría de las agencias todavía no ofrece.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="font-light leading-[1.8] text-warm" style={{ fontSize: "1.05rem" }}>
-                Trabajamos con marcas de toda la región: Clorinda, Formosa, y también del lado paraguayo. Inmobiliarias, estudios jurídicos, constructoras, concesionarias, comercios. Gente que necesita resultados concretos, no promesas vacías.
+                Trabajamos con clínicas, peluquerías premium, gastronomía, inmobiliarias y comercios de Asunción, Clorinda y toda la región. Gente que necesita resultados concretos: leads en su WhatsApp, no promesas vacías.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
               <p className="font-light leading-[1.8] text-warm" style={{ fontSize: "1.05rem" }}>
                 Nuestro trabajo es simple:{" "}
-                <strong className="text-cream font-medium">hacer que más clientes te encuentren, te elijan y vuelvan.</strong>
+                <strong className="text-cream font-medium">más clientes, menos trabajo manual, más crecimiento.</strong>
               </p>
             </Reveal>
           </div>
@@ -56,32 +58,38 @@ export default function Estudio() {
               style={{ y: yPhoto }}
               className="grid grid-cols-2 grid-rows-[260px_160px] gap-2"
             >
-              <div className="col-span-2 overflow-hidden">
+              <div className="col-span-2 overflow-hidden relative group">
                 <img
                   src={IMG_A}
                   alt="Estudio GAUDIAN — espacio creativo de comunicación, diseño y publicidad"
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-[6000ms] ease-out hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   style={{ filter: "brightness(.7) saturate(.75)", objectPosition: "center 35%" }}
                 />
+                <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/30 transition-colors duration-500 pointer-events-none" />
+                <span className="absolute bottom-4 left-5 font-display uppercase text-cream opacity-80 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ fontSize: "1rem", letterSpacing: "0.06em" }}>
+                  El estudio
+                </span>
               </div>
-              <div className="overflow-hidden">
+              <div className="overflow-hidden relative group">
                 <img
                   src={IMG_B}
                   alt=""
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-[6000ms] ease-out hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   style={{ filter: "brightness(.75) saturate(.8)" }}
                 />
+                <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/15 transition-colors duration-500 pointer-events-none" />
               </div>
-              <div className="overflow-hidden">
+              <div className="overflow-hidden relative group">
                 <img
                   src={IMG_C}
                   alt=""
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-[6000ms] ease-out hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   style={{ filter: "brightness(.75) saturate(.8)" }}
                 />
+                <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/15 transition-colors duration-500 pointer-events-none" />
               </div>
             </motion.div>
           </Reveal>
@@ -92,8 +100,8 @@ export default function Estudio() {
           <div className="grid grid-cols-2 lg:grid-cols-4 border border-border-soft mt-16">
             {[
               { n: "+10", label: "Marcas activas", count: 10, prefix: "+" },
-              { n: "3", label: "Años en el mercado", count: 3 },
-              { n: "100%", label: "Enfoque local & boutique", count: 100, suffix: "%" },
+              { n: "3", label: "Marketing · IA · Automatización", count: 3 },
+              { n: "24/7", label: "Sistemas atendiendo por vos", count: 24, suffix: "/7" },
               { n: "30d", label: "Primeros resultados visibles", count: 30, suffix: "d" },
             ].map((s, i) => (
               <motion.div
