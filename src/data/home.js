@@ -102,9 +102,8 @@ export const casosIntro = {
 
 export const oferta = {
   title: "Un plan, todo incluido.",
+  selector: "¿Dónde está tu negocio?",
   nombre: "Performance Meta",
-  precio: "USD 540",
-  periodo: "por mes + 20% de la pauta",
   desc: "Tus anuncios de Instagram y Facebook, hechos y manejados por el estudio.",
   incluye: [
     "Estrategia y campañas en Meta Ads",
@@ -116,18 +115,62 @@ export const oferta = {
   garantia: {
     titulo: "Garantía de 90 días",
     texto: "Si en 90 días no hay consultas medibles, seguimos trabajando sin cobrarte honorario.",
-    // TODO: confirmar condiciones con Franco.
-    condicion: "Con una inversión en pauta desde Gs. 1.000.000 por mes.",
+    // La condición se completa con la pauta mínima de la zona elegida.
   },
   cupos: "Tomamos 3 negocios nuevos por mes.",
-  nota: "Precios en USD. La inversión en anuncios la pagás vos desde tu cuenta publicitaria. Al arrancar se cobra un mes de honorario como implementación. Permanencia mínima de 6 meses.",
+  nota: "La inversión en anuncios la pagás vos desde tu cuenta publicitaria. Al arrancar se cobra un mes de honorario como implementación. Permanencia mínima de 6 meses.",
 };
+
+// Precios por zona. Performance Meta es la base; el resto mantiene la proporción del tarifario en USD.
+// En Argentina no se cobra el 20% sobre la pauta; en Paraguay y en el resto del mundo sí.
+export const zonas = [
+  {
+    id: "formosa",
+    label: "Formosa",
+    precio: "ARS 180.000",
+    periodo: "por mes + tu presupuesto publicitario",
+    pautaMin: "ARS 120.000",
+    moneda: "Precios en pesos argentinos.",
+    redes: "desde ARS 115.000/mes",
+    bot: "ARS 200.000 + ARS 50.000/mes",
+  },
+  {
+    id: "argentina",
+    label: "Resto de Argentina",
+    precio: "ARS 450.000",
+    periodo: "por mes + tu presupuesto publicitario",
+    pautaMin: "ARS 200.000",
+    moneda: "Precios en pesos argentinos.",
+    redes: "desde ARS 285.000/mes",
+    bot: "ARS 500.000 + ARS 120.000/mes",
+  },
+  {
+    id: "paraguay",
+    label: "Paraguay",
+    precio: "Gs. 2.600.000",
+    periodo: "por mes + 20% de la pauta",
+    pautaMin: "Gs. 1.000.000",
+    moneda: "Precios en guaraníes.",
+    redes: "desde Gs. 1.650.000/mes",
+    bot: "Gs. 2.900.000 + Gs. 700.000/mes",
+  },
+  {
+    id: "mundo",
+    label: "Otro país",
+    precio: "USD 540",
+    periodo: "por mes + 20% de la pauta",
+    pautaMin: "USD 300",
+    moneda: "Precios en dólares.",
+    redes: "desde USD 340/mes",
+    bot: "USD 600 + USD 145/mes",
+  },
+];
 
 export const extras = {
   title: "Podés sumar",
   items: [
-    { nombre: "Gestión de redes", precio: "desde USD 340/mes", desc: "Posteos, reels, historias y respuesta a comentarios para que tu perfil se vea activo." },
-    { nombre: "Bot de WhatsApp con IA", precio: "USD 600 + USD 145/mes", desc: "Contesta, filtra y agenda las consultas que traen tus anuncios, también de noche." },
+    { id: "redes", nombre: "Gestión de redes", desc: "Posteos, reels, historias y respuesta a comentarios para que tu perfil se vea activo." },
+    { id: "bot", nombre: "Bot de WhatsApp con IA", desc: "Contesta, filtra y agenda las consultas que traen tus anuncios, también de noche." },
   ],
 };
 
@@ -147,7 +190,7 @@ export const faqIntro = {
 export const faqs = [
   {
     q: "¿Cuánto tengo que invertir en publicidad?",
-    a: "Recomendamos arrancar con Gs. 1.000.000 por mes como mínimo. Esa plata va directo a Meta desde tu cuenta; nuestro honorario va aparte.",
+    a: "El mínimo por mes es de ARS 120.000 en Formosa, ARS 200.000 en el resto de Argentina, Gs. 1.000.000 en Paraguay y USD 300 en otros países. Esa plata va directo a Meta desde tu cuenta; nuestro honorario va aparte.",
   },
   {
     q: "¿La inversión en anuncios está incluida en el plan?",

@@ -42,7 +42,7 @@ export function RegionProvider({ children, fixed }) {
         if (abort) return;
         const cc = (data.country_code || "").toUpperCase();
         const r = regionFromCountryCode(cc);
-        setDetected({ countryCode: cc, city: data.city, country: data.country_name });
+        setDetected({ countryCode: cc, city: data.city, country: data.country_name, province: data.region });
         // Solo cambiar si el usuario no eligió manualmente otra
         const saved = (() => {
           try { return localStorage.getItem(STORAGE_KEY); } catch { return null; }
