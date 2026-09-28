@@ -16,15 +16,14 @@ export function Estudio() {
             ))}
           </div>
           <div className="mt-10 flex items-center gap-4">
-            {/* TODO: reemplazar por un retrato sobre fondo oscuro (min. 480x480). */}
             <img
-              src="/franco.jpeg"
+              src="/franco.webp"
               alt="Franco Gaudino, fundador de GAUDIAN"
-              width="64"
-              height="64"
+              width="640"
+              height="640"
               loading="lazy"
               decoding="async"
-              className="h-16 w-16 rounded-inner object-cover object-[50%_30%]"
+              className="h-16 w-16 rounded-inner border border-hairline object-cover"
             />
             <p className="text-[15px] text-fg">{estudioCopy.firma}</p>
           </div>
